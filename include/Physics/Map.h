@@ -16,7 +16,7 @@ public:
     const std::vector<b2Vec2>& getPolyline() const;
 
 private:
-    void loadFromFile(std::string filename);
+    void loadFromFile(const std::string& filename);
 
     static constexpr float DENSITY_ = 1.0f;
     static constexpr float FRICTION_ = 0.1f;

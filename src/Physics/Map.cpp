@@ -14,7 +14,7 @@ Map::Map(b2World &world) {
 
     body_ = world.CreateBody(&body_def_);
 
-    loadFromFile("data/map.txt");
+    loadFromFile("../data/map.txt");
 
     map_shape_ = utils::applyTessellation(polyline_);
     unsigned long i = 0;
@@ -46,14 +46,14 @@ const std::vector<b2Vec2>& Map::getPolyline() const {
     return polyline_;
 }
 
-void Map::loadFromFile(std::string filename) {
-    std::ifstream input(filename);
+void Map::loadFromFile(const std::string& filename) {
+    std::ifstream map_file(filename, std::ios::in);
 
     polyline_.clear();
 
     double x, y;
 
-    while (input >> x >> y)
+    while (map_file >> x >> y)
     {
         polyline_.emplace_back(x, y);
     }

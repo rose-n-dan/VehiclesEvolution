@@ -6,6 +6,7 @@
 #define VEHICLESEVOLUTION_UTILS_H
 
 #include <vector>
+#include <iostream>
 
 #include <mapbox/earcut.h>
 

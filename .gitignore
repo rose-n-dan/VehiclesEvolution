@@ -1,6 +1,7 @@
 # IDE
 .idea/
 cmake-build*/
+CMakeFiles/*
 
 # Prerequisites
 *.d
