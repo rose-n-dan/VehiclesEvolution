@@ -16,6 +16,8 @@ namespace utils {
 
 std::vector<b2PolygonShape> applyTessellation(const std::vector<b2Vec2> &polyline);
 
+bool isNearlyZero(double value, double precision);
+
 } // utils
 
 #endif //VEHICLESEVOLUTION_UTILS_H
