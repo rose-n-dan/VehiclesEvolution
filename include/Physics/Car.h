@@ -10,6 +10,7 @@
 #include <Physics/CarBody.h>
 #include <Physics/Wheel.h>
 #include <EvolutionaryAlgorithm/CarParameters.h>
+#include <Utils.h>
 
 class Car {
 
@@ -17,6 +18,7 @@ public:
     Car(b2World &world, const b2Vec2 &position, const CarParameters &car_parameters);
 
     const b2Vec2& getPosition() const;
+    const b2Vec2 getVelocity() const;
     const b2Vec2& getFrontWheelPosition() const;
     const b2Vec2& getRearWheelPosition() const;
     const double getFrontWheelRadius() const;
@@ -29,6 +31,8 @@ private:
     static constexpr float MAX_MOTOR_TORQUE_ = 100000.0f;
     static constexpr float MOTOR_SPEED_ = 40.0f;
 
+    static constexpr double MIN_VELOCITY_TO_STATE_CAR_STARTED = 0.5;
+
     Wheel front_wheel_, rear_wheel_;
     CarBody car_body_;
 
@@ -36,7 +40,10 @@ private:
     b2RevoluteJoint *front_joint_;
     b2RevoluteJoint *rear_joint_;
 
-    bool is_dead_;
+    mutable bool is_dead_;
+    mutable bool started_;
+
+    const bool started() const;
 
 };
 

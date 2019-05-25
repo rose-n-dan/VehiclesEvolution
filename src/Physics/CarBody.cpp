@@ -57,6 +57,10 @@ const b2Vec2& CarBody::getPosition() const {
     return body_->GetPosition();
 }
 
+const b2Vec2 CarBody::getVelocity() const {
+    return body_->GetLinearVelocity();
+}
+
 const double CarBody::getAngle() const {
     return body_->GetAngle();
 }

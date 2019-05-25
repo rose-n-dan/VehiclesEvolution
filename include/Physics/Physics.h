@@ -47,6 +47,9 @@ public:
 private:
     Physics();
 
+    static constexpr int32 VELOCITY_ITERATIONS_ = 10;
+    static constexpr int32 POSITION_ITERATIONS_ = 8;
+
     static const b2Vec2 CAR_STARTING_POSITION_;
 
     b2Vec2 gravity_;

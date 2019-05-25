@@ -53,4 +53,8 @@ std::vector<b2PolygonShape> applyTessellation(const std::vector<b2Vec2> &polylin
     return map_shape;
 }
 
+bool isNearlyZero(double value, double precision) {
+    return value < precision && value > -precision;
+}
+
 } // utils

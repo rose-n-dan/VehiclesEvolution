@@ -6,6 +6,7 @@
 
 Car::Car(b2World &world, const b2Vec2 &position, const CarParameters &car_parameters) :
                                                                 is_dead_(false),
+                                                                started_(false),
                                                                 car_body_(world, position, car_parameters.car_body_),
                                                                 front_wheel_(world, car_parameters.front_wheel_radius_),
                                                                 rear_wheel_(world, car_parameters.rear_wheel_radius_) {
@@ -36,6 +37,10 @@ const b2Vec2& Car::getPosition() const {
     return car_body_.getPosition();
 }
 
+const b2Vec2 Car::getVelocity() const{
+    return car_body_.getVelocity();
+}
+
 const b2Vec2& Car::getFrontWheelPosition() const {
     return front_wheel_.getPosition();
 }
@@ -61,5 +66,20 @@ const double Car::getAngle() const {
 }
 
 const bool Car::isDead() const {
+    if (!is_dead_ && started()) {
+        if (utils::isNearlyZero(getVelocity().x, 1e-4)) {
+            is_dead_ = true;
+        }
+    }
+
     return is_dead_;
+}
+
+const bool Car::started() const {
+    if (!started_) {
+        if (getVelocity().x > MIN_VELOCITY_TO_STATE_CAR_STARTED) {
+            started_ = true;
+        }
+    }
+    return started_;
 }
