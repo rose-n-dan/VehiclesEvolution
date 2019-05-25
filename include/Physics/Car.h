@@ -31,6 +31,8 @@ private:
     static constexpr float MAX_MOTOR_TORQUE_ = 100000.0f;
     static constexpr float MOTOR_SPEED_ = 40.0f;
 
+    static constexpr double MIN_VELOCITY_TO_STATE_CAR_STARTED = 0.5;
+
     Wheel front_wheel_, rear_wheel_;
     CarBody car_body_;
 
@@ -39,6 +41,10 @@ private:
     b2RevoluteJoint *rear_joint_;
 
     bool is_dead_;
+    bool started_;
+
+    const bool started();
+
 };
 
 
