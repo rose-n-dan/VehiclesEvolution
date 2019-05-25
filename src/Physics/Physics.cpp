@@ -13,10 +13,8 @@ Physics::Physics() : gravity_(0.0f, 9.81f),
 
 void Physics::update(const int frame_rate) {
     float32 timeStep = 1.0f / frame_rate;
-    int32 velocityIterations = 6;
-    int32 positionIterations = 2;
 
-    world_.Step(timeStep, velocityIterations, positionIterations);
+    world_.Step(timeStep, VELOCITY_ITERATIONS_, POSITION_ITERATIONS_);
 }
 
 const bool Physics::allDead() const{
