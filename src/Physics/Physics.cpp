@@ -14,6 +14,11 @@ Physics::Physics() : gravity_(0.0f, 9.81f),
 void Physics::update(const int frame_rate) {
     float32 timeStep = 1.0f / frame_rate;
 
+    if (allDead()) {
+        std::cout << "ALL DEAD" << std::endl;
+//        stop simulation, save all distances, make new genereation and so on...
+    }
+
     world_.Step(timeStep, VELOCITY_ITERATIONS_, POSITION_ITERATIONS_);
 }
 
