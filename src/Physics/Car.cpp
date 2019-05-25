@@ -64,6 +64,12 @@ const double Car::getAngle() const {
     return car_body_.getAngle();
 }
 
-const bool Car::isDead() const {
+const bool Car::isDead() {
+    if (!is_dead_) {
+        if (utils::isNearlyZero(getVelocity().x, 1e-4)) {
+            is_dead_ = true;
+        }
+    }
+
     return is_dead_;
 }

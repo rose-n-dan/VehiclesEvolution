@@ -25,7 +25,7 @@ public:
     const double getRearWheelRadius() const;
     std::vector<b2Vec2> getCarBodyVertices() const;
     const double getAngle() const;
-    const bool isDead() const;
+    const bool isDead();
 
 private:
     static constexpr float MAX_MOTOR_TORQUE_ = 100000.0f;
