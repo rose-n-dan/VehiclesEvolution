@@ -65,7 +65,7 @@ const double Car::getAngle() const {
     return car_body_.getAngle();
 }
 
-const bool Car::isDead() {
+const bool Car::isDead() const {
     if (!is_dead_ && started()) {
         if (utils::isNearlyZero(getVelocity().x, 1e-4)) {
             is_dead_ = true;
@@ -75,7 +75,7 @@ const bool Car::isDead() {
     return is_dead_;
 }
 
-const bool Car::started() {
+const bool Car::started() const {
     if (!started_) {
         if (getVelocity().x > MIN_VELOCITY_TO_STATE_CAR_STARTED) {
             started_ = true;

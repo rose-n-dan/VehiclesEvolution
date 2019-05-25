@@ -25,7 +25,7 @@ public:
     const double getRearWheelRadius() const;
     std::vector<b2Vec2> getCarBodyVertices() const;
     const double getAngle() const;
-    const bool isDead();
+    const bool isDead() const;
 
 private:
     static constexpr float MAX_MOTOR_TORQUE_ = 100000.0f;
@@ -40,10 +40,10 @@ private:
     b2RevoluteJoint *front_joint_;
     b2RevoluteJoint *rear_joint_;
 
-    bool is_dead_;
-    bool started_;
+    mutable bool is_dead_;
+    mutable bool started_;
 
-    const bool started();
+    const bool started() const;
 
 };
 
