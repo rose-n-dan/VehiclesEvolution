@@ -15,6 +15,7 @@ public:
     CarBody(b2World &world, const b2Vec2 &position, const std::vector<b2Vec2> &vertices);
 
     const b2Vec2& getPosition() const;
+    const b2Vec2 getVelocity() const; //couldn't return reference - velocity object is temporary
     const double getAngle() const;
     std::vector<b2Vec2> getPolygon() const;
 

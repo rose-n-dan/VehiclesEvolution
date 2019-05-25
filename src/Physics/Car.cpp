@@ -36,6 +36,10 @@ const b2Vec2& Car::getPosition() const {
     return car_body_.getPosition();
 }
 
+const b2Vec2 Car::getVelocity() const{
+    return car_body_.getVelocity();
+}
+
 const b2Vec2& Car::getFrontWheelPosition() const {
     return front_wheel_.getPosition();
 }
