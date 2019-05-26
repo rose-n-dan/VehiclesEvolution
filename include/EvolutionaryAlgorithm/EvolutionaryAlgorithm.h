@@ -22,13 +22,21 @@ public:
     void setMutationProbablity_(double mutation_probablity);
     void setCrossoverProbability_(double crossover_probability);
 
+    double maybeMutate(double value, double sigma) const;
+
 
 private:
     EvolutionaryAlgorithm() = default;
 
+    double doMutate(double value, double sigma) const;
+
+    bool drawLotsWithPercentage(double percentage) const;
+
     std::vector<CarParameters> last_generation_parameters_;
-    double mutation_probablity_;
-    double crossover_probability_;
+    double mutation_probablity_{0.02};
+    double crossover_probability_{0.4};
+
+    std::default_random_engine generator_;
 
 };
 
