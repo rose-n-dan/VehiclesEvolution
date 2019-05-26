@@ -16,13 +16,14 @@ public:
     EvolutionaryAlgorithm& operator=(const EvolutionaryAlgorithm&) = delete;
     static EvolutionaryAlgorithm& getInstance();
 
-    const std::vector<CarParameters>& makeNewGeneration(const std::vector<double> &distances);
-    const double getMutationProbablity() const;
+    const std::vector<CarParameters> makeNewGeneration(const std::vector<double> &distances);
+    const double getMutationProbability() const;
     const double getCrossoverProbability() const;
-    void setMutationProbablity_(double mutation_probablity);
+    void setMutationProbability_(double mutation_probability);
     void setCrossoverProbability_(double crossover_probability);
 
-    double maybeMutate(double value, double sigma) const;
+    bool maybeMutate(double & value, double sigma) const;
+    bool maybeMutate(CarParameters & parameters) const;
 
 
 private:
@@ -30,14 +31,19 @@ private:
 
     double doMutate(double value, double sigma) const;
     double doCrossover(double mothers_value, double fathers_value) const;
+    CarParameters doCrossover(const CarParameters & mother, const CarParameters & father) const;
 
     bool drawLotsWithPercentage(double percentage) const;
+    const int selectOneInN(int n) const;
+
+    // may be problem with adding new car?
+    const int CAR_NUMBER_IN_POPULATION_{10};
 
     std::vector<CarParameters> last_generation_parameters_;
-    double mutation_probablity_{0.02};
+    double mutation_probability_{0.02};
     double crossover_probability_{0.4};
 
-    std::default_random_engine generator_;
+    mutable std::default_random_engine generator_;
 
 };
 

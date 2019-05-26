@@ -17,8 +17,10 @@ public:
     double front_wheel_radius_;
     double rear_wheel_radius_;
     std::vector<b2Vec2> car_body_;
-    b2Vec2 const front_joint_;
-    b2Vec2 const rear_joint_;
+    b2Vec2 front_joint_;
+    b2Vec2 rear_joint_;
+
+    double distance_{0};
 
 };
 
