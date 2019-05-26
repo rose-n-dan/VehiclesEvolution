@@ -29,6 +29,7 @@ private:
     EvolutionaryAlgorithm() = default;
 
     double doMutate(double value, double sigma) const;
+    double doCrossover(double mothers_value, double fathers_value) const;
 
     bool drawLotsWithPercentage(double percentage) const;
 

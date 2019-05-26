@@ -45,6 +45,12 @@ double EvolutionaryAlgorithm::doMutate(double value, double sigma) const {
     return distribution(generator_);
 }
 
+double EvolutionaryAlgorithm::doCrossover(double mothers_value, double fathers_value) const {
+    std::uniform_real_distribution<double> distribution(0, 1);
+    double coefficient = distribution(generator_);
+    return coefficient * mothers_value + (1 - coefficient) * fathers_value;
+}
+
 bool EvolutionaryAlgorithm::drawLotsWithPercentage(double percentage) const {
     std::uniform_real_distribution<double> distribution(0, 1);
     return distribution(generator_) < percentage;
