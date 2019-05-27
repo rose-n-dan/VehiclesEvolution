@@ -2,7 +2,6 @@
 // Created by SpiritStudio on 01.12.18.
 //
 
-#include <random>
 #include <functional>
 
 #include <Utils.h>
@@ -34,8 +33,8 @@ const std::vector<CarParameters> EvolutionaryAlgorithm::makeNewGeneration(const 
     std::vector<CarParameters> newly_generated_population;
 
     // elitist selection - two best guys have guaranteed places in new population
-    newly_generated_population.push_back(*last_generation_parameters_.end());
-    newly_generated_population.push_back(*(last_generation_parameters_.end() - 1));
+    newly_generated_population.push_back(last_generation_parameters_.rbegin()[0]);
+    newly_generated_population.push_back(last_generation_parameters_.rbegin()[1]);
 
     // rank based selection
     while (newly_generated_population.size() < distances.size()) {
@@ -113,4 +112,8 @@ double EvolutionaryAlgorithm::doCrossover(double mothers_value, double fathers_v
 bool EvolutionaryAlgorithm::drawLotsWithPercentage(double percentage) const {
     std::uniform_real_distribution<double> distribution(0, 1);
     return distribution(generator_) < percentage;
+}
+
+void EvolutionaryAlgorithm::setLastGenerationParameters(const std::vector<CarParameters> &last_generation_parameters) {
+    last_generation_parameters_ = last_generation_parameters;
 }

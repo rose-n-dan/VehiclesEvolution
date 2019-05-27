@@ -4,6 +4,7 @@
 
 #include <Physics/Physics.h>
 #include <Graphics/Graphics.h>
+#include <EvolutionaryAlgorithm/EvolutionaryAlgorithm.h>
 
 int main()
 {
@@ -12,17 +13,6 @@ int main()
     Physics::getInstance().notifyMap();
     Physics::getInstance().notifyCars();
 
-//    Every generation goes like this
-//
-//
-//    if (Physics::getInstance().allDead())
-//    {
-//        Physics::getInstance().makeCars(
-//                EvolutionaryAlgorithm::getInstance.makeParameters(
-//                        Physics::getInstance().getLatestDistances()));
-//
-//        Physics::getInstance().notifyCars(Graphics::getInstance());
-//    }
     Graphics::getInstance().restartClock();
 
     while (Graphics::getInstance().isWindowOpen())
@@ -31,6 +21,19 @@ int main()
 
         Physics::getInstance().update(FRAME_RATE);
         Physics::getInstance().notifyCarsPositions();
+
+        // Every generation goes like this
+        if (Physics::getInstance().allDead())
+        {
+            std::cout << "ALL DEAD" << std::endl;
+            // stop simulation, save all distances, make new generation and so on...
+
+            Physics::getInstance().makeCars(
+                    EvolutionaryAlgorithm::getInstance().makeNewGeneration(
+                            Physics::getInstance().getFinalDistances()));
+
+            std::cout << "BEWARE, NEW GENERATION IS COMING!" << std::endl;
+        }
 
         Graphics::getInstance().draw();
         Graphics::getInstance().ensureConstantFrameRate(FRAME_RATE);

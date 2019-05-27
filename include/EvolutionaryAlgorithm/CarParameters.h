@@ -13,6 +13,10 @@ class CarParameters {
 
 public:
     CarParameters();
+    CarParameters(double front_wheel_radius, double rear_wheel_radius) : CarParameters() {
+        front_wheel_radius_ = front_wheel_radius;
+        rear_wheel_radius_ = rear_wheel_radius;
+    }
 
     double front_wheel_radius_;
     double rear_wheel_radius_;

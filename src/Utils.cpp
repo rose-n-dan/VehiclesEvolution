@@ -24,10 +24,6 @@ std::vector<b2PolygonShape> applyTessellation(const std::vector<b2Vec2> &polylin
 
     std::vector<N> indices = mapbox::earcut<N>(polygon);
 
-    for (auto index : indices) {
-        std::cout << points[index][0] << " " << points[index][1] << std::endl;
-    }
-
     if (indices.size() % 3 != 0) {
         throw std::runtime_error("Ear cutting algorithm failed!");
     }

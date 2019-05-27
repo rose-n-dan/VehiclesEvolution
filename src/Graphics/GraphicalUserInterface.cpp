@@ -41,8 +41,10 @@ void GraphicalUserInterface::addWidgets() {
     // TODO: Change make functions into making from Evolutional Algorithm
     std::vector<CarParameters> params_example;
     params_example.emplace_back();
+    params_example.emplace_back(0.5, 1);
+    params_example.emplace_back(0.1, 2);
 
-    button = addButton(sf::Vector2f(left_side_offset, vertical_distance), "Make new generation");
+    button = addButton(sf::Vector2f(left_side_offset, vertical_distance), "Generate new population");
     button->connect("pressed", &Physics::makeCars, &Physics::getInstance(), params_example);
     vertical_distance += BUTTONS_VERTICAL_DISTANCE_PIXELS_;
 

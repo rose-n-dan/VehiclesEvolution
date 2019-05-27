@@ -6,6 +6,7 @@
 #define VEHICLESEVOLUTION_EVOLUTIONARYALGORITHM_H
 
 #include <vector>
+#include <random>
 
 #include <EvolutionaryAlgorithm/CarParameters.h>
 
@@ -25,6 +26,7 @@ public:
     bool maybeMutate(double & value, double sigma) const;
     bool maybeMutate(CarParameters & parameters) const;
 
+    void setLastGenerationParameters(const std::vector<CarParameters> &last_generation_parameters_);
 
 private:
     EvolutionaryAlgorithm() = default;
@@ -37,7 +39,7 @@ private:
     const int selectOneInN(int n) const;
 
     // may be problem with adding new car?
-    const int CAR_NUMBER_IN_POPULATION_{10};
+    const int CAR_NUMBER_IN_POPULATION_{3};
 
     std::vector<CarParameters> last_generation_parameters_;
     double mutation_probability_{0.02};
