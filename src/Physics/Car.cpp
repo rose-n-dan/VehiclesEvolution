@@ -67,7 +67,7 @@ const double Car::getAngle() const {
 
 const bool Car::isDead() const {
     if (!is_dead_ && started()) {
-        if (utils::isNearlyZero(getVelocity().x, 1e-4)) {
+        if (utils::isNearlyZero(getVelocity().x, 1e-1)) {
             is_dead_ = true;
         }
     }

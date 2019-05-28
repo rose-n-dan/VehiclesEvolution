@@ -12,6 +12,50 @@ EvolutionaryAlgorithm& EvolutionaryAlgorithm::getInstance() {
     return evolutionaryAlgorithmInstance;
 }
 
+const CarParameters EvolutionaryAlgorithm::generateRandomCar() const {
+    std::normal_distribution<double> wheel_radius_distribution(0.7, 0.3);
+    double first_wheel_radius = std::fabs(wheel_radius_distribution(generator_));
+    double second_wheel_radius = std::fabs(wheel_radius_distribution(generator_));
+
+    std::normal_distribution<double> car_body_distribution_x(0.0, 1.5);
+    std::normal_distribution<double> car_body_distribution_y(0.0, 0.7);
+    std::vector<b2Vec2> car_body_points;
+    while (car_body_points.size() < CarParameters::NUMBER_OF_CAR_BODY_POINTS_) {
+        car_body_points.emplace_back(car_body_distribution_x(generator_), car_body_distribution_y(generator_));
+    }
+
+    std::uniform_int_distribution<int> joint_index_distribution(0, 7);
+    int first_joint_index = joint_index_distribution(generator_);
+    int second_joint_index = joint_index_distribution(generator_);
+    while (first_joint_index == second_joint_index) {
+        second_joint_index = joint_index_distribution(generator_);
+    }
+    b2Vec2 first = car_body_points.at(first_joint_index);
+    b2Vec2 second = car_body_points.at(second_joint_index);
+    b2Vec2 front_joint;
+    b2Vec2 rear_joint;
+    if (first.x < second.x) {
+        front_joint = second;
+        rear_joint = first;
+    }
+    else {
+        front_joint = first;
+        rear_joint = second;
+    }
+
+    return CarParameters(first_wheel_radius, second_wheel_radius, car_body_points, front_joint, rear_joint);
+}
+
+const std::vector<CarParameters> EvolutionaryAlgorithm::generateNewPopulation() {
+    std::vector<CarParameters> newly_generated_population;
+
+    while (newly_generated_population.size() < CAR_NUMBER_IN_POPULATION_) {
+        newly_generated_population.push_back(generateRandomCar());
+    }
+
+    return newly_generated_population;
+}
+
 const std::vector<CarParameters> EvolutionaryAlgorithm::makeNewGeneration(const std::vector<double> &distances) {
     // add distances to last_generation_parameters vector
     {
