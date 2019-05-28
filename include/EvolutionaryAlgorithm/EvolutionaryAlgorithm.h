@@ -6,6 +6,7 @@
 #define VEHICLESEVOLUTION_EVOLUTIONARYALGORITHM_H
 
 #include <vector>
+#include <chrono>
 #include <random>
 
 #include <EvolutionaryAlgorithm/CarParameters.h>
@@ -30,7 +31,7 @@ public:
     void setLastGenerationParameters(const std::vector<CarParameters> &last_generation_parameters_);
 
 private:
-    EvolutionaryAlgorithm() = default;
+    EvolutionaryAlgorithm();
 
     const CarParameters generateRandomCar() const;
 

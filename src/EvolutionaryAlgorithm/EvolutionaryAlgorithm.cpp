@@ -7,24 +7,35 @@
 #include <Utils.h>
 #include <EvolutionaryAlgorithm/EvolutionaryAlgorithm.h>
 
+EvolutionaryAlgorithm::EvolutionaryAlgorithm() {
+    std::random_device rd;
+    generator_.seed(rd());
+}
+
 EvolutionaryAlgorithm& EvolutionaryAlgorithm::getInstance() {
     static EvolutionaryAlgorithm evolutionaryAlgorithmInstance;
     return evolutionaryAlgorithmInstance;
 }
 
 const CarParameters EvolutionaryAlgorithm::generateRandomCar() const {
-    std::normal_distribution<double> wheel_radius_distribution(0.7, 0.3);
+    // wheels radiuses generation
+    std::normal_distribution<double> wheel_radius_distribution(0.5, 0.15);
     double first_wheel_radius = std::fabs(wheel_radius_distribution(generator_));
     double second_wheel_radius = std::fabs(wheel_radius_distribution(generator_));
 
-    std::normal_distribution<double> car_body_distribution_x(0.0, 1.5);
-    std::normal_distribution<double> car_body_distribution_y(0.0, 0.7);
+    std::uniform_real_distribution<double> car_body_distribution_theta(0.0, 2 * M_PI / CarParameters::NUMBER_OF_CAR_BODY_POINTS_);
+    std::uniform_real_distribution<double> car_body_distribution_radius(0.3, 2);
     std::vector<b2Vec2> car_body_points;
-    while (car_body_points.size() < CarParameters::NUMBER_OF_CAR_BODY_POINTS_) {
-        car_body_points.emplace_back(car_body_distribution_x(generator_), car_body_distribution_y(generator_));
+    for (int i = 0; i < CarParameters::NUMBER_OF_CAR_BODY_POINTS_; i++) {
+        double offset = i * 2 * M_PI / CarParameters::NUMBER_OF_CAR_BODY_POINTS_;
+        double theta = offset + car_body_distribution_theta(generator_);
+        double radius = car_body_distribution_radius(generator_);
+        double x = radius * cos(theta);
+        double y = radius * sin(theta);
+        car_body_points.emplace_back(x, y);
     }
 
-    std::uniform_int_distribution<int> joint_index_distribution(0, 7);
+    std::uniform_int_distribution<int> joint_index_distribution(0, CarParameters::NUMBER_OF_CAR_BODY_POINTS_ - 1);
     int first_joint_index = joint_index_distribution(generator_);
     int second_joint_index = joint_index_distribution(generator_);
     while (first_joint_index == second_joint_index) {
@@ -78,7 +89,7 @@ const std::vector<CarParameters> EvolutionaryAlgorithm::makeNewGeneration(const 
 
     // elitist selection - two best guys have guaranteed places in new population
     newly_generated_population.push_back(last_generation_parameters_.rbegin()[0]);
-    newly_generated_population.push_back(last_generation_parameters_.rbegin()[1]);
+//    newly_generated_population.push_back(last_generation_parameters_.rbegin()[1]);
 
     // rank based selection
     while (newly_generated_population.size() < distances.size()) {

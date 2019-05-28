@@ -29,6 +29,8 @@ CarBody::CarBody(b2World &world, const b2Vec2 &position, const std::vector<b2Vec
     // Override the default friction.
     fixture_def_.friction = FRICTION_;
 
+    fixture_def_.restitution = RESTITIUTION_;
+
     fixture_def_.filter.categoryBits = 0x0001;
     fixture_def_.filter.maskBits = 0x0002;
 
