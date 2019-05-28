@@ -28,7 +28,7 @@ public:
     const bool isDead() const;
 
 private:
-    static constexpr float MAX_MOTOR_TORQUE_ = 100000.0f;
+    static constexpr float MAX_MOTOR_TORQUE_ = 3000.0f;
     static constexpr float MOTOR_SPEED_ = 40.0f;
 
     static constexpr double MIN_VELOCITY_TO_STATE_CAR_STARTED = 0.5;

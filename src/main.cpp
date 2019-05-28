@@ -8,7 +8,7 @@
 
 int main()
 {
-    constexpr int FRAME_RATE = 60;
+    constexpr int FRAME_RATE = 120;
 
     Physics::getInstance().notifyMap();
     Physics::getInstance().notifyCars();

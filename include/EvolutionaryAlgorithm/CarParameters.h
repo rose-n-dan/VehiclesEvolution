@@ -18,6 +18,9 @@ public:
         rear_wheel_radius_ = rear_wheel_radius;
     }
 
+    CarParameters(double front_wheel_radius, double rear_wheel_radius,
+                  const std::vector<b2Vec2>& car_body, b2Vec2 front_joint, b2Vec2 rear_joint);
+
     double front_wheel_radius_;
     double rear_wheel_radius_;
     std::vector<b2Vec2> car_body_;
@@ -25,6 +28,8 @@ public:
     b2Vec2 rear_joint_;
 
     double distance_{0};
+
+    static constexpr int NUMBER_OF_CAR_BODY_POINTS_{6};
 
 };
 

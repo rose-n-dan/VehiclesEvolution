@@ -6,6 +6,7 @@
 #define VEHICLESEVOLUTION_EVOLUTIONARYALGORITHM_H
 
 #include <vector>
+#include <chrono>
 #include <random>
 
 #include <EvolutionaryAlgorithm/CarParameters.h>
@@ -18,6 +19,7 @@ public:
     static EvolutionaryAlgorithm& getInstance();
 
     const std::vector<CarParameters> makeNewGeneration(const std::vector<double> &distances);
+    const std::vector<CarParameters> generateNewPopulation();
     const double getMutationProbability() const;
     const double getCrossoverProbability() const;
     void setMutationProbability_(double mutation_probability);
@@ -29,7 +31,9 @@ public:
     void setLastGenerationParameters(const std::vector<CarParameters> &last_generation_parameters_);
 
 private:
-    EvolutionaryAlgorithm() = default;
+    EvolutionaryAlgorithm();
+
+    const CarParameters generateRandomCar() const;
 
     double doMutate(double value, double sigma) const;
     double doCrossover(double mothers_value, double fathers_value) const;

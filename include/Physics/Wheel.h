@@ -19,9 +19,9 @@ public:
     b2Body* getBody();
 
 private:
-    static constexpr float DENSITY_ = 1.0f;
+    static constexpr float DENSITY_ = 2.0f;
     static constexpr float FRICTION_ = 0.5f;
-    static constexpr float RESTITIUTION_ = 0.2f;
+    static constexpr float RESTITIUTION_ = 0.1f;
 
     b2BodyDef body_def_;
     b2CircleShape dynamic_circle_;
