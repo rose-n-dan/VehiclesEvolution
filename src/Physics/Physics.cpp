@@ -18,25 +18,19 @@ void Physics::update(const int frame_rate) {
 }
 
 const bool Physics::allDead() const {
+    bool ret = true;
+
     if (cars_.empty()) {
         return false;
     }
 
-    for (int i=0; i < cars_.size(); i++){
-        bool dead = cars_[i].isDead();
-        std::cout << i << ": " << dead << std::endl;
-        if (!dead) {
-            return false;
+    for (auto &car : cars_){
+        if (!car.isDead()) {
+          ret = false;
         }
     }
 
-//    for (auto &car : cars_){
-//        if (!car.isDead()) {
-//            return false;
-//        }
-//    }
-
-    return true;
+    return ret;
 }
 
 void Physics::notifyCars() {
