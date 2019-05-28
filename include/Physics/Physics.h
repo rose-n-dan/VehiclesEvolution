@@ -15,6 +15,7 @@
 #include <Physics/Map.h>
 #include <Graphics/Graphics.h>
 #include <EvolutionaryAlgorithm/CarParameters.h>
+#include <EvolutionaryAlgorithm/EvolutionaryAlgorithm.h>
 
 /**
  * Class implementing Factory and Singleton design patterns
@@ -37,6 +38,8 @@ public:
     void makeCars(const std::vector<CarParameters> &cars_parameters);
     void makeCar(const CarParameters &car_parameters);
 
+    std::vector<double> getFinalDistances() const;
+
     void notifyCars();
     void notifyMap();
     void notifyCarsPositions();
@@ -47,8 +50,8 @@ public:
 private:
     Physics();
 
-    static constexpr int32 VELOCITY_ITERATIONS_ = 10;
-    static constexpr int32 POSITION_ITERATIONS_ = 8;
+    static constexpr int32 VELOCITY_ITERATIONS_{10};
+    static constexpr int32 POSITION_ITERATIONS_{8};
 
     static const b2Vec2 CAR_STARTING_POSITION_;
 

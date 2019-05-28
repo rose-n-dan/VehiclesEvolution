@@ -14,26 +14,23 @@ Physics::Physics() : gravity_(0.0f, 9.81f),
 void Physics::update(const int frame_rate) {
     float32 timeStep = 1.0f / frame_rate;
 
-    if (allDead()) {
-        std::cout << "ALL DEAD" << std::endl;
-//        stop simulation, save all distances, make new genereation and so on...
-    }
-
     world_.Step(timeStep, VELOCITY_ITERATIONS_, POSITION_ITERATIONS_);
 }
 
-const bool Physics::allDead() const{
+const bool Physics::allDead() const {
+    bool ret = true;
+
     if (cars_.empty()) {
         return false;
     }
 
     for (auto &car : cars_){
         if (!car.isDead()) {
-            return false;
+          ret = false;
         }
     }
 
-    return true;
+    return ret;
 }
 
 void Physics::notifyCars() {
@@ -49,8 +46,12 @@ void Physics::notifyCarsPositions() {
 }
 
 void Physics::makeCars(const std::vector<CarParameters> &cars_parameters) {
+    // store the initial parameters for future generations
+    EvolutionaryAlgorithm::getInstance().setLastGenerationParameters(cars_parameters);
+
     cars_.clear();
 
+    // don't mess with the order of constructed cars
     for (const auto &car_parameters : cars_parameters)
     {
         cars_.emplace_back(world_, CAR_STARTING_POSITION_, car_parameters);
@@ -65,10 +66,19 @@ void Physics::makeCar(const CarParameters &car_parameters) {
     notifyCars();
 }
 
-const std::vector<Car>& Physics::getCars() const{
+std::vector<double> Physics::getFinalDistances() const {
+    std::vector<double> distances;
+    for (const auto & car : cars_) {
+        distances.push_back(car.getPosition().x);
+    }
+
+    return distances;
+}
+
+const std::vector<Car>& Physics::getCars() const {
     return cars_;
 }
 
-const Map& Physics::getMap() const{
+const Map& Physics::getMap() const {
     return map_;
 }

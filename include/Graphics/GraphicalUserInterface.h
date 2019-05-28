@@ -42,7 +42,7 @@ private:
     tgui::Gui gui_;
     sf::RectangleShape background_;
 
-    bool follow_the_leader_checked_;
+    bool follow_the_leader_checked_{false};
 };
 
 
