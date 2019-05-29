@@ -66,20 +66,23 @@ const double Car::getAngle() const {
 }
 
 const bool Car::isDead() const {
-    if (!is_dead_ && started()) {
-        if (utils::isNearlyZero(getVelocity().x, 1e-4)) {
-            is_dead_ = true;
+    if (!is_dead_) {
+        std::chrono::duration<double> elapsed = std::chrono::high_resolution_clock::now() - stands_still_since;
+
+        // WTF ?!?!
+//        std::cout << "Time not moving: " << elapsed.count() << std::endl;
+//        std::cout << "Velocity by position: " << last_iteration_position_x - getPosition().x << std::endl;
+//        std::cout << "Velocity: " << getVelocity().x << std::endl;
+
+        if (utils::isNearlyZero(getPosition().x - last_iteration_position_x, 1e-5)) {
+            if ((elapsed.count()) > TIME_STANDING_STILL_TO_DIE_S_) {
+                is_dead_ = true;
+            }
+        } else {
+            stands_still_since = std::chrono::high_resolution_clock::now();
         }
+        last_iteration_position_x = getPosition().x;
     }
 
     return is_dead_;
-}
-
-const bool Car::started() const {
-    if (!started_) {
-        if (getVelocity().x > MIN_VELOCITY_TO_STATE_CAR_STARTED) {
-            started_ = true;
-        }
-    }
-    return started_;
 }
