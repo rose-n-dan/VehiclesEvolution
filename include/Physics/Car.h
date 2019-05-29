@@ -5,6 +5,8 @@
 #ifndef VEHICLESEVOLUTION_CAR_H
 #define VEHICLESEVOLUTION_CAR_H
 
+#include <chrono>
+
 #include <Box2D/Box2D.h>
 
 #include <Physics/CarBody.h>
@@ -31,7 +33,7 @@ private:
     static constexpr float MAX_MOTOR_TORQUE_ = 3000.0f;
     static constexpr float MOTOR_SPEED_ = 40.0f;
 
-    static constexpr double MIN_VELOCITY_TO_STATE_CAR_STARTED = 0.5;
+    static constexpr double TIME_STANDING_STILL_TO_DIE_S_{5};
 
     Wheel front_wheel_, rear_wheel_;
     CarBody car_body_;
@@ -42,8 +44,8 @@ private:
 
     mutable bool is_dead_;
     mutable bool started_;
-
-    const bool started() const;
+    mutable std::chrono::time_point<std::chrono::high_resolution_clock> stands_still_since;
+    mutable double last_iteration_position_x;
 
 };
 
