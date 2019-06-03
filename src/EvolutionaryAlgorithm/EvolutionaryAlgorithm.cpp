@@ -132,8 +132,21 @@ void EvolutionaryAlgorithm::setCrossoverProbability_(double crossover_probabilit
 
 bool EvolutionaryAlgorithm::maybeMutate(CarParameters & parameters) const {
     // should return if mutation occured
+    // mutate on both wheel radius and carbody points
     return maybeMutate(parameters.front_wheel_radius_, 0.15) &&
-           maybeMutate(parameters.rear_wheel_radius_, 0.15);
+           maybeMutate(parameters.rear_wheel_radius_, 0.15) &&
+           maybeMutate(reinterpret_cast<double &>(parameters.car_body_.at(0).x), 0.15) &&
+           maybeMutate(reinterpret_cast<double &>(parameters.car_body_.at(0).y), 0.15) &&
+           maybeMutate(reinterpret_cast<double &>(parameters.car_body_.at(1).x), 0.15) &&
+           maybeMutate(reinterpret_cast<double &>(parameters.car_body_.at(1).y), 0.15) &&
+           maybeMutate(reinterpret_cast<double &>(parameters.car_body_.at(2).x), 0.15) &&
+           maybeMutate(reinterpret_cast<double &>(parameters.car_body_.at(2).y), 0.15) &&
+           maybeMutate(reinterpret_cast<double &>(parameters.car_body_.at(3).x), 0.15) &&
+           maybeMutate(reinterpret_cast<double &>(parameters.car_body_.at(3).y), 0.15) &&
+           maybeMutate(reinterpret_cast<double &>(parameters.car_body_.at(4).x), 0.15) &&
+           maybeMutate(reinterpret_cast<double &>(parameters.car_body_.at(4).y), 0.15) &&
+           maybeMutate(reinterpret_cast<double &>(parameters.car_body_.at(5).x), 0.15) &&
+           maybeMutate(reinterpret_cast<double &>(parameters.car_body_.at(5).y), 0.15);
 }
 
 bool EvolutionaryAlgorithm::maybeMutate(double & value, double sigma) const {
@@ -151,9 +164,32 @@ double EvolutionaryAlgorithm::doMutate(double value, double sigma) const {
 }
 
 CarParameters EvolutionaryAlgorithm::doCrossover(const CarParameters & mother, const CarParameters & father) const {
+    //create new parameters
     CarParameters new_car_parameters;
+    //crossover on wheel radius
     new_car_parameters.front_wheel_radius_ = doCrossover(mother.front_wheel_radius_, father.front_wheel_radius_);
     new_car_parameters.rear_wheel_radius_ = doCrossover(mother.rear_wheel_radius_, father.rear_wheel_radius_);
+    //crossover on carbody points
+    for (int i = 0; i < CarParameters::NUMBER_OF_CAR_BODY_POINTS_; i++) {
+        new_car_parameters.car_body_[i].x = doCrossover(mother.car_body_[i].x, father.car_body_[i].x);
+        new_car_parameters.car_body_[i].y = doCrossover(mother.car_body_[i].y, father.car_body_[i].y);
+    }
+    //pick right joint position
+    //picking from bottom area of carbody
+    std::uniform_int_distribution<int> joint_index_distribution(3, 5);
+    int first_joint_index = joint_index_distribution(generator_);
+    int second_joint_index = joint_index_distribution(generator_);
+    while (first_joint_index == second_joint_index) {
+        second_joint_index = joint_index_distribution(generator_);
+    }
+    if(first_joint_index > second_joint_index) {
+        new_car_parameters.front_joint_ = new_car_parameters.car_body_.at(second_joint_index);
+        new_car_parameters.rear_joint_ = new_car_parameters.car_body_.at(first_joint_index);
+    }
+    else {
+        new_car_parameters.front_joint_ = new_car_parameters.car_body_.at(first_joint_index);
+        new_car_parameters.rear_joint_ = new_car_parameters.car_body_.at(second_joint_index);
+    }
 
     return new_car_parameters;
 }

@@ -13,6 +13,7 @@ CarParameters::CarParameters() : front_wheel_radius_(0.5f),
     car_body_.emplace_back(1.25f, 0.5f);
     car_body_.emplace_back(-1.25f, 0.5f);
     car_body_.emplace_back(-1.25f, -0.5f);
+    car_body_.emplace_back(-2.0f, 0.0f);
 }
 
 CarParameters::CarParameters(double front_wheel_radius,
