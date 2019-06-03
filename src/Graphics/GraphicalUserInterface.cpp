@@ -45,10 +45,10 @@ void GraphicalUserInterface::addWidgets() {
     button->connect("pressed", &Physics::makeCars, &Physics::getInstance(), params_example);
     vertical_distance += BUTTONS_VERTICAL_DISTANCE_PIXELS_;
 
-    CarParameters param_example;
-    button = addButton(sf::Vector2f(left_side_offset, vertical_distance), "Add new car");
-    button->connect("pressed", &Physics::makeCar, &Physics::getInstance(), param_example);
-    vertical_distance += BUTTONS_VERTICAL_DISTANCE_PIXELS_;
+//    CarParameters param_example;
+//    button = addButton(sf::Vector2f(left_side_offset, vertical_distance), "Add new car");
+//    button->connect("pressed", &Physics::makeCar, &Physics::getInstance(), param_example);
+//    vertical_distance += BUTTONS_VERTICAL_DISTANCE_PIXELS_;
 
     auto checkbox = addCheckbox(sf::Vector2f(left_side_offset, vertical_distance), "Follow the leader");
     checkbox->connect("checked", [&](){ follow_the_leader_checked_ = true; });
