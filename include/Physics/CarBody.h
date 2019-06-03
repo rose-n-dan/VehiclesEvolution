@@ -23,7 +23,7 @@ public:
 
 private:
     static constexpr float DENSITY_ = 0.7f;
-    static constexpr float FRICTION_ = 0.7f;
+    static constexpr float FRICTION_ = 2.0f;
     static constexpr float RESTITIUTION_ = 0.001f;
 
     b2BodyDef body_def_;

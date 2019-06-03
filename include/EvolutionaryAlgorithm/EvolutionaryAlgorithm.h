@@ -43,7 +43,7 @@ private:
     const int selectOneInN(int n) const;
 
     // may be problem with adding new car?
-    const int CAR_NUMBER_IN_POPULATION_{3};
+    const int CAR_NUMBER_IN_POPULATION_{15};
 
     std::vector<CarParameters> last_generation_parameters_;
     double mutation_probability_{0.02};
