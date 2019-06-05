@@ -1,7 +1,7 @@
 //!  A CarParameters class.
 /*!
-  A class which represents physical parameters of a car
-  Including its shape, size and mass
+  A class which represents physical parameters of a car.
+  Parameters includes car's shape, size and mass.
 */
 
 

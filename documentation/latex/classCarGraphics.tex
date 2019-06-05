@@ -2,6 +2,11 @@
 \label{classCarGraphics}\index{Car\+Graphics@{Car\+Graphics}}
 
 
+A \hyperlink{classCarGraphics}{Car\+Graphics} class .  
+
+
+
+
 {\ttfamily \#include $<$Car\+Graphics.\+h$>$}
 
 
@@ -16,39 +21,41 @@ Collaboration diagram for Car\+Graphics\+:
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classCarGraphics_a37c8d0d08003f0a84495a3aedfe471db}{Car\+Graphics} (const std\+::vector$<$ sf\+::\+Vector2f $>$ \&vertices, double front\+\_\+wheel\+\_\+radius, double rear\+\_\+wheel\+\_\+radius)
-\item 
+\begin{DoxyCompactList}\small\item\em A \hyperlink{classCarGraphics}{Car\+Graphics} constructors. \end{DoxyCompactList}\item 
 void \hyperlink{classCarGraphics_a66e55f3ba283beb484eb8285c40bda14}{set\+Position\+And\+Angle} (const sf\+::\+Vector2f \&position, float angle)
-\item 
+\begin{DoxyCompactList}\small\item\em A method for setting the posistion and angle of the \hyperlink{classCarGraphics}{Car\+Graphics} object. \end{DoxyCompactList}\item 
 void \hyperlink{classCarGraphics_a02169a6fec9b7d4c076b5597a11eac08}{set\+Front\+Wheel\+Position} (const sf\+::\+Vector2f \&position)
-\item 
+\begin{DoxyCompactList}\small\item\em A method for setting the position and angle of the front wheel from \hyperlink{classCarGraphics}{Car\+Graphics} object. \end{DoxyCompactList}\item 
 void \hyperlink{classCarGraphics_a30a28ce4d33808d22f6ca460c5b8013d}{set\+Rear\+Wheel\+Position} (const sf\+::\+Vector2f \&position)
-\item 
+\begin{DoxyCompactList}\small\item\em A method for setting the position and angle of the rear wheel from \hyperlink{classCarGraphics}{Car\+Graphics} object. \end{DoxyCompactList}\item 
 const sf\+::\+Vector2f \& \hyperlink{classCarGraphics_a80e3b77608619843db5cbae4faee825b}{get\+Position} () const
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em A method for getting the position of the \hyperlink{classCarGraphics}{Car\+Graphics} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{classCarGraphics_a7a9cf695c9bae5a533c21c6f5d78e635}{draw} (sf\+::\+Render\+Target \&target, sf\+::\+Render\+States states) const override
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em A method for drawing the \hyperlink{classCarGraphics}{Car\+Graphics} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 const sf\+::\+Color \hyperlink{classCarGraphics_a3df8d600a272817a5c521cdc8c23c587}{car\+\_\+body\+\_\+color\+\_\+}
-\item 
+\begin{DoxyCompactList}\small\item\em Private consant variable. \end{DoxyCompactList}\item 
 const sf\+::\+Color \hyperlink{classCarGraphics_adc369f5f948025767d40f2ad40e2568a}{wheel\+\_\+color\+\_\+}
 \item 
 sf\+::\+Convex\+Shape \hyperlink{classCarGraphics_a4e1969ef5f4326f10b83b1488484f660}{car\+\_\+body\+\_\+graphics\+\_\+}
-\item 
+\begin{DoxyCompactList}\small\item\em Private constant variable. \end{DoxyCompactList}\item 
 sf\+::\+Circle\+Shape \hyperlink{classCarGraphics_a2a66d0c60b79f54a807a31afd76c4ad1}{wheel\+\_\+rear\+\_\+}
-\item 
+\begin{DoxyCompactList}\small\item\em Private constant variable. \end{DoxyCompactList}\item 
 sf\+::\+Circle\+Shape \hyperlink{classCarGraphics_a2e004e7f0288f6ed1352ba9116b4d112}{wheel\+\_\+front\+\_\+}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Private constant variable. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
+A \hyperlink{classCarGraphics}{Car\+Graphics} class . 
 
+A class which performs a graphical representation of a car. Determines the rules drawing and positioning of the car texture. 
 
-Definition at line 10 of file Car\+Graphics.\+h.
+Definition at line 12 of file Car\+Graphics.\+h.
 
 
 
@@ -59,6 +66,19 @@ Definition at line 10 of file Car\+Graphics.\+h.
 \subsubsection{\texorpdfstring{Car\+Graphics()}{CarGraphics()}}
 {\footnotesize\ttfamily Car\+Graphics\+::\+Car\+Graphics (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ sf\+::\+Vector2f $>$ \&}]{vertices,  }\item[{double}]{front\+\_\+wheel\+\_\+radius,  }\item[{double}]{rear\+\_\+wheel\+\_\+radius }\end{DoxyParamCaption})}
 
+
+
+A \hyperlink{classCarGraphics}{Car\+Graphics} constructors. 
+
+Constructor create an instance of \hyperlink{classCarGraphics}{Car\+Graphics} specifying its parameters. 
+\begin{DoxyParams}{Parameters}
+{\em vertices} & is a vector which consist of verticies coordinates of car body polygon. \\
+\hline
+{\em front\+\_\+wheel\+\_\+radius} & is a variable which consist of value of front wheel radius. \\
+\hline
+{\em rear\+\_\+wheel\+\_\+radius} & is a variable which consist of value of rear wheel radius. \\
+\hline
+\end{DoxyParams}
 
 
 Definition at line 11 of file Car\+Graphics.\+cpp.
@@ -104,6 +124,10 @@ Definition at line 11 of file Car\+Graphics.\+cpp.
 
 
 
+A method for drawing the \hyperlink{classCarGraphics}{Car\+Graphics} object. 
+
+
+
 Definition at line 55 of file Car\+Graphics.\+cpp.
 
 
@@ -119,6 +143,10 @@ Definition at line 55 of file Car\+Graphics.\+cpp.
 \index{get\+Position@{get\+Position}!Car\+Graphics@{Car\+Graphics}}
 \subsubsection{\texorpdfstring{get\+Position()}{getPosition()}}
 {\footnotesize\ttfamily const sf\+::\+Vector2f \& Car\+Graphics\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+A method for getting the position of the \hyperlink{classCarGraphics}{Car\+Graphics} object. 
 
 
 
@@ -138,6 +166,15 @@ Definition at line 51 of file Car\+Graphics.\+cpp.
 
 
 
+A method for setting the position and angle of the front wheel from \hyperlink{classCarGraphics}{Car\+Graphics} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & is a vector which consist of front wheel graphic\textquotesingle{}s coordinates \\
+\hline
+\end{DoxyParams}
+
+
 Definition at line 43 of file Car\+Graphics.\+cpp.
 
 
@@ -152,6 +189,15 @@ Definition at line 43 of file Car\+Graphics.\+cpp.
 \subsubsection{\texorpdfstring{set\+Position\+And\+Angle()}{setPositionAndAngle()}}
 {\footnotesize\ttfamily void Car\+Graphics\+::set\+Position\+And\+Angle (\begin{DoxyParamCaption}\item[{const sf\+::\+Vector2f \&}]{position,  }\item[{float}]{angle }\end{DoxyParamCaption})}
 
+
+
+A method for setting the posistion and angle of the \hyperlink{classCarGraphics}{Car\+Graphics} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & is a vector which consist of car graphic\textquotesingle{}s coordinates \\
+\hline
+\end{DoxyParams}
 
 
 Definition at line 38 of file Car\+Graphics.\+cpp.
@@ -169,6 +215,15 @@ Definition at line 38 of file Car\+Graphics.\+cpp.
 \subsubsection{\texorpdfstring{set\+Rear\+Wheel\+Position()}{setRearWheelPosition()}}
 {\footnotesize\ttfamily void Car\+Graphics\+::set\+Rear\+Wheel\+Position (\begin{DoxyParamCaption}\item[{const sf\+::\+Vector2f \&}]{position }\end{DoxyParamCaption})}
 
+
+
+A method for setting the position and angle of the rear wheel from \hyperlink{classCarGraphics}{Car\+Graphics} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & is a vector which consist of rear wheel graphic\textquotesingle{}s coordinates \\
+\hline
+\end{DoxyParams}
 
 
 Definition at line 47 of file Car\+Graphics.\+cpp.
@@ -190,7 +245,11 @@ Definition at line 47 of file Car\+Graphics.\+cpp.
 
 
 
-Definition at line 24 of file Car\+Graphics.\+h.
+Private consant variable. 
+
+Store the information about color of car body and wheels 
+
+Definition at line 50 of file Car\+Graphics.\+h.
 
 \mbox{\Hypertarget{classCarGraphics_a4e1969ef5f4326f10b83b1488484f660}\label{classCarGraphics_a4e1969ef5f4326f10b83b1488484f660}} 
 \index{Car\+Graphics@{Car\+Graphics}!car\+\_\+body\+\_\+graphics\+\_\+@{car\+\_\+body\+\_\+graphics\+\_\+}}
@@ -200,7 +259,11 @@ Definition at line 24 of file Car\+Graphics.\+h.
 
 
 
-Definition at line 26 of file Car\+Graphics.\+h.
+Private constant variable. 
+
+Store the information about convex polygonal shape of car body 
+
+Definition at line 56 of file Car\+Graphics.\+h.
 
 \mbox{\Hypertarget{classCarGraphics_adc369f5f948025767d40f2ad40e2568a}\label{classCarGraphics_adc369f5f948025767d40f2ad40e2568a}} 
 \index{Car\+Graphics@{Car\+Graphics}!wheel\+\_\+color\+\_\+@{wheel\+\_\+color\+\_\+}}
@@ -210,7 +273,7 @@ Definition at line 26 of file Car\+Graphics.\+h.
 
 
 
-Definition at line 24 of file Car\+Graphics.\+h.
+Definition at line 50 of file Car\+Graphics.\+h.
 
 \mbox{\Hypertarget{classCarGraphics_a2e004e7f0288f6ed1352ba9116b4d112}\label{classCarGraphics_a2e004e7f0288f6ed1352ba9116b4d112}} 
 \index{Car\+Graphics@{Car\+Graphics}!wheel\+\_\+front\+\_\+@{wheel\+\_\+front\+\_\+}}
@@ -220,7 +283,11 @@ Definition at line 24 of file Car\+Graphics.\+h.
 
 
 
-Definition at line 28 of file Car\+Graphics.\+h.
+Private constant variable. 
+
+Store the information about circle shape of front wheel 
+
+Definition at line 66 of file Car\+Graphics.\+h.
 
 \mbox{\Hypertarget{classCarGraphics_a2a66d0c60b79f54a807a31afd76c4ad1}\label{classCarGraphics_a2a66d0c60b79f54a807a31afd76c4ad1}} 
 \index{Car\+Graphics@{Car\+Graphics}!wheel\+\_\+rear\+\_\+@{wheel\+\_\+rear\+\_\+}}
@@ -230,7 +297,11 @@ Definition at line 28 of file Car\+Graphics.\+h.
 
 
 
-Definition at line 27 of file Car\+Graphics.\+h.
+Private constant variable. 
+
+Store the information about circle shape of rear wheel 
+
+Definition at line 61 of file Car\+Graphics.\+h.
 
 
 

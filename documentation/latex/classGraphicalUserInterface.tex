@@ -2,70 +2,77 @@
 \label{classGraphicalUserInterface}\index{Graphical\+User\+Interface@{Graphical\+User\+Interface}}
 
 
+A \hyperlink{classGraphicalUserInterface}{Graphical\+User\+Interface} class.  
+
+
+
+
 {\ttfamily \#include $<$Graphical\+User\+Interface.\+h$>$}
 
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classGraphicalUserInterface_a53c95b6d9e7a7b1f04b60d925a8e2e7b}{Graphical\+User\+Interface} (sf\+::\+Render\+Window \&window, const int interface\+\_\+width, const int interface\+\_\+height)
-\item 
+\begin{DoxyCompactList}\small\item\em An explicit constructor of class. \end{DoxyCompactList}\item 
 void \hyperlink{classGraphicalUserInterface_a9dc5f335b77be5a4d871926155afb8dd}{set\+Window} ()
-\item 
+\begin{DoxyCompactList}\small\item\em A method for setting the application window. \end{DoxyCompactList}\item 
 void \hyperlink{classGraphicalUserInterface_ab0c8cd6460442a3ad01c304ec1216631}{set\+View} (sf\+::\+View \&view)
-\item 
+\begin{DoxyCompactList}\small\item\em A method for setting the displaying background. \end{DoxyCompactList}\item 
 void \hyperlink{classGraphicalUserInterface_a48e6dcc9acc179fdb74e67a51d66efb7}{add\+Widgets} ()
-\item 
+\begin{DoxyCompactList}\small\item\em A method for setting and creating the button widget. \end{DoxyCompactList}\item 
 bool \hyperlink{classGraphicalUserInterface_a71964c3c49b23a05aa3fd4b4d36aa42d}{handle\+Event} (sf\+::\+Event \&event)
-\item 
+\begin{DoxyCompactList}\small\item\em A method for handling on-\/running events, like mouse-\/click. \end{DoxyCompactList}\item 
 void \hyperlink{classGraphicalUserInterface_a268c54faf6a8ac32628c60495900ea1c}{draw} ()
-\item 
+\begin{DoxyCompactList}\small\item\em A method for drawing widget on window. \end{DoxyCompactList}\item 
 const int \hyperlink{classGraphicalUserInterface_a6b168726ffb57ba7d06946d27435abad}{get\+Interface\+Width} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Public consant variable. \end{DoxyCompactList}\item 
 const bool \hyperlink{classGraphicalUserInterface_a9aa8920f70bf99225a7e8e4ff9cb5e3f}{is\+Following\+The\+Leader} () const
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em A method for checking whether the following leather button is checked. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 std\+::shared\+\_\+ptr$<$ tgui\+::\+Button $>$ \hyperlink{classGraphicalUserInterface_a91abd8446fe18cee7ff63a541a79da56}{add\+Button} (const sf\+::\+Vector2f \&position, const std\+::string \&text)
-\item 
+\begin{DoxyCompactList}\small\item\em Private pointer. \end{DoxyCompactList}\item 
 std\+::shared\+\_\+ptr$<$ tgui\+::\+Check\+Box $>$ \hyperlink{classGraphicalUserInterface_ac7094ec5d8ec8edd7325072f97f8de59}{add\+Checkbox} (const sf\+::\+Vector2f \&position, const std\+::string \&text)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Private pointer. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 const int \hyperlink{classGraphicalUserInterface_ae3c07ea59e557909f92882028fafb0a3}{interface\+\_\+width\+\_\+}
-\item 
+\begin{DoxyCompactList}\small\item\em Constant expression. \end{DoxyCompactList}\item 
 const int \hyperlink{classGraphicalUserInterface_a2e867c6d5b0d903d9e16e9934af93fc1}{interface\+\_\+height\+\_\+}
-\item 
+\begin{DoxyCompactList}\small\item\em Constant expression. \end{DoxyCompactList}\item 
 const sf\+::\+Color \hyperlink{classGraphicalUserInterface_a0361d82710bb150c272a2a760164241f}{background\+\_\+color\+\_\+}
-\item 
+\begin{DoxyCompactList}\small\item\em Constant expression. \end{DoxyCompactList}\item 
 sf\+::\+Render\+Window \& \hyperlink{classGraphicalUserInterface_ae51adeb759a97196eda3b37bfc80a452}{window\+\_\+}
-\item 
+\begin{DoxyCompactList}\small\item\em Private object. \end{DoxyCompactList}\item 
 tgui\+::\+Gui \hyperlink{classGraphicalUserInterface_ab07abda0fdb8e2965b70d2024fa3cf20}{gui\+\_\+}
-\item 
+\begin{DoxyCompactList}\small\item\em Private object. \end{DoxyCompactList}\item 
 sf\+::\+Rectangle\+Shape \hyperlink{classGraphicalUserInterface_a6d706ef82ec59d143a009331b40681bb}{background\+\_\+}
-\item 
+\begin{DoxyCompactList}\small\item\em Private object. \end{DoxyCompactList}\item 
 bool \hyperlink{classGraphicalUserInterface_a57fe5ef98f53a222aab96d191e869ad3}{follow\+\_\+the\+\_\+leader\+\_\+checked\+\_\+} \{false\}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Private variable. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 static constexpr int \hyperlink{classGraphicalUserInterface_a16c6d010f7594c76c3d4b50f7cb4764b}{B\+U\+T\+T\+O\+N\+\_\+\+H\+E\+I\+G\+H\+T\+\_\+\+P\+I\+X\+E\+L\+S\+\_\+} = 40
-\item 
+\begin{DoxyCompactList}\small\item\em Static constant expression. \end{DoxyCompactList}\item 
 static constexpr int \hyperlink{classGraphicalUserInterface_a90c125308f85a684fa6e609d474f4550}{B\+U\+T\+T\+O\+N\+\_\+\+W\+I\+D\+T\+H\+\_\+\+P\+I\+X\+E\+L\+S\+\_\+} = 200
-\item 
+\begin{DoxyCompactList}\small\item\em Static constant expression. \end{DoxyCompactList}\item 
 static constexpr float \hyperlink{classGraphicalUserInterface_a6448ea8aab0807628a01487db52f76c2}{F\+I\+R\+S\+T\+\_\+\+B\+U\+T\+T\+O\+N\+\_\+\+V\+E\+R\+T\+I\+C\+A\+L\+\_\+\+D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+P\+I\+X\+E\+L\+S\+\_\+} = 50
-\item 
+\begin{DoxyCompactList}\small\item\em Static constant expression. \end{DoxyCompactList}\item 
 static constexpr int \hyperlink{classGraphicalUserInterface_aa5dd4f194d311d5b2dd3690ed0bad8ec}{B\+U\+T\+T\+O\+N\+S\+\_\+\+V\+E\+R\+T\+I\+C\+A\+L\+\_\+\+D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+P\+I\+X\+E\+L\+S\+\_\+} = 100
-\item 
+\begin{DoxyCompactList}\small\item\em Static constant expression. \end{DoxyCompactList}\item 
 static constexpr int \hyperlink{classGraphicalUserInterface_afe4127bf0dbfbba90ec15fea6e046379}{C\+H\+E\+C\+K\+B\+O\+X\+\_\+\+S\+I\+Z\+E\+\_\+\+P\+I\+X\+E\+L\+S\+\_\+} = 20
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Static constant expression. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
+A \hyperlink{classGraphicalUserInterface}{Graphical\+User\+Interface} class. 
 
+A class designed in order to create G\+UI. It consists information about widgets, buttons and background. 
 
-Definition at line 14 of file Graphical\+User\+Interface.\+h.
+Definition at line 16 of file Graphical\+User\+Interface.\+h.
 
 
 
@@ -75,6 +82,10 @@ Definition at line 14 of file Graphical\+User\+Interface.\+h.
 \index{Graphical\+User\+Interface@{Graphical\+User\+Interface}!Graphical\+User\+Interface@{Graphical\+User\+Interface}}
 \subsubsection{\texorpdfstring{Graphical\+User\+Interface()}{GraphicalUserInterface()}}
 {\footnotesize\ttfamily Graphical\+User\+Interface\+::\+Graphical\+User\+Interface (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window,  }\item[{const int}]{interface\+\_\+width,  }\item[{const int}]{interface\+\_\+height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+An explicit constructor of class. 
 
 
 
@@ -104,6 +115,10 @@ Definition at line 8 of file Graphical\+User\+Interface.\+cpp.
 
 
 
+Private pointer. 
+
+Creates and stores the pointer to button specifying its text and position 
+
 Definition at line 58 of file Graphical\+User\+Interface.\+cpp.
 
 
@@ -127,6 +142,10 @@ Definition at line 58 of file Graphical\+User\+Interface.\+cpp.
 
 
 
+Private pointer. 
+
+Creates and stores the pointer to checkbox specifying its text and position 
+
 Definition at line 68 of file Graphical\+User\+Interface.\+cpp.
 
 
@@ -146,6 +165,10 @@ Definition at line 68 of file Graphical\+User\+Interface.\+cpp.
 \index{add\+Widgets@{add\+Widgets}!Graphical\+User\+Interface@{Graphical\+User\+Interface}}
 \subsubsection{\texorpdfstring{add\+Widgets()}{addWidgets()}}
 {\footnotesize\ttfamily void Graphical\+User\+Interface\+::add\+Widgets (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+A method for setting and creating the button widget. 
 
 
 
@@ -192,6 +215,10 @@ Definition at line 33 of file Graphical\+User\+Interface.\+cpp.
 
 
 
+A method for drawing widget on window. 
+
+
+
 Definition at line 79 of file Graphical\+User\+Interface.\+cpp.
 
 
@@ -209,6 +236,10 @@ Definition at line 79 of file Graphical\+User\+Interface.\+cpp.
 
 
 
+Public consant variable. 
+
+Store the information about width of the displayed interface. 
+
 Definition at line 84 of file Graphical\+User\+Interface.\+cpp.
 
 
@@ -222,6 +253,10 @@ Definition at line 84 of file Graphical\+User\+Interface.\+cpp.
 \index{handle\+Event@{handle\+Event}!Graphical\+User\+Interface@{Graphical\+User\+Interface}}
 \subsubsection{\texorpdfstring{handle\+Event()}{handleEvent()}}
 {\footnotesize\ttfamily bool Graphical\+User\+Interface\+::handle\+Event (\begin{DoxyParamCaption}\item[{sf\+::\+Event \&}]{event }\end{DoxyParamCaption})}
+
+
+
+A method for handling on-\/running events, like mouse-\/click. 
 
 
 
@@ -241,6 +276,10 @@ Definition at line 20 of file Graphical\+User\+Interface.\+cpp.
 
 
 
+A method for checking whether the following leather button is checked. 
+
+
+
 Definition at line 88 of file Graphical\+User\+Interface.\+cpp.
 
 
@@ -254,6 +293,10 @@ Definition at line 88 of file Graphical\+User\+Interface.\+cpp.
 \index{set\+View@{set\+View}!Graphical\+User\+Interface@{Graphical\+User\+Interface}}
 \subsubsection{\texorpdfstring{set\+View()}{setView()}}
 {\footnotesize\ttfamily void Graphical\+User\+Interface\+::set\+View (\begin{DoxyParamCaption}\item[{sf\+::\+View \&}]{view }\end{DoxyParamCaption})}
+
+
+
+A method for setting the displaying background. 
 
 
 
@@ -271,6 +314,10 @@ Definition at line 28 of file Graphical\+User\+Interface.\+cpp.
 \index{set\+Window@{set\+Window}!Graphical\+User\+Interface@{Graphical\+User\+Interface}}
 \subsubsection{\texorpdfstring{set\+Window()}{setWindow()}}
 {\footnotesize\ttfamily void Graphical\+User\+Interface\+::set\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+A method for setting the application window. 
 
 
 
@@ -293,7 +340,11 @@ Definition at line 24 of file Graphical\+User\+Interface.\+cpp.
 
 
 
-Definition at line 43 of file Graphical\+User\+Interface.\+h.
+Private object. 
+
+An object representing background of interface 
+
+Definition at line 110 of file Graphical\+User\+Interface.\+h.
 
 \mbox{\Hypertarget{classGraphicalUserInterface_a0361d82710bb150c272a2a760164241f}\label{classGraphicalUserInterface_a0361d82710bb150c272a2a760164241f}} 
 \index{Graphical\+User\+Interface@{Graphical\+User\+Interface}!background\+\_\+color\+\_\+@{background\+\_\+color\+\_\+}}
@@ -303,7 +354,11 @@ Definition at line 43 of file Graphical\+User\+Interface.\+h.
 
 
 
-Definition at line 39 of file Graphical\+User\+Interface.\+h.
+Constant expression. 
+
+A attribute consists of information color of the interface\textquotesingle{}s background 
+
+Definition at line 94 of file Graphical\+User\+Interface.\+h.
 
 \mbox{\Hypertarget{classGraphicalUserInterface_a16c6d010f7594c76c3d4b50f7cb4764b}\label{classGraphicalUserInterface_a16c6d010f7594c76c3d4b50f7cb4764b}} 
 \index{Graphical\+User\+Interface@{Graphical\+User\+Interface}!B\+U\+T\+T\+O\+N\+\_\+\+H\+E\+I\+G\+H\+T\+\_\+\+P\+I\+X\+E\+L\+S\+\_\+@{B\+U\+T\+T\+O\+N\+\_\+\+H\+E\+I\+G\+H\+T\+\_\+\+P\+I\+X\+E\+L\+S\+\_\+}}
@@ -313,7 +368,11 @@ Definition at line 39 of file Graphical\+User\+Interface.\+h.
 
 
 
-Definition at line 31 of file Graphical\+User\+Interface.\+h.
+Static constant expression. 
+
+A attribute consists of information about height of the button widgets in pixels 
+
+Definition at line 57 of file Graphical\+User\+Interface.\+h.
 
 \mbox{\Hypertarget{classGraphicalUserInterface_a90c125308f85a684fa6e609d474f4550}\label{classGraphicalUserInterface_a90c125308f85a684fa6e609d474f4550}} 
 \index{Graphical\+User\+Interface@{Graphical\+User\+Interface}!B\+U\+T\+T\+O\+N\+\_\+\+W\+I\+D\+T\+H\+\_\+\+P\+I\+X\+E\+L\+S\+\_\+@{B\+U\+T\+T\+O\+N\+\_\+\+W\+I\+D\+T\+H\+\_\+\+P\+I\+X\+E\+L\+S\+\_\+}}
@@ -323,7 +382,11 @@ Definition at line 31 of file Graphical\+User\+Interface.\+h.
 
 
 
-Definition at line 32 of file Graphical\+User\+Interface.\+h.
+Static constant expression. 
+
+A attribute consists of information about width of the button widgets in pixels 
+
+Definition at line 62 of file Graphical\+User\+Interface.\+h.
 
 \mbox{\Hypertarget{classGraphicalUserInterface_aa5dd4f194d311d5b2dd3690ed0bad8ec}\label{classGraphicalUserInterface_aa5dd4f194d311d5b2dd3690ed0bad8ec}} 
 \index{Graphical\+User\+Interface@{Graphical\+User\+Interface}!B\+U\+T\+T\+O\+N\+S\+\_\+\+V\+E\+R\+T\+I\+C\+A\+L\+\_\+\+D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+P\+I\+X\+E\+L\+S\+\_\+@{B\+U\+T\+T\+O\+N\+S\+\_\+\+V\+E\+R\+T\+I\+C\+A\+L\+\_\+\+D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+P\+I\+X\+E\+L\+S\+\_\+}}
@@ -333,7 +396,11 @@ Definition at line 32 of file Graphical\+User\+Interface.\+h.
 
 
 
-Definition at line 34 of file Graphical\+User\+Interface.\+h.
+Static constant expression. 
+
+A attribute consists of information about distance of the checkbox widgets from another checkbox widgets in pixels 
+
+Definition at line 72 of file Graphical\+User\+Interface.\+h.
 
 \mbox{\Hypertarget{classGraphicalUserInterface_afe4127bf0dbfbba90ec15fea6e046379}\label{classGraphicalUserInterface_afe4127bf0dbfbba90ec15fea6e046379}} 
 \index{Graphical\+User\+Interface@{Graphical\+User\+Interface}!C\+H\+E\+C\+K\+B\+O\+X\+\_\+\+S\+I\+Z\+E\+\_\+\+P\+I\+X\+E\+L\+S\+\_\+@{C\+H\+E\+C\+K\+B\+O\+X\+\_\+\+S\+I\+Z\+E\+\_\+\+P\+I\+X\+E\+L\+S\+\_\+}}
@@ -343,7 +410,11 @@ Definition at line 34 of file Graphical\+User\+Interface.\+h.
 
 
 
-Definition at line 35 of file Graphical\+User\+Interface.\+h.
+Static constant expression. 
+
+A attribute consists of information about size of the checkbox widgets in pixels 
+
+Definition at line 77 of file Graphical\+User\+Interface.\+h.
 
 \mbox{\Hypertarget{classGraphicalUserInterface_a6448ea8aab0807628a01487db52f76c2}\label{classGraphicalUserInterface_a6448ea8aab0807628a01487db52f76c2}} 
 \index{Graphical\+User\+Interface@{Graphical\+User\+Interface}!F\+I\+R\+S\+T\+\_\+\+B\+U\+T\+T\+O\+N\+\_\+\+V\+E\+R\+T\+I\+C\+A\+L\+\_\+\+D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+P\+I\+X\+E\+L\+S\+\_\+@{F\+I\+R\+S\+T\+\_\+\+B\+U\+T\+T\+O\+N\+\_\+\+V\+E\+R\+T\+I\+C\+A\+L\+\_\+\+D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+P\+I\+X\+E\+L\+S\+\_\+}}
@@ -353,7 +424,11 @@ Definition at line 35 of file Graphical\+User\+Interface.\+h.
 
 
 
-Definition at line 33 of file Graphical\+User\+Interface.\+h.
+Static constant expression. 
+
+A attribute consists of information about distance of the button widgets from another button widgets in pixels 
+
+Definition at line 67 of file Graphical\+User\+Interface.\+h.
 
 \mbox{\Hypertarget{classGraphicalUserInterface_a57fe5ef98f53a222aab96d191e869ad3}\label{classGraphicalUserInterface_a57fe5ef98f53a222aab96d191e869ad3}} 
 \index{Graphical\+User\+Interface@{Graphical\+User\+Interface}!follow\+\_\+the\+\_\+leader\+\_\+checked\+\_\+@{follow\+\_\+the\+\_\+leader\+\_\+checked\+\_\+}}
@@ -363,7 +438,11 @@ Definition at line 33 of file Graphical\+User\+Interface.\+h.
 
 
 
-Definition at line 45 of file Graphical\+User\+Interface.\+h.
+Private variable. 
+
+Store the information about whether the Follow The Leader checkbox is checked. 
+
+Definition at line 116 of file Graphical\+User\+Interface.\+h.
 
 \mbox{\Hypertarget{classGraphicalUserInterface_ab07abda0fdb8e2965b70d2024fa3cf20}\label{classGraphicalUserInterface_ab07abda0fdb8e2965b70d2024fa3cf20}} 
 \index{Graphical\+User\+Interface@{Graphical\+User\+Interface}!gui\+\_\+@{gui\+\_\+}}
@@ -373,7 +452,11 @@ Definition at line 45 of file Graphical\+User\+Interface.\+h.
 
 
 
-Definition at line 42 of file Graphical\+User\+Interface.\+h.
+Private object. 
+
+An object representing an interface 
+
+Definition at line 105 of file Graphical\+User\+Interface.\+h.
 
 \mbox{\Hypertarget{classGraphicalUserInterface_a2e867c6d5b0d903d9e16e9934af93fc1}\label{classGraphicalUserInterface_a2e867c6d5b0d903d9e16e9934af93fc1}} 
 \index{Graphical\+User\+Interface@{Graphical\+User\+Interface}!interface\+\_\+height\+\_\+@{interface\+\_\+height\+\_\+}}
@@ -383,7 +466,11 @@ Definition at line 42 of file Graphical\+User\+Interface.\+h.
 
 
 
-Definition at line 37 of file Graphical\+User\+Interface.\+h.
+Constant expression. 
+
+A attribute consists of information about width height of the interface in pixels 
+
+Definition at line 88 of file Graphical\+User\+Interface.\+h.
 
 \mbox{\Hypertarget{classGraphicalUserInterface_ae3c07ea59e557909f92882028fafb0a3}\label{classGraphicalUserInterface_ae3c07ea59e557909f92882028fafb0a3}} 
 \index{Graphical\+User\+Interface@{Graphical\+User\+Interface}!interface\+\_\+width\+\_\+@{interface\+\_\+width\+\_\+}}
@@ -393,7 +480,11 @@ Definition at line 37 of file Graphical\+User\+Interface.\+h.
 
 
 
-Definition at line 37 of file Graphical\+User\+Interface.\+h.
+Constant expression. 
+
+A attribute consists of information about width of the interface in pixels 
+
+Definition at line 83 of file Graphical\+User\+Interface.\+h.
 
 \mbox{\Hypertarget{classGraphicalUserInterface_ae51adeb759a97196eda3b37bfc80a452}\label{classGraphicalUserInterface_ae51adeb759a97196eda3b37bfc80a452}} 
 \index{Graphical\+User\+Interface@{Graphical\+User\+Interface}!window\+\_\+@{window\+\_\+}}
@@ -403,7 +494,11 @@ Definition at line 37 of file Graphical\+User\+Interface.\+h.
 
 
 
-Definition at line 41 of file Graphical\+User\+Interface.\+h.
+Private object. 
+
+An object representing an application window 
+
+Definition at line 100 of file Graphical\+User\+Interface.\+h.
 
 
 

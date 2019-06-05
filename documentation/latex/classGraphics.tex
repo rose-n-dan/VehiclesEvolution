@@ -2,6 +2,11 @@
 \label{classGraphics}\index{Graphics@{Graphics}}
 
 
+A \hyperlink{classGraphics}{Graphics} class.  
+
+
+
+
 {\ttfamily \#include $<$Graphics.\+h$>$}
 
 
@@ -12,79 +17,81 @@ Collaboration diagram for Graphics\+:
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classGraphics_abe2f13f24a1d35c55fdac10a282744eb}{Graphics} (const \hyperlink{classGraphics}{Graphics} \&)=delete
-\item 
+\begin{DoxyCompactList}\small\item\em A \hyperlink{classGraphics}{Graphics} copy and copy-\/assigned constructor deleted. \end{DoxyCompactList}\item 
 \hyperlink{classGraphics}{Graphics} \& \hyperlink{classGraphics_abaf6bc20f9541026835dfee157ac5efb}{operator=} (const \hyperlink{classGraphics}{Graphics} \&)=delete
-\item 
+\begin{DoxyCompactList}\small\item\em A \hyperlink{classGraphics}{Graphics} copy and copy-\/assigned constructor deleted. \end{DoxyCompactList}\item 
 void \hyperlink{classGraphics_aee9384443642037cef28b28acddf86d3}{new\+Cars} (const std\+::vector$<$ \hyperlink{classCar}{Car} $>$ \&cars)
-\item 
+\begin{DoxyCompactList}\small\item\em A Method for creating graphics of cars. \end{DoxyCompactList}\item 
 void \hyperlink{classGraphics_adf0937a71f5d477bcd9c553fe863e87b}{new\+Map} (const \hyperlink{classMap}{Map} \&map)
-\item 
+\begin{DoxyCompactList}\small\item\em A Method for creating graphics of map. \end{DoxyCompactList}\item 
 void \hyperlink{classGraphics_a5f2e6a6cc8dffc34b48e66df42046243}{new\+Cars\+Positions} (const std\+::vector$<$ \hyperlink{classCar}{Car} $>$ \&cars)
-\item 
+\begin{DoxyCompactList}\small\item\em A Method for updating the position of cars. \end{DoxyCompactList}\item 
 const bool \hyperlink{classGraphics_a21729e7f5db9080db1a766682e64c43a}{is\+Window\+Open} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Public constant variable. \end{DoxyCompactList}\item 
 void \hyperlink{classGraphics_abad4212fb355b9b3d6504ad019832213}{handle\+Events} ()
-\item 
+\begin{DoxyCompactList}\small\item\em A method for handling on-\/running events, like mouse-\/click. \end{DoxyCompactList}\item 
 void \hyperlink{classGraphics_a283310b7fe274dab0544d307525198dc}{ensure\+Constant\+Frame\+Rate} (int frame\+Rate)
-\item 
+\begin{DoxyCompactList}\small\item\em A method for ensuring the constant frame rate of the application graphic refreshing. \end{DoxyCompactList}\item 
 void \hyperlink{classGraphics_abb78da7bc406f5c9518f7fd3f20b42f8}{restart\+Clock} ()
-\item 
+\begin{DoxyCompactList}\small\item\em A method for restarting the application clock. \end{DoxyCompactList}\item 
 void \hyperlink{classGraphics_ad0e7c12771870690d603e9df6643542c}{draw} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em A method for drawing texture on window. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 static \hyperlink{classGraphics}{Graphics} \& \hyperlink{classGraphics_a115d78c8686f6c82add227bf1fe2c81c}{get\+Instance} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em A \hyperlink{classGraphics}{Graphics} singleton constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classGraphics_af2e8fe67fd31ec263c843a6e28b29d3c}{Graphics} ()
-\item 
+\begin{DoxyCompactList}\small\item\em A \hyperlink{classGraphics}{Graphics} private constructor. \end{DoxyCompactList}\item 
 \hyperlink{classCarGraphics}{Car\+Graphics} \hyperlink{classGraphics_a504c1b9aa359dbe8b05f8879c1045610}{generate\+Graphics} (const \hyperlink{classCar}{Car} \&car)
 \item 
 void \hyperlink{classGraphics_ad3718f2541f28115865058823113f5cd}{follow\+The\+Leader} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em A Method for following the car which covered the greatest distance. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 const sf\+::\+Color \hyperlink{classGraphics_a44d7a76a58e03b8ad3f025123894c526}{background\+\_\+color\+\_\+}
-\item 
+\begin{DoxyCompactList}\small\item\em Constant object. \end{DoxyCompactList}\item 
 std\+::vector$<$ \hyperlink{classCarGraphics}{Car\+Graphics} $>$ \hyperlink{classGraphics_a8be356ffe3ee47f915027361b6ae34ab}{cars\+\_\+graphics\+\_\+}
-\item 
+\begin{DoxyCompactList}\small\item\em Private vector. \end{DoxyCompactList}\item 
 \hyperlink{classMapGraphics}{Map\+Graphics} \hyperlink{classGraphics_a7b3e98774ea965783584d5351c730276}{map\+\_\+graphic\+\_\+}
-\item 
+\begin{DoxyCompactList}\small\item\em Private object. \end{DoxyCompactList}\item 
 \hyperlink{classGraphicalUserInterface}{Graphical\+User\+Interface} \hyperlink{classGraphics_ac582857f6b0de010eabd0146c4a5f4d2}{gui\+\_\+}
-\item 
+\begin{DoxyCompactList}\small\item\em Private object. \end{DoxyCompactList}\item 
 sf\+::\+Context\+Settings \hyperlink{classGraphics_ab8d68b2977c39547e1c10a7669698aca}{settings\+\_\+}
-\item 
+\begin{DoxyCompactList}\small\item\em Private object. \end{DoxyCompactList}\item 
 sf\+::\+Render\+Window \hyperlink{classGraphics_ac760fe1abb0b648844c9f15afa087ef6}{window\+\_\+}
-\item 
+\begin{DoxyCompactList}\small\item\em Private object. \end{DoxyCompactList}\item 
 sf\+::\+Clock \hyperlink{classGraphics_ad9850d50fe5792666c8aea88f39ba99c}{clock\+\_\+}
-\item 
+\begin{DoxyCompactList}\small\item\em Private object. \end{DoxyCompactList}\item 
 sf\+::\+Time \hyperlink{classGraphics_ab2983b7d90351c0f7b824ac6f887fd6d}{time\+\_\+}
-\item 
+\begin{DoxyCompactList}\small\item\em Private object. \end{DoxyCompactList}\item 
 sf\+::\+View \hyperlink{classGraphics_a60792a296f5e93dbd1d086398e20cbd0}{view\+\_\+action\+\_\+}
-\item 
+\begin{DoxyCompactList}\small\item\em Private object. \end{DoxyCompactList}\item 
 sf\+::\+View \hyperlink{classGraphics_aaca5b237fae17f3166f8f28e4c363e06}{view\+\_\+gui\+\_\+}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Private object. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 static constexpr float \hyperlink{classGraphics_af9c6251065c2900d0a92380c2bea26b2}{P\+I\+X\+E\+L\+S\+\_\+\+P\+E\+R\+\_\+\+M\+E\+T\+E\+R\+\_\+} = 60.\+0f
-\item 
+\begin{DoxyCompactList}\small\item\em Static constant expression. \end{DoxyCompactList}\item 
 static constexpr int \hyperlink{classGraphics_a4e8cd4a9f4799e3b7f5e85685d6d4905}{W\+I\+N\+D\+O\+W\+\_\+\+W\+I\+D\+T\+H\+\_\+\+P\+I\+X\+E\+L\+S\+\_\+} = 1000
-\item 
+\begin{DoxyCompactList}\small\item\em Static constant expression. \end{DoxyCompactList}\item 
 static constexpr int \hyperlink{classGraphics_a2838b79511d56711b88e677ad48c54e9}{W\+I\+N\+D\+O\+W\+\_\+\+H\+E\+I\+G\+H\+T\+\_\+\+P\+I\+X\+E\+L\+S\+\_\+} = 600
-\item 
+\begin{DoxyCompactList}\small\item\em Static constant expression. \end{DoxyCompactList}\item 
 static constexpr int \hyperlink{classGraphics_aac15ea113ea8c69d5e54996513886110}{I\+N\+T\+E\+R\+F\+A\+C\+E\+\_\+\+W\+I\+D\+T\+H\+\_\+\+P\+I\+X\+E\+L\+S\+\_\+} = 300
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Static constant expression. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-Class implementing Singleton and Pseudo-\/\+Observer design patterns 
+A \hyperlink{classGraphics}{Graphics} class. 
 
-Definition at line 22 of file Graphics.\+h.
+Class implementing Singleton and Pseudo-\/\+Observer design patterns. It was designed in order to create graphics of cars and map and showing their movement. 
+
+Definition at line 23 of file Graphics.\+h.
 
 
 
@@ -95,11 +102,19 @@ Definition at line 22 of file Graphics.\+h.
 \subsubsection{\texorpdfstring{Graphics()}{Graphics()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily Graphics\+::\+Graphics (\begin{DoxyParamCaption}\item[{const \hyperlink{classGraphics}{Graphics} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
 
+
+
+A \hyperlink{classGraphics}{Graphics} copy and copy-\/assigned constructor deleted. 
+
 \mbox{\Hypertarget{classGraphics_af2e8fe67fd31ec263c843a6e28b29d3c}\label{classGraphics_af2e8fe67fd31ec263c843a6e28b29d3c}} 
 \index{Graphics@{Graphics}!Graphics@{Graphics}}
 \index{Graphics@{Graphics}!Graphics@{Graphics}}
 \subsubsection{\texorpdfstring{Graphics()}{Graphics()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily Graphics\+::\+Graphics (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+A \hyperlink{classGraphics}{Graphics} private constructor. 
 
 
 
@@ -135,6 +150,10 @@ Definition at line 11 of file Graphics.\+cpp.
 
 
 
+A method for drawing texture on window. 
+
+
+
 Definition at line 100 of file Graphics.\+cpp.
 
 
@@ -163,6 +182,10 @@ Definition at line 100 of file Graphics.\+cpp.
 
 
 
+A method for ensuring the constant frame rate of the application graphic refreshing. 
+
+
+
 Definition at line 116 of file Graphics.\+cpp.
 
 
@@ -182,6 +205,10 @@ Definition at line 116 of file Graphics.\+cpp.
 {\footnotesize\ttfamily void Graphics\+::follow\+The\+Leader (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 
+
+A Method for following the car which covered the greatest distance. 
+
+The Method is designed to follow the leader of the population. A car which is first on the map is being followed. 
 
 Definition at line 127 of file Graphics.\+cpp.
 
@@ -242,20 +269,28 @@ Definition at line 144 of file Graphics.\+cpp.
 
 
 
-Definition at line 28 of file Graphics.\+h.
+A \hyperlink{classGraphics}{Graphics} singleton constructor. 
+
+
+
+Definition at line 31 of file Graphics.\+h.
 
 
 \begin{DoxyCode}
-28                                    \{
-29         \textcolor{keyword}{static} \hyperlink{classGraphics}{Graphics} graphicsInstance;
-30         \textcolor{keywordflow}{return} graphicsInstance;
-31     \}
+31                                    \{
+32         \textcolor{keyword}{static} \hyperlink{classGraphics}{Graphics} graphicsInstance;
+33         \textcolor{keywordflow}{return} graphicsInstance;
+34     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classGraphics_abad4212fb355b9b3d6504ad019832213}\label{classGraphics_abad4212fb355b9b3d6504ad019832213}} 
 \index{Graphics@{Graphics}!handle\+Events@{handle\+Events}}
 \index{handle\+Events@{handle\+Events}!Graphics@{Graphics}}
 \subsubsection{\texorpdfstring{handle\+Events()}{handleEvents()}}
 {\footnotesize\ttfamily void Graphics\+::handle\+Events (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+A method for handling on-\/running events, like mouse-\/click. 
 
 
 
@@ -290,6 +325,10 @@ Definition at line 81 of file Graphics.\+cpp.
 
 
 
+Public constant variable. 
+
+Store the information whether the application window is open. 
+
 Definition at line 77 of file Graphics.\+cpp.
 
 
@@ -305,6 +344,10 @@ Definition at line 77 of file Graphics.\+cpp.
 {\footnotesize\ttfamily void Graphics\+::new\+Cars (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \hyperlink{classCar}{Car} $>$ \&}]{cars }\end{DoxyParamCaption})}
 
 
+
+A Method for creating graphics of cars. 
+
+The Method is designed to fill the vector of car graphics from the vector of corresponding objects of class \hyperlink{classCar}{Car}. 
 
 Definition at line 24 of file Graphics.\+cpp.
 
@@ -326,6 +369,10 @@ Definition at line 24 of file Graphics.\+cpp.
 {\footnotesize\ttfamily void Graphics\+::new\+Cars\+Positions (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \hyperlink{classCar}{Car} $>$ \&}]{cars }\end{DoxyParamCaption})}
 
 
+
+A Method for updating the position of cars. 
+
+The Method is designed to update the position of the cars from the population. Cars change their position every single iteration and \hyperlink{classGraphics}{Graphics} object need to update their textures every iteration. 
 
 Definition at line 56 of file Graphics.\+cpp.
 
@@ -364,6 +411,10 @@ Definition at line 56 of file Graphics.\+cpp.
 
 
 
+A Method for creating graphics of map. 
+
+The Method is designed in order to create the map from the information about verticies of the polygon which represents earth. 
+
 Definition at line 33 of file Graphics.\+cpp.
 
 
@@ -399,11 +450,19 @@ Definition at line 33 of file Graphics.\+cpp.
 \subsubsection{\texorpdfstring{operator=()}{operator=()}}
 {\footnotesize\ttfamily \hyperlink{classGraphics}{Graphics}\& Graphics\+::operator= (\begin{DoxyParamCaption}\item[{const \hyperlink{classGraphics}{Graphics} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
 
+
+
+A \hyperlink{classGraphics}{Graphics} copy and copy-\/assigned constructor deleted. 
+
 \mbox{\Hypertarget{classGraphics_abb78da7bc406f5c9518f7fd3f20b42f8}\label{classGraphics_abb78da7bc406f5c9518f7fd3f20b42f8}} 
 \index{Graphics@{Graphics}!restart\+Clock@{restart\+Clock}}
 \index{restart\+Clock@{restart\+Clock}!Graphics@{Graphics}}
 \subsubsection{\texorpdfstring{restart\+Clock()}{restartClock()}}
 {\footnotesize\ttfamily void Graphics\+::restart\+Clock (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+A method for restarting the application clock. 
 
 
 
@@ -426,7 +485,11 @@ Definition at line 123 of file Graphics.\+cpp.
 
 
 
-Definition at line 57 of file Graphics.\+h.
+Constant object. 
+
+A attribute consists of information about color of the application background. 
+
+Definition at line 109 of file Graphics.\+h.
 
 \mbox{\Hypertarget{classGraphics_a8be356ffe3ee47f915027361b6ae34ab}\label{classGraphics_a8be356ffe3ee47f915027361b6ae34ab}} 
 \index{Graphics@{Graphics}!cars\+\_\+graphics\+\_\+@{cars\+\_\+graphics\+\_\+}}
@@ -436,7 +499,11 @@ Definition at line 57 of file Graphics.\+h.
 
 
 
-Definition at line 59 of file Graphics.\+h.
+Private vector. 
+
+A vector consists of \hyperlink{classCarGraphics}{Car\+Graphics} objects. 
+
+Definition at line 115 of file Graphics.\+h.
 
 \mbox{\Hypertarget{classGraphics_ad9850d50fe5792666c8aea88f39ba99c}\label{classGraphics_ad9850d50fe5792666c8aea88f39ba99c}} 
 \index{Graphics@{Graphics}!clock\+\_\+@{clock\+\_\+}}
@@ -446,7 +513,11 @@ Definition at line 59 of file Graphics.\+h.
 
 
 
-Definition at line 65 of file Graphics.\+h.
+Private object. 
+
+An object which represents the application clock. 
+
+Definition at line 141 of file Graphics.\+h.
 
 \mbox{\Hypertarget{classGraphics_ac582857f6b0de010eabd0146c4a5f4d2}\label{classGraphics_ac582857f6b0de010eabd0146c4a5f4d2}} 
 \index{Graphics@{Graphics}!gui\+\_\+@{gui\+\_\+}}
@@ -456,7 +527,11 @@ Definition at line 65 of file Graphics.\+h.
 
 
 
-Definition at line 61 of file Graphics.\+h.
+Private object. 
+
+An object consists of graphic representation of User Interface. 
+
+Definition at line 125 of file Graphics.\+h.
 
 \mbox{\Hypertarget{classGraphics_aac15ea113ea8c69d5e54996513886110}\label{classGraphics_aac15ea113ea8c69d5e54996513886110}} 
 \index{Graphics@{Graphics}!I\+N\+T\+E\+R\+F\+A\+C\+E\+\_\+\+W\+I\+D\+T\+H\+\_\+\+P\+I\+X\+E\+L\+S\+\_\+@{I\+N\+T\+E\+R\+F\+A\+C\+E\+\_\+\+W\+I\+D\+T\+H\+\_\+\+P\+I\+X\+E\+L\+S\+\_\+}}
@@ -466,7 +541,11 @@ Definition at line 61 of file Graphics.\+h.
 
 
 
-Definition at line 55 of file Graphics.\+h.
+Static constant expression. 
+
+A attribute consists of information about application interface width in pixels. 
+
+Definition at line 103 of file Graphics.\+h.
 
 \mbox{\Hypertarget{classGraphics_a7b3e98774ea965783584d5351c730276}\label{classGraphics_a7b3e98774ea965783584d5351c730276}} 
 \index{Graphics@{Graphics}!map\+\_\+graphic\+\_\+@{map\+\_\+graphic\+\_\+}}
@@ -476,7 +555,11 @@ Definition at line 55 of file Graphics.\+h.
 
 
 
-Definition at line 60 of file Graphics.\+h.
+Private object. 
+
+An object consists of graphic representation of map. 
+
+Definition at line 120 of file Graphics.\+h.
 
 \mbox{\Hypertarget{classGraphics_af9c6251065c2900d0a92380c2bea26b2}\label{classGraphics_af9c6251065c2900d0a92380c2bea26b2}} 
 \index{Graphics@{Graphics}!P\+I\+X\+E\+L\+S\+\_\+\+P\+E\+R\+\_\+\+M\+E\+T\+E\+R\+\_\+@{P\+I\+X\+E\+L\+S\+\_\+\+P\+E\+R\+\_\+\+M\+E\+T\+E\+R\+\_\+}}
@@ -486,7 +569,11 @@ Definition at line 60 of file Graphics.\+h.
 
 
 
-Definition at line 52 of file Graphics.\+h.
+Static constant expression. 
+
+A attribute consists of information about pixels per meter density. 
+
+Definition at line 88 of file Graphics.\+h.
 
 \mbox{\Hypertarget{classGraphics_ab8d68b2977c39547e1c10a7669698aca}\label{classGraphics_ab8d68b2977c39547e1c10a7669698aca}} 
 \index{Graphics@{Graphics}!settings\+\_\+@{settings\+\_\+}}
@@ -496,7 +583,11 @@ Definition at line 52 of file Graphics.\+h.
 
 
 
-Definition at line 63 of file Graphics.\+h.
+Private object. 
+
+An object consists of information about current application settings 
+
+Definition at line 131 of file Graphics.\+h.
 
 \mbox{\Hypertarget{classGraphics_ab2983b7d90351c0f7b824ac6f887fd6d}\label{classGraphics_ab2983b7d90351c0f7b824ac6f887fd6d}} 
 \index{Graphics@{Graphics}!time\+\_\+@{time\+\_\+}}
@@ -506,7 +597,11 @@ Definition at line 63 of file Graphics.\+h.
 
 
 
-Definition at line 66 of file Graphics.\+h.
+Private object. 
+
+An object which consists of the information about time which passed from application start. 
+
+Definition at line 146 of file Graphics.\+h.
 
 \mbox{\Hypertarget{classGraphics_a60792a296f5e93dbd1d086398e20cbd0}\label{classGraphics_a60792a296f5e93dbd1d086398e20cbd0}} 
 \index{Graphics@{Graphics}!view\+\_\+action\+\_\+@{view\+\_\+action\+\_\+}}
@@ -516,7 +611,11 @@ Definition at line 66 of file Graphics.\+h.
 
 
 
-Definition at line 67 of file Graphics.\+h.
+Private object. 
+
+An object which consists of the representation of the current action view 
+
+Definition at line 151 of file Graphics.\+h.
 
 \mbox{\Hypertarget{classGraphics_aaca5b237fae17f3166f8f28e4c363e06}\label{classGraphics_aaca5b237fae17f3166f8f28e4c363e06}} 
 \index{Graphics@{Graphics}!view\+\_\+gui\+\_\+@{view\+\_\+gui\+\_\+}}
@@ -526,7 +625,11 @@ Definition at line 67 of file Graphics.\+h.
 
 
 
-Definition at line 67 of file Graphics.\+h.
+Private object. 
+
+An object which consists of the representation of the current Graphical User Interface view 
+
+Definition at line 156 of file Graphics.\+h.
 
 \mbox{\Hypertarget{classGraphics_ac760fe1abb0b648844c9f15afa087ef6}\label{classGraphics_ac760fe1abb0b648844c9f15afa087ef6}} 
 \index{Graphics@{Graphics}!window\+\_\+@{window\+\_\+}}
@@ -536,7 +639,11 @@ Definition at line 67 of file Graphics.\+h.
 
 
 
-Definition at line 64 of file Graphics.\+h.
+Private object. 
+
+An object which represents the application window. 
+
+Definition at line 136 of file Graphics.\+h.
 
 \mbox{\Hypertarget{classGraphics_a2838b79511d56711b88e677ad48c54e9}\label{classGraphics_a2838b79511d56711b88e677ad48c54e9}} 
 \index{Graphics@{Graphics}!W\+I\+N\+D\+O\+W\+\_\+\+H\+E\+I\+G\+H\+T\+\_\+\+P\+I\+X\+E\+L\+S\+\_\+@{W\+I\+N\+D\+O\+W\+\_\+\+H\+E\+I\+G\+H\+T\+\_\+\+P\+I\+X\+E\+L\+S\+\_\+}}
@@ -546,7 +653,11 @@ Definition at line 64 of file Graphics.\+h.
 
 
 
-Definition at line 54 of file Graphics.\+h.
+Static constant expression. 
+
+A attribute consists of information about application window height in pixels. 
+
+Definition at line 98 of file Graphics.\+h.
 
 \mbox{\Hypertarget{classGraphics_a4e8cd4a9f4799e3b7f5e85685d6d4905}\label{classGraphics_a4e8cd4a9f4799e3b7f5e85685d6d4905}} 
 \index{Graphics@{Graphics}!W\+I\+N\+D\+O\+W\+\_\+\+W\+I\+D\+T\+H\+\_\+\+P\+I\+X\+E\+L\+S\+\_\+@{W\+I\+N\+D\+O\+W\+\_\+\+W\+I\+D\+T\+H\+\_\+\+P\+I\+X\+E\+L\+S\+\_\+}}
@@ -556,7 +667,11 @@ Definition at line 54 of file Graphics.\+h.
 
 
 
-Definition at line 53 of file Graphics.\+h.
+Static constant expression. 
+
+A attribute consists of information about application window width in pixels. 
+
+Definition at line 93 of file Graphics.\+h.
 
 
 

@@ -4,9 +4,9 @@ digraph "Graphics"
   node [fontname="Helvetica",fontsize="10",shape=record];
   Node1 [label="Graphics",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
   Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" map_graphic_" ];
-  Node2 [label="MapGraphics",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classMapGraphics.html"];
+  Node2 [label="MapGraphics",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classMapGraphics.html",tooltip="A MapGraphics class . "];
   Node3 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
   Node3 [label="Drawable",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
   Node4 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" gui_" ];
-  Node4 [label="GraphicalUserInterface",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classGraphicalUserInterface.html"];
+  Node4 [label="GraphicalUserInterface",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classGraphicalUserInterface.html",tooltip="A GraphicalUserInterface class. "];
 }

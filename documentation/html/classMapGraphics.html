@@ -69,6 +69,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>A <a class="el" href="classMapGraphics.html" title="A MapGraphics class . ">MapGraphics</a> class .  
+ <a href="classMapGraphics.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="MapGraphics_8h_source.html">MapGraphics.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for MapGraphics:</div>
@@ -86,23 +89,29 @@ Collaboration diagram for MapGraphics:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a389137596a79ed6a8239fe5451f8f470"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMapGraphics.html#a389137596a79ed6a8239fe5451f8f470">resetPolyline</a> (size_t size)</td></tr>
+<tr class="memdesc:a389137596a79ed6a8239fe5451f8f470"><td class="mdescLeft">&#160;</td><td class="mdescRight">A Method for resetting the shape of polygon.  <a href="#a389137596a79ed6a8239fe5451f8f470">More...</a><br /></td></tr>
 <tr class="separator:a389137596a79ed6a8239fe5451f8f470"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0d58d85db2e9d6e62623ebab6ffa11e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMapGraphics.html#a0d58d85db2e9d6e62623ebab6ffa11e9">setVertex</a> (int i, const sf::Vector2f &amp;position)</td></tr>
+<tr class="memdesc:a0d58d85db2e9d6e62623ebab6ffa11e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">A Method for setting the position of i-th vertex.  <a href="#a0d58d85db2e9d6e62623ebab6ffa11e9">More...</a><br /></td></tr>
 <tr class="separator:a0d58d85db2e9d6e62623ebab6ffa11e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a6bd8a1174e0f56edb00def916a096e3c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMapGraphics.html#a6bd8a1174e0f56edb00def916a096e3c">draw</a> (sf::RenderTarget &amp;target, sf::RenderStates states) const override</td></tr>
+<tr class="memdesc:a6bd8a1174e0f56edb00def916a096e3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">A method for drawing the <a class="el" href="classMapGraphics.html" title="A MapGraphics class . ">MapGraphics</a> object.  <a href="#a6bd8a1174e0f56edb00def916a096e3c">More...</a><br /></td></tr>
 <tr class="separator:a6bd8a1174e0f56edb00def916a096e3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a2136d586176f0c3a008182ff3fba50e3"><td class="memItemLeft" align="right" valign="top">sf::VertexArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMapGraphics.html#a2136d586176f0c3a008182ff3fba50e3">map_graphics_</a></td></tr>
+<tr class="memdesc:a2136d586176f0c3a008182ff3fba50e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Private array.  <a href="#a2136d586176f0c3a008182ff3fba50e3">More...</a><br /></td></tr>
 <tr class="separator:a2136d586176f0c3a008182ff3fba50e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="MapGraphics_8h_source.html#l00010">10</a> of file <a class="el" href="MapGraphics_8h_source.html">MapGraphics.h</a>.</p>
+<div class="textblock"><p>A <a class="el" href="classMapGraphics.html" title="A MapGraphics class . ">MapGraphics</a> class . </p>
+<p>A class which performs a graphical representation of a map. Determines the rules drawing and positioning of the map textures. </p>
+
+<p class="definition">Definition at line <a class="el" href="MapGraphics_8h_source.html#l00012">12</a> of file <a class="el" href="MapGraphics_8h_source.html">MapGraphics.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a6bd8a1174e0f56edb00def916a096e3c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6bd8a1174e0f56edb00def916a096e3c">&#9670;&nbsp;</a></span>draw()</h2>
@@ -138,8 +147,10 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>A method for drawing the <a class="el" href="classMapGraphics.html" title="A MapGraphics class . ">MapGraphics</a> object. </p>
+
 <p class="definition">Definition at line <a class="el" href="MapGraphics_8cpp_source.html#l00007">7</a> of file <a class="el" href="MapGraphics_8cpp_source.html">MapGraphics.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;                                                                          {</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    target.draw(<a class="code" href="classMapGraphics.html#a2136d586176f0c3a008182ff3fba50e3">map_graphics_</a>, states);</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;}</div><div class="ttc" id="classMapGraphics_html_a2136d586176f0c3a008182ff3fba50e3"><div class="ttname"><a href="classMapGraphics.html#a2136d586176f0c3a008182ff3fba50e3">MapGraphics::map_graphics_</a></div><div class="ttdeci">sf::VertexArray map_graphics_</div><div class="ttdef"><b>Definition:</b> <a href="MapGraphics_8h_source.html#l00019">MapGraphics.h:19</a></div></div>
+<div class="fragment"><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;                                                                          {</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    target.draw(<a class="code" href="classMapGraphics.html#a2136d586176f0c3a008182ff3fba50e3">map_graphics_</a>, states);</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;}</div><div class="ttc" id="classMapGraphics_html_a2136d586176f0c3a008182ff3fba50e3"><div class="ttname"><a href="classMapGraphics.html#a2136d586176f0c3a008182ff3fba50e3">MapGraphics::map_graphics_</a></div><div class="ttdeci">sf::VertexArray map_graphics_</div><div class="ttdoc">Private array. </div><div class="ttdef"><b>Definition:</b> <a href="MapGraphics_8h_source.html#l00028">MapGraphics.h:28</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -159,8 +170,10 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>A Method for resetting the shape of polygon. </p>
+
 <p class="definition">Definition at line <a class="el" href="MapGraphics_8cpp_source.html#l00011">11</a> of file <a class="el" href="MapGraphics_8cpp_source.html">MapGraphics.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;                                           {</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="classMapGraphics.html#a2136d586176f0c3a008182ff3fba50e3">map_graphics_</a> = sf::VertexArray(sf::LineStrip, size);</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;}</div><div class="ttc" id="classMapGraphics_html_a2136d586176f0c3a008182ff3fba50e3"><div class="ttname"><a href="classMapGraphics.html#a2136d586176f0c3a008182ff3fba50e3">MapGraphics::map_graphics_</a></div><div class="ttdeci">sf::VertexArray map_graphics_</div><div class="ttdef"><b>Definition:</b> <a href="MapGraphics_8h_source.html#l00019">MapGraphics.h:19</a></div></div>
+<div class="fragment"><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;                                           {</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="classMapGraphics.html#a2136d586176f0c3a008182ff3fba50e3">map_graphics_</a> = sf::VertexArray(sf::LineStrip, size);</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;}</div><div class="ttc" id="classMapGraphics_html_a2136d586176f0c3a008182ff3fba50e3"><div class="ttname"><a href="classMapGraphics.html#a2136d586176f0c3a008182ff3fba50e3">MapGraphics::map_graphics_</a></div><div class="ttdeci">sf::VertexArray map_graphics_</div><div class="ttdoc">Private array. </div><div class="ttdef"><b>Definition:</b> <a href="MapGraphics_8h_source.html#l00028">MapGraphics.h:28</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -190,8 +203,10 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>A Method for setting the position of i-th vertex. </p>
+
 <p class="definition">Definition at line <a class="el" href="MapGraphics_8cpp_source.html#l00015">15</a> of file <a class="el" href="MapGraphics_8cpp_source.html">MapGraphics.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                                                             {</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="classMapGraphics.html#a2136d586176f0c3a008182ff3fba50e3">map_graphics_</a>[i].position = position;</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;}</div><div class="ttc" id="classMapGraphics_html_a2136d586176f0c3a008182ff3fba50e3"><div class="ttname"><a href="classMapGraphics.html#a2136d586176f0c3a008182ff3fba50e3">MapGraphics::map_graphics_</a></div><div class="ttdeci">sf::VertexArray map_graphics_</div><div class="ttdef"><b>Definition:</b> <a href="MapGraphics_8h_source.html#l00019">MapGraphics.h:19</a></div></div>
+<div class="fragment"><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                                                             {</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="classMapGraphics.html#a2136d586176f0c3a008182ff3fba50e3">map_graphics_</a>[i].position = position;</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;}</div><div class="ttc" id="classMapGraphics_html_a2136d586176f0c3a008182ff3fba50e3"><div class="ttname"><a href="classMapGraphics.html#a2136d586176f0c3a008182ff3fba50e3">MapGraphics::map_graphics_</a></div><div class="ttdeci">sf::VertexArray map_graphics_</div><div class="ttdoc">Private array. </div><div class="ttdef"><b>Definition:</b> <a href="MapGraphics_8h_source.html#l00028">MapGraphics.h:28</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -216,7 +231,10 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MapGraphics_8h_source.html#l00019">19</a> of file <a class="el" href="MapGraphics_8h_source.html">MapGraphics.h</a>.</p>
+<p>Private array. </p>
+<p>Store the information about verticies which altogether create shape of map </p>
+
+<p class="definition">Definition at line <a class="el" href="MapGraphics_8h_source.html#l00028">28</a> of file <a class="el" href="MapGraphics_8h_source.html">MapGraphics.h</a>.</p>
 
 </div>
 </div>

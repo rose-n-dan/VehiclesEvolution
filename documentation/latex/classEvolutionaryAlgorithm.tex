@@ -2,7 +2,7 @@
 \label{classEvolutionaryAlgorithm}\index{Evolutionary\+Algorithm@{Evolutionary\+Algorithm}}
 
 
-A \hyperlink{classEvolutionaryAlgorithm}{Evolutionary\+Algorithm} class.  
+A \hyperlink{classEvolutionaryAlgorithm}{Evolutionary\+Algorithm} class .  
 
 
 
@@ -13,68 +13,68 @@ A \hyperlink{classEvolutionaryAlgorithm}{Evolutionary\+Algorithm} class.
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classEvolutionaryAlgorithm_ae93cddd09649e8077b553c09919542b4}{Evolutionary\+Algorithm} (const \hyperlink{classEvolutionaryAlgorithm}{Evolutionary\+Algorithm} \&)=delete
-\item 
+\begin{DoxyCompactList}\small\item\em A \hyperlink{classCarParameters}{Car\+Parameters} copy and copy-\/assignment constructors are deleted. \end{DoxyCompactList}\item 
 \hyperlink{classEvolutionaryAlgorithm}{Evolutionary\+Algorithm} \& \hyperlink{classEvolutionaryAlgorithm_a4726d79d2cfc00b01f521a2fb8b87863}{operator=} (const \hyperlink{classEvolutionaryAlgorithm}{Evolutionary\+Algorithm} \&)=delete
-\item 
+\begin{DoxyCompactList}\small\item\em A \hyperlink{classCarParameters}{Car\+Parameters} copy and copy-\/assignment constructors are deleted. \end{DoxyCompactList}\item 
 const std\+::vector$<$ \hyperlink{classCarParameters}{Car\+Parameters} $>$ \hyperlink{classEvolutionaryAlgorithm_aa4dc48e8ad0d0e5892546ce6978f492f}{make\+New\+Generation} (const std\+::vector$<$ double $>$ \&distances)
-\item 
+\begin{DoxyCompactList}\small\item\em A Method for producing new generation of cars. \end{DoxyCompactList}\item 
 const std\+::vector$<$ \hyperlink{classCarParameters}{Car\+Parameters} $>$ \hyperlink{classEvolutionaryAlgorithm_aad3e66c5d020fdcf1cb1e5ade0f01385}{generate\+New\+Population} ()
-\item 
+\begin{DoxyCompactList}\small\item\em A Method for producing the first generation of cars. \end{DoxyCompactList}\item 
 const double \hyperlink{classEvolutionaryAlgorithm_ae2aa7a6fdbfb3a065aecdb7a5488bcc6}{get\+Mutation\+Probability} () const
-\item 
+\begin{DoxyCompactList}\small\item\em A Method for getting the value of mutation probability in newly generated populations. \end{DoxyCompactList}\item 
 const double \hyperlink{classEvolutionaryAlgorithm_a71ca76fa04d0824bf7cf86b67fc65414}{get\+Crossover\+Probability} () const
-\item 
+\begin{DoxyCompactList}\small\item\em A Method for getting the value of crossover probability in newly generated populations. \end{DoxyCompactList}\item 
 void \hyperlink{classEvolutionaryAlgorithm_a2f47cbcc3c2b886ece5ba97bbfed4178}{set\+Mutation\+Probability\+\_\+} (double mutation\+\_\+probability)
-\item 
+\begin{DoxyCompactList}\small\item\em A Method for setting the value of mutation probability in newly generated populations. \end{DoxyCompactList}\item 
 void \hyperlink{classEvolutionaryAlgorithm_ab5951bdd3eec16074aff63349726dee8}{set\+Crossover\+Probability\+\_\+} (double crossover\+\_\+probability)
-\item 
+\begin{DoxyCompactList}\small\item\em A Method for setting the value of crossover probability in newly generated populations. \end{DoxyCompactList}\item 
 bool \hyperlink{classEvolutionaryAlgorithm_a19c58cc0434d314fb5378e3674546988}{maybe\+Mutate} (double \&value, double sigma) const
-\item 
+\begin{DoxyCompactList}\small\item\em A Method for deciding whether a mutation will occur. \end{DoxyCompactList}\item 
 bool \hyperlink{classEvolutionaryAlgorithm_ac144c241688bbe9a50c7ce98f6895ba2}{maybe\+Mutate} (\hyperlink{classCarParameters}{Car\+Parameters} \&parameters) const
-\item 
+\begin{DoxyCompactList}\small\item\em A Method for deciding whether a mutation will occur. \end{DoxyCompactList}\item 
 void \hyperlink{classEvolutionaryAlgorithm_accd59515cc111edb66a030e7f8d79099}{set\+Last\+Generation\+Parameters} (const std\+::vector$<$ \hyperlink{classCarParameters}{Car\+Parameters} $>$ \&\hyperlink{classEvolutionaryAlgorithm_a85d23b07f2b2c8b1df581a9566111fa7}{last\+\_\+generation\+\_\+parameters\+\_\+})
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em A Method for setting the value of the class vector attrubute which consist of parameters of lastly generated cars. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 static \hyperlink{classEvolutionaryAlgorithm}{Evolutionary\+Algorithm} \& \hyperlink{classEvolutionaryAlgorithm_a306ea15ca9a4eb67b84d22c7b24ef659}{get\+Instance} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em A Method for design pattern of singleton. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classEvolutionaryAlgorithm_a7a37fb1cdb3f585529af74dec4d0bf8d}{Evolutionary\+Algorithm} ()
-\item 
+\begin{DoxyCompactList}\small\item\em A \hyperlink{classCarParameters}{Car\+Parameters} default constructor. \end{DoxyCompactList}\item 
 const \hyperlink{classCarParameters}{Car\+Parameters} \hyperlink{classEvolutionaryAlgorithm_a4f36e597080d9822c36837c8a582d4d0}{generate\+Random\+Car} () const
-\item 
+\begin{DoxyCompactList}\small\item\em A Method for generating a car with random parameters. \end{DoxyCompactList}\item 
 double \hyperlink{classEvolutionaryAlgorithm_a02a05f75707440141d9ec3129cadc681}{do\+Mutate} (double value, double sigma) const
-\item 
+\begin{DoxyCompactList}\small\item\em A Method for performing a mutation. \end{DoxyCompactList}\item 
 double \hyperlink{classEvolutionaryAlgorithm_a1f0c3d66b8abfdcdf6eedf065580cef6}{do\+Crossover} (double mothers\+\_\+value, double fathers\+\_\+value) const
-\item 
+\begin{DoxyCompactList}\small\item\em A Method for performing a crossover over two values. \end{DoxyCompactList}\item 
 \hyperlink{classCarParameters}{Car\+Parameters} \hyperlink{classEvolutionaryAlgorithm_a387fba63cd849a74652c6de1beb82318}{do\+Crossover} (const \hyperlink{classCarParameters}{Car\+Parameters} \&mother, const \hyperlink{classCarParameters}{Car\+Parameters} \&father) const
-\item 
+\begin{DoxyCompactList}\small\item\em A Method for performing a crossover over two \hyperlink{classCarParameters}{Car\+Parameters} object. \end{DoxyCompactList}\item 
 bool \hyperlink{classEvolutionaryAlgorithm_a20aec1049a8837cddef2305259450fe3}{draw\+Lots\+With\+Percentage} (double percentage) const
-\item 
+\begin{DoxyCompactList}\small\item\em A Method randomizing feature. \end{DoxyCompactList}\item 
 const int \hyperlink{classEvolutionaryAlgorithm_a8efaa380f6d1b9a2f8a6ad44e2d362e2}{select\+One\+InN} (int n) const
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em A Method for selecting one instance from population to perform crossover. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 const int \hyperlink{classEvolutionaryAlgorithm_af466ca42d5d03e212df4575f263f3a8c}{C\+A\+R\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+I\+N\+\_\+\+P\+O\+P\+U\+L\+A\+T\+I\+O\+N\+\_\+} \{15\}
-\item 
+\begin{DoxyCompactList}\small\item\em Private constant variable. \end{DoxyCompactList}\item 
 std\+::vector$<$ \hyperlink{classCarParameters}{Car\+Parameters} $>$ \hyperlink{classEvolutionaryAlgorithm_a85d23b07f2b2c8b1df581a9566111fa7}{last\+\_\+generation\+\_\+parameters\+\_\+}
-\item 
+\begin{DoxyCompactList}\small\item\em Private vector. \end{DoxyCompactList}\item 
 double \hyperlink{classEvolutionaryAlgorithm_ab847e49664c7b97e1e55963e6f33b332}{mutation\+\_\+probability\+\_\+} \{0.\+02\}
-\item 
+\begin{DoxyCompactList}\small\item\em Private variable. \end{DoxyCompactList}\item 
 double \hyperlink{classEvolutionaryAlgorithm_a815be8b2644e2d1bdc6378c88ab03da3}{crossover\+\_\+probability\+\_\+} \{0.\+4\}
-\item 
+\begin{DoxyCompactList}\small\item\em Private variable. \end{DoxyCompactList}\item 
 std\+::default\+\_\+random\+\_\+engine \hyperlink{classEvolutionaryAlgorithm_adbd823d385ad95bf20496fd2fc25ccde}{generator\+\_\+}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Private default\+\_\+random\+\_\+engine. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-A \hyperlink{classEvolutionaryAlgorithm}{Evolutionary\+Algorithm} class. 
+A \hyperlink{classEvolutionaryAlgorithm}{Evolutionary\+Algorithm} class . 
 
-A class which represents the Evolutionary Algorithm 
+A class which represents the Evolutionary Algorithm Determines the rules of crossover and mutation on car attributes 
 
 Definition at line 16 of file Evolutionary\+Algorithm.\+h.
 
@@ -87,11 +87,19 @@ Definition at line 16 of file Evolutionary\+Algorithm.\+h.
 \subsubsection{\texorpdfstring{Evolutionary\+Algorithm()}{EvolutionaryAlgorithm()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily Evolutionary\+Algorithm\+::\+Evolutionary\+Algorithm (\begin{DoxyParamCaption}\item[{const \hyperlink{classEvolutionaryAlgorithm}{Evolutionary\+Algorithm} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
 
+
+
+A \hyperlink{classCarParameters}{Car\+Parameters} copy and copy-\/assignment constructors are deleted. 
+
 \mbox{\Hypertarget{classEvolutionaryAlgorithm_a7a37fb1cdb3f585529af74dec4d0bf8d}\label{classEvolutionaryAlgorithm_a7a37fb1cdb3f585529af74dec4d0bf8d}} 
 \index{Evolutionary\+Algorithm@{Evolutionary\+Algorithm}!Evolutionary\+Algorithm@{Evolutionary\+Algorithm}}
 \index{Evolutionary\+Algorithm@{Evolutionary\+Algorithm}!Evolutionary\+Algorithm@{Evolutionary\+Algorithm}}
 \subsubsection{\texorpdfstring{Evolutionary\+Algorithm()}{EvolutionaryAlgorithm()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily Evolutionary\+Algorithm\+::\+Evolutionary\+Algorithm (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+A \hyperlink{classCarParameters}{Car\+Parameters} default constructor. 
 
 
 
@@ -115,6 +123,17 @@ Definition at line 10 of file Evolutionary\+Algorithm.\+cpp.
 
 
 
+A Method for performing a crossover over two values. 
+
+The Method is designed to perform the crossover of attributes originated from mother and father attribute. 
+\begin{DoxyParams}{Parameters}
+{\em mother} & is an attribute which will be crossed with father\textquotesingle{}s value in order to generate new value. \\
+\hline
+{\em father} & is an attribute which will be crossed with mother\textquotesingle{}s value in order to generate new value. \\
+\hline
+\end{DoxyParams}
+
+
 Definition at line 197 of file Evolutionary\+Algorithm.\+cpp.
 
 
@@ -131,6 +150,17 @@ Definition at line 197 of file Evolutionary\+Algorithm.\+cpp.
 \subsubsection{\texorpdfstring{do\+Crossover()}{doCrossover()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily \hyperlink{classCarParameters}{Car\+Parameters} Evolutionary\+Algorithm\+::do\+Crossover (\begin{DoxyParamCaption}\item[{const \hyperlink{classCarParameters}{Car\+Parameters} \&}]{mother,  }\item[{const \hyperlink{classCarParameters}{Car\+Parameters} \&}]{father }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+A Method for performing a crossover over two \hyperlink{classCarParameters}{Car\+Parameters} object. 
+
+The Method is designed to perform the crossover of attributes over two \hyperlink{classCarParameters}{Car\+Parameters} which consist of mother and father parameters 
+\begin{DoxyParams}{Parameters}
+{\em mother} & is a Car\+Parameter object which attributes will be crossed with father in order to generate new Car\+Parameter \\
+\hline
+{\em father} & is a Car\+Parameter object which attributes will be crossed with mother in order to generate new Car\+Parameter \\
+\hline
+\end{DoxyParams}
 
 
 Definition at line 166 of file Evolutionary\+Algorithm.\+cpp.
@@ -186,6 +216,17 @@ Definition at line 166 of file Evolutionary\+Algorithm.\+cpp.
 
 
 
+A Method for performing a mutation. 
+
+The Method is designed to perform the mutation on specified attribute from Car\+Parameter object. 
+\begin{DoxyParams}{Parameters}
+{\em value} & is an attribute\textquotesingle{}s value on which mutation will be performed. \\
+\hline
+{\em sigma} & is an expectation value of the normal distribution. \\
+\hline
+\end{DoxyParams}
+
+
 Definition at line 161 of file Evolutionary\+Algorithm.\+cpp.
 
 
@@ -203,6 +244,10 @@ Definition at line 161 of file Evolutionary\+Algorithm.\+cpp.
 
 
 
+A Method randomizing feature. 
+
+The Method is designed to perform the randomizing feature in order to choose whether the mutation or crossover occurs. 
+
 Definition at line 203 of file Evolutionary\+Algorithm.\+cpp.
 
 
@@ -218,6 +263,15 @@ Definition at line 203 of file Evolutionary\+Algorithm.\+cpp.
 \subsubsection{\texorpdfstring{generate\+New\+Population()}{generateNewPopulation()}}
 {\footnotesize\ttfamily const std\+::vector$<$ \hyperlink{classCarParameters}{Car\+Parameters} $>$ Evolutionary\+Algorithm\+::generate\+New\+Population (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+A Method for producing the first generation of cars. 
+
+The Method is designed to produce the first generation of cars on start of the program. The parameters of the car ale selected randomly by using uniform and normal distributions. 
+\begin{DoxyParams}{Parameters}
+{\em distances} & is a vector which consist of distances covered by lastly created generation. \\
+\hline
+\end{DoxyParams}
 
 
 Definition at line 60 of file Evolutionary\+Algorithm.\+cpp.
@@ -241,6 +295,10 @@ Definition at line 60 of file Evolutionary\+Algorithm.\+cpp.
 {\footnotesize\ttfamily const \hyperlink{classCarParameters}{Car\+Parameters} Evolutionary\+Algorithm\+::generate\+Random\+Car (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
 
 
+
+A Method for generating a car with random parameters. 
+
+The Method is designed to generate the very first population of cars on beginning of the program. The car parameters are generated randomly by using uniform and normal distributions. 
 
 Definition at line 20 of file Evolutionary\+Algorithm.\+cpp.
 
@@ -299,6 +357,10 @@ Definition at line 20 of file Evolutionary\+Algorithm.\+cpp.
 
 
 
+A Method for getting the value of crossover probability in newly generated populations. 
+
+
+
 Definition at line 121 of file Evolutionary\+Algorithm.\+cpp.
 
 
@@ -314,6 +376,10 @@ Definition at line 121 of file Evolutionary\+Algorithm.\+cpp.
 {\footnotesize\ttfamily \hyperlink{classEvolutionaryAlgorithm}{Evolutionary\+Algorithm} \& Evolutionary\+Algorithm\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
+
+A Method for design pattern of singleton. 
+
+The Method to recall the singleton instance of \hyperlink{classEvolutionaryAlgorithm}{Evolutionary\+Algorithm} object 
 
 Definition at line 15 of file Evolutionary\+Algorithm.\+cpp.
 
@@ -332,6 +398,10 @@ Definition at line 15 of file Evolutionary\+Algorithm.\+cpp.
 
 
 
+A Method for getting the value of mutation probability in newly generated populations. 
+
+
+
 Definition at line 117 of file Evolutionary\+Algorithm.\+cpp.
 
 
@@ -346,6 +416,15 @@ Definition at line 117 of file Evolutionary\+Algorithm.\+cpp.
 \subsubsection{\texorpdfstring{make\+New\+Generation()}{makeNewGeneration()}}
 {\footnotesize\ttfamily const std\+::vector$<$ \hyperlink{classCarParameters}{Car\+Parameters} $>$ Evolutionary\+Algorithm\+::make\+New\+Generation (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ double $>$ \&}]{distances }\end{DoxyParamCaption})}
 
+
+
+A Method for producing new generation of cars. 
+
+The Method is designed to produce new generation of cars once the cars from previous generations are unable to move further. 
+\begin{DoxyParams}{Parameters}
+{\em distances} & a vector that stores the information about distances covered by corresponding car in previous generation. \\
+\hline
+\end{DoxyParams}
 
 
 Definition at line 70 of file Evolutionary\+Algorithm.\+cpp.
@@ -407,6 +486,20 @@ Definition at line 70 of file Evolutionary\+Algorithm.\+cpp.
 
 
 
+A Method for deciding whether a mutation will occur. 
+
+The Method is designed to perform the mutation on specified parameter. The decision about whether the mutation occurs is based on value of mutation\+\_\+probability\+\_\+. \begin{DoxySeeAlso}{See also}
+\hyperlink{classEvolutionaryAlgorithm_a19c58cc0434d314fb5378e3674546988}{maybe\+Mutate()} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em value} & is an attribute\textquotesingle{}s value on which mutation may be performed. \\
+\hline
+{\em sigma} & is a expectation value of the normal distribution \\
+\hline
+\end{DoxyParams}
+
+
 Definition at line 152 of file Evolutionary\+Algorithm.\+cpp.
 
 
@@ -426,6 +519,15 @@ Definition at line 152 of file Evolutionary\+Algorithm.\+cpp.
 \subsubsection{\texorpdfstring{maybe\+Mutate()}{maybeMutate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily bool Evolutionary\+Algorithm\+::maybe\+Mutate (\begin{DoxyParamCaption}\item[{\hyperlink{classCarParameters}{Car\+Parameters} \&}]{parameters }\end{DoxyParamCaption}) const}
 
+
+
+A Method for deciding whether a mutation will occur. 
+
+The Method is designed to perform the mutation on specified parameter. The decision about whether the mutation occurs is based on value of mutation\+\_\+probability\+\_\+. 
+\begin{DoxyParams}{Parameters}
+{\em parameters} & is a vector of car parameters on which mutation may be performed. \\
+\hline
+\end{DoxyParams}
 
 
 Definition at line 133 of file Evolutionary\+Algorithm.\+cpp.
@@ -469,6 +571,10 @@ Definition at line 133 of file Evolutionary\+Algorithm.\+cpp.
 \subsubsection{\texorpdfstring{operator=()}{operator=()}}
 {\footnotesize\ttfamily \hyperlink{classEvolutionaryAlgorithm}{Evolutionary\+Algorithm}\& Evolutionary\+Algorithm\+::operator= (\begin{DoxyParamCaption}\item[{const \hyperlink{classEvolutionaryAlgorithm}{Evolutionary\+Algorithm} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
 
+
+
+A \hyperlink{classCarParameters}{Car\+Parameters} copy and copy-\/assignment constructors are deleted. 
+
 \mbox{\Hypertarget{classEvolutionaryAlgorithm_a8efaa380f6d1b9a2f8a6ad44e2d362e2}\label{classEvolutionaryAlgorithm_a8efaa380f6d1b9a2f8a6ad44e2d362e2}} 
 \index{Evolutionary\+Algorithm@{Evolutionary\+Algorithm}!select\+One\+InN@{select\+One\+InN}}
 \index{select\+One\+InN@{select\+One\+InN}!Evolutionary\+Algorithm@{Evolutionary\+Algorithm}}
@@ -476,6 +582,10 @@ Definition at line 133 of file Evolutionary\+Algorithm.\+cpp.
 {\footnotesize\ttfamily const int Evolutionary\+Algorithm\+::select\+One\+InN (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
 
 
+
+A Method for selecting one instance from population to perform crossover. 
+
+The Method is designed to select an instance of \hyperlink{classCarParameters}{Car\+Parameters} from population. The method is based on rank based selection which depends on how the car with \hyperlink{classCarParameters}{Car\+Parameters} perform on road. If car covered further distance, the probability of picking it from population is higher. 
 
 Definition at line 112 of file Evolutionary\+Algorithm.\+cpp.
 
@@ -491,6 +601,10 @@ Definition at line 112 of file Evolutionary\+Algorithm.\+cpp.
 \index{set\+Crossover\+Probability\+\_\+@{set\+Crossover\+Probability\+\_\+}!Evolutionary\+Algorithm@{Evolutionary\+Algorithm}}
 \subsubsection{\texorpdfstring{set\+Crossover\+Probability\+\_\+()}{setCrossoverProbability\_()}}
 {\footnotesize\ttfamily void Evolutionary\+Algorithm\+::set\+Crossover\+Probability\+\_\+ (\begin{DoxyParamCaption}\item[{double}]{crossover\+\_\+probability }\end{DoxyParamCaption})}
+
+
+
+A Method for setting the value of crossover probability in newly generated populations. 
 
 
 
@@ -511,6 +625,10 @@ Definition at line 129 of file Evolutionary\+Algorithm.\+cpp.
 
 
 
+A Method for setting the value of the class vector attrubute which consist of parameters of lastly generated cars. 
+
+
+
 Definition at line 208 of file Evolutionary\+Algorithm.\+cpp.
 
 
@@ -525,6 +643,10 @@ Definition at line 208 of file Evolutionary\+Algorithm.\+cpp.
 \index{set\+Mutation\+Probability\+\_\+@{set\+Mutation\+Probability\+\_\+}!Evolutionary\+Algorithm@{Evolutionary\+Algorithm}}
 \subsubsection{\texorpdfstring{set\+Mutation\+Probability\+\_\+()}{setMutationProbability\_()}}
 {\footnotesize\ttfamily void Evolutionary\+Algorithm\+::set\+Mutation\+Probability\+\_\+ (\begin{DoxyParamCaption}\item[{double}]{mutation\+\_\+probability }\end{DoxyParamCaption})}
+
+
+
+A Method for setting the value of mutation probability in newly generated populations. 
 
 
 
@@ -548,7 +670,11 @@ Definition at line 125 of file Evolutionary\+Algorithm.\+cpp.
 
 
 
-Definition at line 48 of file Evolutionary\+Algorithm.\+h.
+Private constant variable. 
+
+Store the information about number of cars in each of the population. 
+
+Definition at line 120 of file Evolutionary\+Algorithm.\+h.
 
 \mbox{\Hypertarget{classEvolutionaryAlgorithm_a815be8b2644e2d1bdc6378c88ab03da3}\label{classEvolutionaryAlgorithm_a815be8b2644e2d1bdc6378c88ab03da3}} 
 \index{Evolutionary\+Algorithm@{Evolutionary\+Algorithm}!crossover\+\_\+probability\+\_\+@{crossover\+\_\+probability\+\_\+}}
@@ -558,7 +684,11 @@ Definition at line 48 of file Evolutionary\+Algorithm.\+h.
 
 
 
-Definition at line 52 of file Evolutionary\+Algorithm.\+h.
+Private variable. 
+
+Store the information about probability of crossover occurrence. 
+
+Definition at line 136 of file Evolutionary\+Algorithm.\+h.
 
 \mbox{\Hypertarget{classEvolutionaryAlgorithm_adbd823d385ad95bf20496fd2fc25ccde}\label{classEvolutionaryAlgorithm_adbd823d385ad95bf20496fd2fc25ccde}} 
 \index{Evolutionary\+Algorithm@{Evolutionary\+Algorithm}!generator\+\_\+@{generator\+\_\+}}
@@ -568,7 +698,11 @@ Definition at line 52 of file Evolutionary\+Algorithm.\+h.
 
 
 
-Definition at line 54 of file Evolutionary\+Algorithm.\+h.
+Private default\+\_\+random\+\_\+engine. 
+
+The attribute to perform effective randomization. 
+
+Definition at line 141 of file Evolutionary\+Algorithm.\+h.
 
 \mbox{\Hypertarget{classEvolutionaryAlgorithm_a85d23b07f2b2c8b1df581a9566111fa7}\label{classEvolutionaryAlgorithm_a85d23b07f2b2c8b1df581a9566111fa7}} 
 \index{Evolutionary\+Algorithm@{Evolutionary\+Algorithm}!last\+\_\+generation\+\_\+parameters\+\_\+@{last\+\_\+generation\+\_\+parameters\+\_\+}}
@@ -578,7 +712,11 @@ Definition at line 54 of file Evolutionary\+Algorithm.\+h.
 
 
 
-Definition at line 50 of file Evolutionary\+Algorithm.\+h.
+Private vector. 
+
+Store the information about parameters of lastly produced generation. 
+
+Definition at line 126 of file Evolutionary\+Algorithm.\+h.
 
 \mbox{\Hypertarget{classEvolutionaryAlgorithm_ab847e49664c7b97e1e55963e6f33b332}\label{classEvolutionaryAlgorithm_ab847e49664c7b97e1e55963e6f33b332}} 
 \index{Evolutionary\+Algorithm@{Evolutionary\+Algorithm}!mutation\+\_\+probability\+\_\+@{mutation\+\_\+probability\+\_\+}}
@@ -588,7 +726,11 @@ Definition at line 50 of file Evolutionary\+Algorithm.\+h.
 
 
 
-Definition at line 51 of file Evolutionary\+Algorithm.\+h.
+Private variable. 
+
+Store the information about probability of mutation occurrence. 
+
+Definition at line 131 of file Evolutionary\+Algorithm.\+h.
 
 
 

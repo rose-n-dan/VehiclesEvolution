@@ -2,6 +2,11 @@
 \label{classMapGraphics}\index{Map\+Graphics@{Map\+Graphics}}
 
 
+A \hyperlink{classMapGraphics}{Map\+Graphics} class .  
+
+
+
+
 {\ttfamily \#include $<$Map\+Graphics.\+h$>$}
 
 
@@ -16,25 +21,27 @@ Collaboration diagram for Map\+Graphics\+:
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{classMapGraphics_a389137596a79ed6a8239fe5451f8f470}{reset\+Polyline} (size\+\_\+t size)
-\item 
+\begin{DoxyCompactList}\small\item\em A Method for resetting the shape of polygon. \end{DoxyCompactList}\item 
 void \hyperlink{classMapGraphics_a0d58d85db2e9d6e62623ebab6ffa11e9}{set\+Vertex} (int i, const sf\+::\+Vector2f \&position)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em A Method for setting the position of i-\/th vertex. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{classMapGraphics_a6bd8a1174e0f56edb00def916a096e3c}{draw} (sf\+::\+Render\+Target \&target, sf\+::\+Render\+States states) const override
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em A method for drawing the \hyperlink{classMapGraphics}{Map\+Graphics} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 sf\+::\+Vertex\+Array \hyperlink{classMapGraphics_a2136d586176f0c3a008182ff3fba50e3}{map\+\_\+graphics\+\_\+}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Private array. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
+A \hyperlink{classMapGraphics}{Map\+Graphics} class . 
 
+A class which performs a graphical representation of a map. Determines the rules drawing and positioning of the map textures. 
 
-Definition at line 10 of file Map\+Graphics.\+h.
+Definition at line 12 of file Map\+Graphics.\+h.
 
 
 
@@ -44,6 +51,10 @@ Definition at line 10 of file Map\+Graphics.\+h.
 \index{draw@{draw}!Map\+Graphics@{Map\+Graphics}}
 \subsubsection{\texorpdfstring{draw()}{draw()}}
 {\footnotesize\ttfamily void Map\+Graphics\+::draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Target \&}]{target,  }\item[{sf\+::\+Render\+States}]{states }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}}
+
+
+
+A method for drawing the \hyperlink{classMapGraphics}{Map\+Graphics} object. 
 
 
 
@@ -63,6 +74,10 @@ Definition at line 7 of file Map\+Graphics.\+cpp.
 
 
 
+A Method for resetting the shape of polygon. 
+
+
+
 Definition at line 11 of file Map\+Graphics.\+cpp.
 
 
@@ -76,6 +91,10 @@ Definition at line 11 of file Map\+Graphics.\+cpp.
 \index{set\+Vertex@{set\+Vertex}!Map\+Graphics@{Map\+Graphics}}
 \subsubsection{\texorpdfstring{set\+Vertex()}{setVertex()}}
 {\footnotesize\ttfamily void Map\+Graphics\+::set\+Vertex (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{const sf\+::\+Vector2f \&}]{position }\end{DoxyParamCaption})}
+
+
+
+A Method for setting the position of i-\/th vertex. 
 
 
 
@@ -98,7 +117,11 @@ Definition at line 15 of file Map\+Graphics.\+cpp.
 
 
 
-Definition at line 19 of file Map\+Graphics.\+h.
+Private array. 
+
+Store the information about verticies which altogether create shape of map 
+
+Definition at line 28 of file Map\+Graphics.\+h.
 
 
 
