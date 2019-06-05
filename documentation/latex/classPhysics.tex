@@ -1,0 +1,401 @@
+\hypertarget{classPhysics}{}\section{Physics Class Reference}
+\label{classPhysics}\index{Physics@{Physics}}
+
+
+{\ttfamily \#include $<$Physics.\+h$>$}
+
+
+
+Collaboration diagram for Physics\+:
+% FIG 0
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPhysics_a6fe4747c42265cefae8a24b9a2a291ad}{Physics} (const \hyperlink{classPhysics}{Physics} \&)=delete
+\item 
+\hyperlink{classPhysics}{Physics} \& \hyperlink{classPhysics_ac67d8ce0efaaaf9b442863f8085619fe}{operator=} (const \hyperlink{classPhysics}{Physics} \&)=delete
+\item 
+void \hyperlink{classPhysics_a8ae58a3feb584b913d9fef04be7051b0}{update} (const int frame\+\_\+rate)
+\item 
+const bool \hyperlink{classPhysics_a44933e5f70128b1ff6d0ccb6dd7b3628}{all\+Dead} () const
+\item 
+void \hyperlink{classPhysics_a0c2c8ee78b42f9727d420f2fbb624e5a}{make\+Cars} (const std\+::vector$<$ \hyperlink{classCarParameters}{Car\+Parameters} $>$ \&cars\+\_\+parameters)
+\item 
+void \hyperlink{classPhysics_ad42659995ef232bb751eac09d0a4e8d9}{make\+Car} (const \hyperlink{classCarParameters}{Car\+Parameters} \&car\+\_\+parameters)
+\item 
+std\+::vector$<$ double $>$ \hyperlink{classPhysics_a185e8476eebb2de5d8b26e52f14d864b}{get\+Final\+Distances} () const
+\item 
+void \hyperlink{classPhysics_a466b0a9be955dcf7afd58afdd396a560}{notify\+Cars} ()
+\item 
+void \hyperlink{classPhysics_adb2d289adeba022a24562bfcd374df38}{notify\+Map} ()
+\item 
+void \hyperlink{classPhysics_a5ec463e5f4ccd5830de8c85c2398caaf}{notify\+Cars\+Positions} ()
+\item 
+const std\+::vector$<$ \hyperlink{classCar}{Car} $>$ \& \hyperlink{classPhysics_a1a235bab70736238746e3028799680e5}{get\+Cars} () const
+\item 
+const \hyperlink{classMap}{Map} \& \hyperlink{classPhysics_ad18d164ad1e718a207e5d5d16bff9f0c}{get\+Map} () const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classPhysics}{Physics} \& \hyperlink{classPhysics_ab0590d6f12821b4e4a3ef894663704a1}{get\+Instance} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPhysics_a4b2ebc0a344f04f48d227c72f0d0fbda}{Physics} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+b2\+Vec2 \hyperlink{classPhysics_a458f9e43685bda01b57e001b9793aed4}{gravity\+\_\+}
+\item 
+b2\+World \hyperlink{classPhysics_a6f9efee327d116528efb9fd16b405bc6}{world\+\_\+}
+\item 
+std\+::vector$<$ \hyperlink{classCar}{Car} $>$ \hyperlink{classPhysics_ad798f52a18a2e5975f349b1fd95ceefc}{cars\+\_\+}
+\item 
+\hyperlink{classMap}{Map} \hyperlink{classPhysics_a1f2b9c2d5ad391eff5e6ebd5cdf495fe}{map\+\_\+}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr int32 \hyperlink{classPhysics_a8d5ed35d229b2ddd31656165b75d3c5a}{V\+E\+L\+O\+C\+I\+T\+Y\+\_\+\+I\+T\+E\+R\+A\+T\+I\+O\+N\+S\+\_\+} \{16\}
+\item 
+static constexpr int32 \hyperlink{classPhysics_a90cdfb590e59b99d0950ca696b00894c}{P\+O\+S\+I\+T\+I\+O\+N\+\_\+\+I\+T\+E\+R\+A\+T\+I\+O\+N\+S\+\_\+} \{16\}
+\item 
+static const b2\+Vec2 \hyperlink{classPhysics_a960c795e535acff932299971c93aa166}{C\+A\+R\+\_\+\+S\+T\+A\+R\+T\+I\+N\+G\+\_\+\+P\+O\+S\+I\+T\+I\+O\+N\+\_\+} = b2\+Vec2(10.\+0f, 3.\+0f)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class implementing Factory and Singleton design patterns 
+
+Definition at line 24 of file Physics.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPhysics_a6fe4747c42265cefae8a24b9a2a291ad}\label{classPhysics_a6fe4747c42265cefae8a24b9a2a291ad}} 
+\index{Physics@{Physics}!Physics@{Physics}}
+\index{Physics@{Physics}!Physics@{Physics}}
+\subsubsection{\texorpdfstring{Physics()}{Physics()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Physics\+::\+Physics (\begin{DoxyParamCaption}\item[{const \hyperlink{classPhysics}{Physics} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classPhysics_a4b2ebc0a344f04f48d227c72f0d0fbda}\label{classPhysics_a4b2ebc0a344f04f48d227c72f0d0fbda}} 
+\index{Physics@{Physics}!Physics@{Physics}}
+\index{Physics@{Physics}!Physics@{Physics}}
+\subsubsection{\texorpdfstring{Physics()}{Physics()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Physics\+::\+Physics (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 9 of file Physics.\+cpp.
+
+
+\begin{DoxyCode}
+9                  : \hyperlink{classPhysics_a458f9e43685bda01b57e001b9793aed4}{gravity\_}(0.0f, 9.81f),
+10                       \hyperlink{classPhysics_a6f9efee327d116528efb9fd16b405bc6}{world\_}(\hyperlink{classPhysics_a458f9e43685bda01b57e001b9793aed4}{gravity\_}, \textcolor{keyword}{false}),
+11                       \hyperlink{classPhysics_a1f2b9c2d5ad391eff5e6ebd5cdf495fe}{map\_}(\hyperlink{classPhysics_a6f9efee327d116528efb9fd16b405bc6}{world\_}) \{
+12 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classPhysics_a44933e5f70128b1ff6d0ccb6dd7b3628}\label{classPhysics_a44933e5f70128b1ff6d0ccb6dd7b3628}} 
+\index{Physics@{Physics}!all\+Dead@{all\+Dead}}
+\index{all\+Dead@{all\+Dead}!Physics@{Physics}}
+\subsubsection{\texorpdfstring{all\+Dead()}{allDead()}}
+{\footnotesize\ttfamily const bool Physics\+::all\+Dead (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 20 of file Physics.\+cpp.
+
+
+\begin{DoxyCode}
+20                                   \{
+21     \textcolor{keywordtype}{bool} ret = \textcolor{keyword}{true};
+22 
+23     \textcolor{keywordflow}{if} (\hyperlink{classPhysics_ad798f52a18a2e5975f349b1fd95ceefc}{cars\_}.empty()) \{
+24         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+25     \}
+26 
+27     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} &car : \hyperlink{classPhysics_ad798f52a18a2e5975f349b1fd95ceefc}{cars\_})\{
+28         \textcolor{keywordflow}{if} (!car.isDead()) \{
+29           ret = \textcolor{keyword}{false};
+30         \}
+31     \}
+32 
+33     \textcolor{keywordflow}{return} ret;
+34 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classPhysics_a1a235bab70736238746e3028799680e5}\label{classPhysics_a1a235bab70736238746e3028799680e5}} 
+\index{Physics@{Physics}!get\+Cars@{get\+Cars}}
+\index{get\+Cars@{get\+Cars}!Physics@{Physics}}
+\subsubsection{\texorpdfstring{get\+Cars()}{getCars()}}
+{\footnotesize\ttfamily const std\+::vector$<$ \hyperlink{classCar}{Car} $>$ \& Physics\+::get\+Cars (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 78 of file Physics.\+cpp.
+
+
+\begin{DoxyCode}
+78                                              \{
+79     \textcolor{keywordflow}{return} \hyperlink{classPhysics_ad798f52a18a2e5975f349b1fd95ceefc}{cars\_};
+80 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classPhysics_a185e8476eebb2de5d8b26e52f14d864b}\label{classPhysics_a185e8476eebb2de5d8b26e52f14d864b}} 
+\index{Physics@{Physics}!get\+Final\+Distances@{get\+Final\+Distances}}
+\index{get\+Final\+Distances@{get\+Final\+Distances}!Physics@{Physics}}
+\subsubsection{\texorpdfstring{get\+Final\+Distances()}{getFinalDistances()}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ Physics\+::get\+Final\+Distances (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 69 of file Physics.\+cpp.
+
+
+\begin{DoxyCode}
+69                                                    \{
+70     std::vector<double> distances;
+71     \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto} & car : \hyperlink{classPhysics_ad798f52a18a2e5975f349b1fd95ceefc}{cars\_}) \{
+72         distances.push\_back(car.getPosition().x);
+73     \}
+74 
+75     \textcolor{keywordflow}{return} distances;
+76 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classPhysics_ab0590d6f12821b4e4a3ef894663704a1}\label{classPhysics_ab0590d6f12821b4e4a3ef894663704a1}} 
+\index{Physics@{Physics}!get\+Instance@{get\+Instance}}
+\index{get\+Instance@{get\+Instance}!Physics@{Physics}}
+\subsubsection{\texorpdfstring{get\+Instance()}{getInstance()}}
+{\footnotesize\ttfamily static \hyperlink{classPhysics}{Physics}\& Physics\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line 30 of file Physics.\+h.
+
+
+\begin{DoxyCode}
+30                                   \{
+31         \textcolor{keyword}{static} \hyperlink{classPhysics}{Physics} physicsInstance;
+32         \textcolor{keywordflow}{return} physicsInstance;
+33     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classPhysics_ad18d164ad1e718a207e5d5d16bff9f0c}\label{classPhysics_ad18d164ad1e718a207e5d5d16bff9f0c}} 
+\index{Physics@{Physics}!get\+Map@{get\+Map}}
+\index{get\+Map@{get\+Map}!Physics@{Physics}}
+\subsubsection{\texorpdfstring{get\+Map()}{getMap()}}
+{\footnotesize\ttfamily const \hyperlink{classMap}{Map} \& Physics\+::get\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 82 of file Physics.\+cpp.
+
+
+\begin{DoxyCode}
+82                                  \{
+83     \textcolor{keywordflow}{return} \hyperlink{classPhysics_a1f2b9c2d5ad391eff5e6ebd5cdf495fe}{map\_};
+84 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classPhysics_ad42659995ef232bb751eac09d0a4e8d9}\label{classPhysics_ad42659995ef232bb751eac09d0a4e8d9}} 
+\index{Physics@{Physics}!make\+Car@{make\+Car}}
+\index{make\+Car@{make\+Car}!Physics@{Physics}}
+\subsubsection{\texorpdfstring{make\+Car()}{makeCar()}}
+{\footnotesize\ttfamily void Physics\+::make\+Car (\begin{DoxyParamCaption}\item[{const \hyperlink{classCarParameters}{Car\+Parameters} \&}]{car\+\_\+parameters }\end{DoxyParamCaption})}
+
+
+
+Definition at line 63 of file Physics.\+cpp.
+
+
+\begin{DoxyCode}
+63                                                          \{
+64     \hyperlink{classPhysics_ad798f52a18a2e5975f349b1fd95ceefc}{cars\_}.emplace\_back(\hyperlink{classPhysics_a6f9efee327d116528efb9fd16b405bc6}{world\_}, \hyperlink{classPhysics_a960c795e535acff932299971c93aa166}{CAR\_STARTING\_POSITION\_}, car\_parameters);
+65 
+66     \hyperlink{classPhysics_a466b0a9be955dcf7afd58afdd396a560}{notifyCars}();
+67 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classPhysics_a0c2c8ee78b42f9727d420f2fbb624e5a}\label{classPhysics_a0c2c8ee78b42f9727d420f2fbb624e5a}} 
+\index{Physics@{Physics}!make\+Cars@{make\+Cars}}
+\index{make\+Cars@{make\+Cars}!Physics@{Physics}}
+\subsubsection{\texorpdfstring{make\+Cars()}{makeCars()}}
+{\footnotesize\ttfamily void Physics\+::make\+Cars (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \hyperlink{classCarParameters}{Car\+Parameters} $>$ \&}]{cars\+\_\+parameters }\end{DoxyParamCaption})}
+
+
+
+Definition at line 48 of file Physics.\+cpp.
+
+
+\begin{DoxyCode}
+48                                                                       \{
+49     \textcolor{comment}{// store the initial parameters for future generations}
+50     \hyperlink{classEvolutionaryAlgorithm_a306ea15ca9a4eb67b84d22c7b24ef659}{EvolutionaryAlgorithm::getInstance}().
+      \hyperlink{classEvolutionaryAlgorithm_accd59515cc111edb66a030e7f8d79099}{setLastGenerationParameters}(cars\_parameters);
+51 
+52     \hyperlink{classPhysics_ad798f52a18a2e5975f349b1fd95ceefc}{cars\_}.clear();
+53 
+54     \textcolor{comment}{// don't mess with the order of constructed cars}
+55     \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto} &car\_parameters : cars\_parameters)
+56     \{
+57         \hyperlink{classPhysics_ad798f52a18a2e5975f349b1fd95ceefc}{cars\_}.emplace\_back(\hyperlink{classPhysics_a6f9efee327d116528efb9fd16b405bc6}{world\_}, \hyperlink{classPhysics_a960c795e535acff932299971c93aa166}{CAR\_STARTING\_POSITION\_}, car\_parameters)
+      ;
+58     \}
+59 
+60     \hyperlink{classPhysics_a466b0a9be955dcf7afd58afdd396a560}{notifyCars}();
+61 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classPhysics_a466b0a9be955dcf7afd58afdd396a560}\label{classPhysics_a466b0a9be955dcf7afd58afdd396a560}} 
+\index{Physics@{Physics}!notify\+Cars@{notify\+Cars}}
+\index{notify\+Cars@{notify\+Cars}!Physics@{Physics}}
+\subsubsection{\texorpdfstring{notify\+Cars()}{notifyCars()}}
+{\footnotesize\ttfamily void Physics\+::notify\+Cars (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 36 of file Physics.\+cpp.
+
+
+\begin{DoxyCode}
+36                          \{
+37     \hyperlink{classGraphics_a115d78c8686f6c82add227bf1fe2c81c}{Graphics::getInstance}().\hyperlink{classGraphics_aee9384443642037cef28b28acddf86d3}{newCars}(\hyperlink{classPhysics_ad798f52a18a2e5975f349b1fd95ceefc}{cars\_});
+38 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classPhysics_a5ec463e5f4ccd5830de8c85c2398caaf}\label{classPhysics_a5ec463e5f4ccd5830de8c85c2398caaf}} 
+\index{Physics@{Physics}!notify\+Cars\+Positions@{notify\+Cars\+Positions}}
+\index{notify\+Cars\+Positions@{notify\+Cars\+Positions}!Physics@{Physics}}
+\subsubsection{\texorpdfstring{notify\+Cars\+Positions()}{notifyCarsPositions()}}
+{\footnotesize\ttfamily void Physics\+::notify\+Cars\+Positions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 44 of file Physics.\+cpp.
+
+
+\begin{DoxyCode}
+44                                   \{
+45     \hyperlink{classGraphics_a115d78c8686f6c82add227bf1fe2c81c}{Graphics::getInstance}().\hyperlink{classGraphics_a5f2e6a6cc8dffc34b48e66df42046243}{newCarsPositions}(
+      \hyperlink{classPhysics_ad798f52a18a2e5975f349b1fd95ceefc}{cars\_});
+46 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classPhysics_adb2d289adeba022a24562bfcd374df38}\label{classPhysics_adb2d289adeba022a24562bfcd374df38}} 
+\index{Physics@{Physics}!notify\+Map@{notify\+Map}}
+\index{notify\+Map@{notify\+Map}!Physics@{Physics}}
+\subsubsection{\texorpdfstring{notify\+Map()}{notifyMap()}}
+{\footnotesize\ttfamily void Physics\+::notify\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 40 of file Physics.\+cpp.
+
+
+\begin{DoxyCode}
+40                         \{
+41     \hyperlink{classGraphics_a115d78c8686f6c82add227bf1fe2c81c}{Graphics::getInstance}().\hyperlink{classGraphics_adf0937a71f5d477bcd9c553fe863e87b}{newMap}(\hyperlink{classPhysics_a1f2b9c2d5ad391eff5e6ebd5cdf495fe}{map\_});
+42 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classPhysics_ac67d8ce0efaaaf9b442863f8085619fe}\label{classPhysics_ac67d8ce0efaaaf9b442863f8085619fe}} 
+\index{Physics@{Physics}!operator=@{operator=}}
+\index{operator=@{operator=}!Physics@{Physics}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \hyperlink{classPhysics}{Physics}\& Physics\+::operator= (\begin{DoxyParamCaption}\item[{const \hyperlink{classPhysics}{Physics} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classPhysics_a8ae58a3feb584b913d9fef04be7051b0}\label{classPhysics_a8ae58a3feb584b913d9fef04be7051b0}} 
+\index{Physics@{Physics}!update@{update}}
+\index{update@{update}!Physics@{Physics}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Physics\+::update (\begin{DoxyParamCaption}\item[{const int}]{frame\+\_\+rate }\end{DoxyParamCaption})}
+
+
+
+Definition at line 14 of file Physics.\+cpp.
+
+
+\begin{DoxyCode}
+14                                          \{
+15     float32 timeStep = 1.0f / frame\_rate;
+16 
+17     \hyperlink{classPhysics_a6f9efee327d116528efb9fd16b405bc6}{world\_}.Step(timeStep, \hyperlink{classPhysics_a8d5ed35d229b2ddd31656165b75d3c5a}{VELOCITY\_ITERATIONS\_}, 
+      \hyperlink{classPhysics_a90cdfb590e59b99d0950ca696b00894c}{POSITION\_ITERATIONS\_});
+18 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classPhysics_a960c795e535acff932299971c93aa166}\label{classPhysics_a960c795e535acff932299971c93aa166}} 
+\index{Physics@{Physics}!C\+A\+R\+\_\+\+S\+T\+A\+R\+T\+I\+N\+G\+\_\+\+P\+O\+S\+I\+T\+I\+O\+N\+\_\+@{C\+A\+R\+\_\+\+S\+T\+A\+R\+T\+I\+N\+G\+\_\+\+P\+O\+S\+I\+T\+I\+O\+N\+\_\+}}
+\index{C\+A\+R\+\_\+\+S\+T\+A\+R\+T\+I\+N\+G\+\_\+\+P\+O\+S\+I\+T\+I\+O\+N\+\_\+@{C\+A\+R\+\_\+\+S\+T\+A\+R\+T\+I\+N\+G\+\_\+\+P\+O\+S\+I\+T\+I\+O\+N\+\_\+}!Physics@{Physics}}
+\subsubsection{\texorpdfstring{C\+A\+R\+\_\+\+S\+T\+A\+R\+T\+I\+N\+G\+\_\+\+P\+O\+S\+I\+T\+I\+O\+N\+\_\+}{CAR\_STARTING\_POSITION\_}}
+{\footnotesize\ttfamily const b2\+Vec2 Physics\+::\+C\+A\+R\+\_\+\+S\+T\+A\+R\+T\+I\+N\+G\+\_\+\+P\+O\+S\+I\+T\+I\+O\+N\+\_\+ = b2\+Vec2(10.\+0f, 3.\+0f)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line 56 of file Physics.\+h.
+
+\mbox{\Hypertarget{classPhysics_ad798f52a18a2e5975f349b1fd95ceefc}\label{classPhysics_ad798f52a18a2e5975f349b1fd95ceefc}} 
+\index{Physics@{Physics}!cars\+\_\+@{cars\+\_\+}}
+\index{cars\+\_\+@{cars\+\_\+}!Physics@{Physics}}
+\subsubsection{\texorpdfstring{cars\+\_\+}{cars\_}}
+{\footnotesize\ttfamily std\+::vector$<$\hyperlink{classCar}{Car}$>$ Physics\+::cars\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 60 of file Physics.\+h.
+
+\mbox{\Hypertarget{classPhysics_a458f9e43685bda01b57e001b9793aed4}\label{classPhysics_a458f9e43685bda01b57e001b9793aed4}} 
+\index{Physics@{Physics}!gravity\+\_\+@{gravity\+\_\+}}
+\index{gravity\+\_\+@{gravity\+\_\+}!Physics@{Physics}}
+\subsubsection{\texorpdfstring{gravity\+\_\+}{gravity\_}}
+{\footnotesize\ttfamily b2\+Vec2 Physics\+::gravity\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 58 of file Physics.\+h.
+
+\mbox{\Hypertarget{classPhysics_a1f2b9c2d5ad391eff5e6ebd5cdf495fe}\label{classPhysics_a1f2b9c2d5ad391eff5e6ebd5cdf495fe}} 
+\index{Physics@{Physics}!map\+\_\+@{map\+\_\+}}
+\index{map\+\_\+@{map\+\_\+}!Physics@{Physics}}
+\subsubsection{\texorpdfstring{map\+\_\+}{map\_}}
+{\footnotesize\ttfamily \hyperlink{classMap}{Map} Physics\+::map\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 61 of file Physics.\+h.
+
+\mbox{\Hypertarget{classPhysics_a90cdfb590e59b99d0950ca696b00894c}\label{classPhysics_a90cdfb590e59b99d0950ca696b00894c}} 
+\index{Physics@{Physics}!P\+O\+S\+I\+T\+I\+O\+N\+\_\+\+I\+T\+E\+R\+A\+T\+I\+O\+N\+S\+\_\+@{P\+O\+S\+I\+T\+I\+O\+N\+\_\+\+I\+T\+E\+R\+A\+T\+I\+O\+N\+S\+\_\+}}
+\index{P\+O\+S\+I\+T\+I\+O\+N\+\_\+\+I\+T\+E\+R\+A\+T\+I\+O\+N\+S\+\_\+@{P\+O\+S\+I\+T\+I\+O\+N\+\_\+\+I\+T\+E\+R\+A\+T\+I\+O\+N\+S\+\_\+}!Physics@{Physics}}
+\subsubsection{\texorpdfstring{P\+O\+S\+I\+T\+I\+O\+N\+\_\+\+I\+T\+E\+R\+A\+T\+I\+O\+N\+S\+\_\+}{POSITION\_ITERATIONS\_}}
+{\footnotesize\ttfamily constexpr int32 Physics\+::\+P\+O\+S\+I\+T\+I\+O\+N\+\_\+\+I\+T\+E\+R\+A\+T\+I\+O\+N\+S\+\_\+ \{16\}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line 54 of file Physics.\+h.
+
+\mbox{\Hypertarget{classPhysics_a8d5ed35d229b2ddd31656165b75d3c5a}\label{classPhysics_a8d5ed35d229b2ddd31656165b75d3c5a}} 
+\index{Physics@{Physics}!V\+E\+L\+O\+C\+I\+T\+Y\+\_\+\+I\+T\+E\+R\+A\+T\+I\+O\+N\+S\+\_\+@{V\+E\+L\+O\+C\+I\+T\+Y\+\_\+\+I\+T\+E\+R\+A\+T\+I\+O\+N\+S\+\_\+}}
+\index{V\+E\+L\+O\+C\+I\+T\+Y\+\_\+\+I\+T\+E\+R\+A\+T\+I\+O\+N\+S\+\_\+@{V\+E\+L\+O\+C\+I\+T\+Y\+\_\+\+I\+T\+E\+R\+A\+T\+I\+O\+N\+S\+\_\+}!Physics@{Physics}}
+\subsubsection{\texorpdfstring{V\+E\+L\+O\+C\+I\+T\+Y\+\_\+\+I\+T\+E\+R\+A\+T\+I\+O\+N\+S\+\_\+}{VELOCITY\_ITERATIONS\_}}
+{\footnotesize\ttfamily constexpr int32 Physics\+::\+V\+E\+L\+O\+C\+I\+T\+Y\+\_\+\+I\+T\+E\+R\+A\+T\+I\+O\+N\+S\+\_\+ \{16\}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line 53 of file Physics.\+h.
+
+\mbox{\Hypertarget{classPhysics_a6f9efee327d116528efb9fd16b405bc6}\label{classPhysics_a6f9efee327d116528efb9fd16b405bc6}} 
+\index{Physics@{Physics}!world\+\_\+@{world\+\_\+}}
+\index{world\+\_\+@{world\+\_\+}!Physics@{Physics}}
+\subsubsection{\texorpdfstring{world\+\_\+}{world\_}}
+{\footnotesize\ttfamily b2\+World Physics\+::world\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 59 of file Physics.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Physics/\hyperlink{Physics_8h}{Physics.\+h}\item 
+src/\+Physics/\hyperlink{Physics_8cpp}{Physics.\+cpp}\end{DoxyCompactItemize}

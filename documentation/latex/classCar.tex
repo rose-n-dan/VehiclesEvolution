@@ -1,0 +1,442 @@
+\hypertarget{classCar}{}\section{Car Class Reference}
+\label{classCar}\index{Car@{Car}}
+
+
+{\ttfamily \#include $<$Car.\+h$>$}
+
+
+
+Collaboration diagram for Car\+:
+% FIG 0
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCar_aedf13bf38dd3f77f92db6ea7f4ebab6b}{Car} (b2\+World \&world, const b2\+Vec2 \&position, const \hyperlink{classCarParameters}{Car\+Parameters} \&car\+\_\+parameters)
+\item 
+const b2\+Vec2 \& \hyperlink{classCar_aedf5fdf009d300cd2dc7faa51f30224b}{get\+Position} () const
+\item 
+const b2\+Vec2 \hyperlink{classCar_a3be84dd5291ab0fcd0110b78d8757cc1}{get\+Velocity} () const
+\item 
+const b2\+Vec2 \& \hyperlink{classCar_a0e86ef897f09538a3815965b99d97f48}{get\+Front\+Wheel\+Position} () const
+\item 
+const b2\+Vec2 \& \hyperlink{classCar_a66a6f10dda6b6f5a58126d58eba6f2d0}{get\+Rear\+Wheel\+Position} () const
+\item 
+const double \hyperlink{classCar_a00f0b724a34f1f98411e098492823bf1}{get\+Front\+Wheel\+Radius} () const
+\item 
+const double \hyperlink{classCar_aeb0e2313eb141c7977f3c1a9a2737933}{get\+Rear\+Wheel\+Radius} () const
+\item 
+std\+::vector$<$ b2\+Vec2 $>$ \hyperlink{classCar_a54179bc7ddca42a4f285c0475174f5b5}{get\+Car\+Body\+Vertices} () const
+\item 
+const double \hyperlink{classCar_aeb9ab35989aee09eecccc786ae08c89c}{get\+Angle} () const
+\item 
+const bool \hyperlink{classCar_a681870b52aa9ad835ddbfcf74ceee84d}{is\+Dead} () const
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classWheel}{Wheel} \hyperlink{classCar_a9c6abcefc82b364b09e67fad1b200beb}{front\+\_\+wheel\+\_\+}
+\item 
+\hyperlink{classWheel}{Wheel} \hyperlink{classCar_a2c29a444d66ee10134352516e42c3e0d}{rear\+\_\+wheel\+\_\+}
+\item 
+\hyperlink{classCarBody}{Car\+Body} \hyperlink{classCar_a6a0d40752a134fb4f0693a28a4e64a0d}{car\+\_\+body\+\_\+}
+\item 
+b2\+Revolute\+Joint\+Def \hyperlink{classCar_a4e2939a9c523e2e264ea2377a4829f7c}{front\+\_\+joint\+\_\+def\+\_\+}
+\item 
+b2\+Revolute\+Joint\+Def \hyperlink{classCar_a6d59c94896a5b765761b89b0ae3b8e64}{rear\+\_\+joint\+\_\+def\+\_\+}
+\item 
+b2\+Revolute\+Joint $\ast$ \hyperlink{classCar_a65195e0f8bdcb242616b6c285d7ff07a}{front\+\_\+joint\+\_\+}
+\item 
+b2\+Revolute\+Joint $\ast$ \hyperlink{classCar_ac916d27d34a5a9aa07129894b79f1aa7}{rear\+\_\+joint\+\_\+}
+\item 
+bool \hyperlink{classCar_a73e9873dd2c3c0ab7bbd6623ac9085a8}{is\+\_\+dead\+\_\+}
+\item 
+bool \hyperlink{classCar_a348ee6b161f174a80ed4c38f9f84d789}{started\+\_\+}
+\item 
+std\+::chrono\+::time\+\_\+point$<$ std\+::chrono\+::high\+\_\+resolution\+\_\+clock $>$ \hyperlink{classCar_a164067ddfd603614a22d9c178bfa6308}{stands\+\_\+still\+\_\+since}
+\item 
+double \hyperlink{classCar_ac74055f1a48feb09e7c15714125ee190}{last\+\_\+iteration\+\_\+position\+\_\+x}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr float \hyperlink{classCar_a70cd98e49fe96eec0bc4f0c414fd8e19}{M\+A\+X\+\_\+\+M\+O\+T\+O\+R\+\_\+\+T\+O\+R\+Q\+U\+E\+\_\+} = 3000.\+0f
+\item 
+static constexpr float \hyperlink{classCar_a371b4dcd77eb566677d633db4dd457ae}{M\+O\+T\+O\+R\+\_\+\+S\+P\+E\+E\+D\+\_\+} = 40.\+0f
+\item 
+static constexpr double \hyperlink{classCar_aa988813339e3a1a8484484ac74b3d4e0}{T\+I\+M\+E\+\_\+\+S\+T\+A\+N\+D\+I\+N\+G\+\_\+\+S\+T\+I\+L\+L\+\_\+\+T\+O\+\_\+\+D\+I\+E\+\_\+\+S\+\_\+} \{5\}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 17 of file Car.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCar_aedf13bf38dd3f77f92db6ea7f4ebab6b}\label{classCar_aedf13bf38dd3f77f92db6ea7f4ebab6b}} 
+\index{Car@{Car}!Car@{Car}}
+\index{Car@{Car}!Car@{Car}}
+\subsubsection{\texorpdfstring{Car()}{Car()}}
+{\footnotesize\ttfamily Car\+::\+Car (\begin{DoxyParamCaption}\item[{b2\+World \&}]{world,  }\item[{const b2\+Vec2 \&}]{position,  }\item[{const \hyperlink{classCarParameters}{Car\+Parameters} \&}]{car\+\_\+parameters }\end{DoxyParamCaption})}
+
+
+
+Definition at line 7 of file Car.\+cpp.
+
+
+\begin{DoxyCode}
+7                                                                                     :
+8                                                                 \hyperlink{classCar_a73e9873dd2c3c0ab7bbd6623ac9085a8}{is\_dead\_}(\textcolor{keyword}{false}),
+9                                                                 \hyperlink{classCar_a348ee6b161f174a80ed4c38f9f84d789}{started\_}(\textcolor{keyword}{false}),
+10                                                                 \hyperlink{classCar_a6a0d40752a134fb4f0693a28a4e64a0d}{car\_body\_}(world, position, 
+      car\_parameters.\hyperlink{classCarParameters_a304345d7fd7771c87421e87785bce810}{car\_body\_}),
+11                                                                 \hyperlink{classCar_a9c6abcefc82b364b09e67fad1b200beb}{front\_wheel\_}(world, 
+      car\_parameters.\hyperlink{classCarParameters_ab66832af7618ebe04364630c92850096}{front\_wheel\_radius\_}),
+12                                                                 \hyperlink{classCar_a2c29a444d66ee10134352516e42c3e0d}{rear\_wheel\_}(world, 
+      car\_parameters.\hyperlink{classCarParameters_a6d3c3fc1c4eef292a7f536da2a089bbd}{rear\_wheel\_radius\_}) \{
+13     \hyperlink{classCar_a4e2939a9c523e2e264ea2377a4829f7c}{front\_joint\_def\_}.bodyA = \hyperlink{classCar_a6a0d40752a134fb4f0693a28a4e64a0d}{car\_body\_}.\hyperlink{classCarBody_abf98252ba6d666ce771acfdf7c6d66cb}{getBody}();
+14     \hyperlink{classCar_a4e2939a9c523e2e264ea2377a4829f7c}{front\_joint\_def\_}.bodyB = \hyperlink{classCar_a9c6abcefc82b364b09e67fad1b200beb}{front\_wheel\_}.\hyperlink{classWheel_af278d5423746dfc46834ec6b225d4e17}{getBody}();
+15     \hyperlink{classCar_a4e2939a9c523e2e264ea2377a4829f7c}{front\_joint\_def\_}.collideConnected = \textcolor{keyword}{false};
+16     \hyperlink{classCar_a4e2939a9c523e2e264ea2377a4829f7c}{front\_joint\_def\_}.localAnchorA.Set(car\_parameters.
+      \hyperlink{classCarParameters_a471bcf264de846ca28e52bde8780f6a8}{front\_joint\_}.x, car\_parameters.\hyperlink{classCarParameters_a471bcf264de846ca28e52bde8780f6a8}{front\_joint\_}.y);
+17     \hyperlink{classCar_a4e2939a9c523e2e264ea2377a4829f7c}{front\_joint\_def\_}.localAnchorB.Set(0.0f, 0.0f);
+18     \hyperlink{classCar_a4e2939a9c523e2e264ea2377a4829f7c}{front\_joint\_def\_}.maxMotorTorque = \hyperlink{classCar_a70cd98e49fe96eec0bc4f0c414fd8e19}{MAX\_MOTOR\_TORQUE\_};
+19     \hyperlink{classCar_a4e2939a9c523e2e264ea2377a4829f7c}{front\_joint\_def\_}.motorSpeed = \hyperlink{classCar_a371b4dcd77eb566677d633db4dd457ae}{MOTOR\_SPEED\_};
+20     \hyperlink{classCar_a4e2939a9c523e2e264ea2377a4829f7c}{front\_joint\_def\_}.enableMotor = \textcolor{keyword}{true};
+21 
+22     \hyperlink{classCar_a65195e0f8bdcb242616b6c285d7ff07a}{front\_joint\_} = (b2RevoluteJoint*)world.CreateJoint(&
+      \hyperlink{classCar_a4e2939a9c523e2e264ea2377a4829f7c}{front\_joint\_def\_});
+23 
+24     \hyperlink{classCar_a6d59c94896a5b765761b89b0ae3b8e64}{rear\_joint\_def\_}.bodyA = \hyperlink{classCar_a6a0d40752a134fb4f0693a28a4e64a0d}{car\_body\_}.\hyperlink{classCarBody_abf98252ba6d666ce771acfdf7c6d66cb}{getBody}();
+25     \hyperlink{classCar_a6d59c94896a5b765761b89b0ae3b8e64}{rear\_joint\_def\_}.bodyB = \hyperlink{classCar_a2c29a444d66ee10134352516e42c3e0d}{rear\_wheel\_}.\hyperlink{classWheel_af278d5423746dfc46834ec6b225d4e17}{getBody}();
+26     \hyperlink{classCar_a6d59c94896a5b765761b89b0ae3b8e64}{rear\_joint\_def\_}.collideConnected = \textcolor{keyword}{false};
+27     \hyperlink{classCar_a6d59c94896a5b765761b89b0ae3b8e64}{rear\_joint\_def\_}.localAnchorA.Set(car\_parameters.\hyperlink{classCarParameters_aec19cf9d1c6ab5f00ac5ff166ee0015a}{rear\_joint\_}.x, car\_parameters
+      .\hyperlink{classCarParameters_aec19cf9d1c6ab5f00ac5ff166ee0015a}{rear\_joint\_}.y);
+28     \hyperlink{classCar_a6d59c94896a5b765761b89b0ae3b8e64}{rear\_joint\_def\_}.localAnchorB.Set(0.0f, 0.0f);
+29     \hyperlink{classCar_a6d59c94896a5b765761b89b0ae3b8e64}{rear\_joint\_def\_}.maxMotorTorque = \hyperlink{classCar_a70cd98e49fe96eec0bc4f0c414fd8e19}{MAX\_MOTOR\_TORQUE\_};
+30     \hyperlink{classCar_a6d59c94896a5b765761b89b0ae3b8e64}{rear\_joint\_def\_}.motorSpeed = \hyperlink{classCar_a371b4dcd77eb566677d633db4dd457ae}{MOTOR\_SPEED\_};
+31     \hyperlink{classCar_a6d59c94896a5b765761b89b0ae3b8e64}{rear\_joint\_def\_}.enableMotor = \textcolor{keyword}{true};
+32 
+33     \hyperlink{classCar_ac916d27d34a5a9aa07129894b79f1aa7}{rear\_joint\_} = (b2RevoluteJoint*)world.CreateJoint(&
+      \hyperlink{classCar_a6d59c94896a5b765761b89b0ae3b8e64}{rear\_joint\_def\_});
+34 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classCar_aeb9ab35989aee09eecccc786ae08c89c}\label{classCar_aeb9ab35989aee09eecccc786ae08c89c}} 
+\index{Car@{Car}!get\+Angle@{get\+Angle}}
+\index{get\+Angle@{get\+Angle}!Car@{Car}}
+\subsubsection{\texorpdfstring{get\+Angle()}{getAngle()}}
+{\footnotesize\ttfamily const double Car\+::get\+Angle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 64 of file Car.\+cpp.
+
+
+\begin{DoxyCode}
+64                                  \{
+65     \textcolor{keywordflow}{return} \hyperlink{classCar_a6a0d40752a134fb4f0693a28a4e64a0d}{car\_body\_}.\hyperlink{classCarBody_a92d8865abe51f98b4fa7b4314e7372d8}{getAngle}();
+66 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classCar_a54179bc7ddca42a4f285c0475174f5b5}\label{classCar_a54179bc7ddca42a4f285c0475174f5b5}} 
+\index{Car@{Car}!get\+Car\+Body\+Vertices@{get\+Car\+Body\+Vertices}}
+\index{get\+Car\+Body\+Vertices@{get\+Car\+Body\+Vertices}!Car@{Car}}
+\subsubsection{\texorpdfstring{get\+Car\+Body\+Vertices()}{getCarBodyVertices()}}
+{\footnotesize\ttfamily std\+::vector$<$ b2\+Vec2 $>$ Car\+::get\+Car\+Body\+Vertices (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 60 of file Car.\+cpp.
+
+
+\begin{DoxyCode}
+60                                                 \{
+61     \textcolor{keywordflow}{return} \hyperlink{classCar_a6a0d40752a134fb4f0693a28a4e64a0d}{car\_body\_}.\hyperlink{classCarBody_ad446bb563f4475c59d28054bbe886a9d}{getPolygon}();
+62 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classCar_a0e86ef897f09538a3815965b99d97f48}\label{classCar_a0e86ef897f09538a3815965b99d97f48}} 
+\index{Car@{Car}!get\+Front\+Wheel\+Position@{get\+Front\+Wheel\+Position}}
+\index{get\+Front\+Wheel\+Position@{get\+Front\+Wheel\+Position}!Car@{Car}}
+\subsubsection{\texorpdfstring{get\+Front\+Wheel\+Position()}{getFrontWheelPosition()}}
+{\footnotesize\ttfamily const b2\+Vec2 \& Car\+::get\+Front\+Wheel\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 44 of file Car.\+cpp.
+
+
+\begin{DoxyCode}
+44                                                \{
+45     \textcolor{keywordflow}{return} \hyperlink{classCar_a9c6abcefc82b364b09e67fad1b200beb}{front\_wheel\_}.\hyperlink{classWheel_a645ce5d8595047c6774f936794e3f543}{getPosition}();
+46 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classCar_a00f0b724a34f1f98411e098492823bf1}\label{classCar_a00f0b724a34f1f98411e098492823bf1}} 
+\index{Car@{Car}!get\+Front\+Wheel\+Radius@{get\+Front\+Wheel\+Radius}}
+\index{get\+Front\+Wheel\+Radius@{get\+Front\+Wheel\+Radius}!Car@{Car}}
+\subsubsection{\texorpdfstring{get\+Front\+Wheel\+Radius()}{getFrontWheelRadius()}}
+{\footnotesize\ttfamily const double Car\+::get\+Front\+Wheel\+Radius (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 52 of file Car.\+cpp.
+
+
+\begin{DoxyCode}
+52                                             \{
+53     \textcolor{keywordflow}{return} \hyperlink{classCar_a9c6abcefc82b364b09e67fad1b200beb}{front\_wheel\_}.\hyperlink{classWheel_a224ac73d325efb3cdc389a36d54ca10b}{getRadius}();
+54 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classCar_aedf5fdf009d300cd2dc7faa51f30224b}\label{classCar_aedf5fdf009d300cd2dc7faa51f30224b}} 
+\index{Car@{Car}!get\+Position@{get\+Position}}
+\index{get\+Position@{get\+Position}!Car@{Car}}
+\subsubsection{\texorpdfstring{get\+Position()}{getPosition()}}
+{\footnotesize\ttfamily const b2\+Vec2 \& Car\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 36 of file Car.\+cpp.
+
+
+\begin{DoxyCode}
+36                                      \{
+37     \textcolor{keywordflow}{return} \hyperlink{classCar_a6a0d40752a134fb4f0693a28a4e64a0d}{car\_body\_}.\hyperlink{classCarBody_aa58f688a6f2ae687870daa41b73db625}{getPosition}();
+38 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classCar_a66a6f10dda6b6f5a58126d58eba6f2d0}\label{classCar_a66a6f10dda6b6f5a58126d58eba6f2d0}} 
+\index{Car@{Car}!get\+Rear\+Wheel\+Position@{get\+Rear\+Wheel\+Position}}
+\index{get\+Rear\+Wheel\+Position@{get\+Rear\+Wheel\+Position}!Car@{Car}}
+\subsubsection{\texorpdfstring{get\+Rear\+Wheel\+Position()}{getRearWheelPosition()}}
+{\footnotesize\ttfamily const b2\+Vec2 \& Car\+::get\+Rear\+Wheel\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 48 of file Car.\+cpp.
+
+
+\begin{DoxyCode}
+48                                               \{
+49     \textcolor{keywordflow}{return} \hyperlink{classCar_a2c29a444d66ee10134352516e42c3e0d}{rear\_wheel\_}.\hyperlink{classWheel_a645ce5d8595047c6774f936794e3f543}{getPosition}();
+50 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classCar_aeb0e2313eb141c7977f3c1a9a2737933}\label{classCar_aeb0e2313eb141c7977f3c1a9a2737933}} 
+\index{Car@{Car}!get\+Rear\+Wheel\+Radius@{get\+Rear\+Wheel\+Radius}}
+\index{get\+Rear\+Wheel\+Radius@{get\+Rear\+Wheel\+Radius}!Car@{Car}}
+\subsubsection{\texorpdfstring{get\+Rear\+Wheel\+Radius()}{getRearWheelRadius()}}
+{\footnotesize\ttfamily const double Car\+::get\+Rear\+Wheel\+Radius (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 56 of file Car.\+cpp.
+
+
+\begin{DoxyCode}
+56                                            \{
+57     \textcolor{keywordflow}{return} \hyperlink{classCar_a2c29a444d66ee10134352516e42c3e0d}{rear\_wheel\_}.\hyperlink{classWheel_a224ac73d325efb3cdc389a36d54ca10b}{getRadius}();
+58 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classCar_a3be84dd5291ab0fcd0110b78d8757cc1}\label{classCar_a3be84dd5291ab0fcd0110b78d8757cc1}} 
+\index{Car@{Car}!get\+Velocity@{get\+Velocity}}
+\index{get\+Velocity@{get\+Velocity}!Car@{Car}}
+\subsubsection{\texorpdfstring{get\+Velocity()}{getVelocity()}}
+{\footnotesize\ttfamily const b2\+Vec2 Car\+::get\+Velocity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 40 of file Car.\+cpp.
+
+
+\begin{DoxyCode}
+40                                    \{
+41     \textcolor{keywordflow}{return} \hyperlink{classCar_a6a0d40752a134fb4f0693a28a4e64a0d}{car\_body\_}.\hyperlink{classCarBody_aac28c2ac7e21b88ebc85f9999bac9b3d}{getVelocity}();
+42 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classCar_a681870b52aa9ad835ddbfcf74ceee84d}\label{classCar_a681870b52aa9ad835ddbfcf74ceee84d}} 
+\index{Car@{Car}!is\+Dead@{is\+Dead}}
+\index{is\+Dead@{is\+Dead}!Car@{Car}}
+\subsubsection{\texorpdfstring{is\+Dead()}{isDead()}}
+{\footnotesize\ttfamily const bool Car\+::is\+Dead (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 68 of file Car.\+cpp.
+
+
+\begin{DoxyCode}
+68                              \{
+69     \textcolor{keywordflow}{if} (!\hyperlink{classCar_a73e9873dd2c3c0ab7bbd6623ac9085a8}{is\_dead\_}) \{
+70         std::chrono::duration<double> elapsed = std::chrono::high\_resolution\_clock::now() - 
+      \hyperlink{classCar_a164067ddfd603614a22d9c178bfa6308}{stands\_still\_since};
+71 
+72         \textcolor{comment}{// WTF ?!?!}
+73 \textcolor{comment}{//        std::cout << "Time not moving: " << elapsed.count() << std::endl;}
+74 \textcolor{comment}{//        std::cout << "Velocity by position: " << last\_iteration\_position\_x - getPosition().x <<
+       std::endl;}
+75 \textcolor{comment}{//        std::cout << "Velocity: " << getVelocity().x << std::endl;}
+76 
+77         \textcolor{keywordflow}{if} (\hyperlink{namespaceutils_a1fe70cdae64372e591da8985d7a884d6}{utils::isNearlyZero}(\hyperlink{classCar_aedf5fdf009d300cd2dc7faa51f30224b}{getPosition}().x - 
+      \hyperlink{classCar_ac74055f1a48feb09e7c15714125ee190}{last\_iteration\_position\_x}, 1e-5)) \{
+78             \textcolor{keywordflow}{if} ((elapsed.count()) > \hyperlink{classCar_aa988813339e3a1a8484484ac74b3d4e0}{TIME\_STANDING\_STILL\_TO\_DIE\_S\_}) \{
+79                 \hyperlink{classCar_a73e9873dd2c3c0ab7bbd6623ac9085a8}{is\_dead\_} = \textcolor{keyword}{true};
+80             \}
+81         \} \textcolor{keywordflow}{else} \{
+82             \hyperlink{classCar_a164067ddfd603614a22d9c178bfa6308}{stands\_still\_since} = std::chrono::high\_resolution\_clock::now();
+83         \}
+84         \hyperlink{classCar_ac74055f1a48feb09e7c15714125ee190}{last\_iteration\_position\_x} = \hyperlink{classCar_aedf5fdf009d300cd2dc7faa51f30224b}{getPosition}().x;
+85     \}
+86 
+87     \textcolor{keywordflow}{return} \hyperlink{classCar_a73e9873dd2c3c0ab7bbd6623ac9085a8}{is\_dead\_};
+88 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classCar_a6a0d40752a134fb4f0693a28a4e64a0d}\label{classCar_a6a0d40752a134fb4f0693a28a4e64a0d}} 
+\index{Car@{Car}!car\+\_\+body\+\_\+@{car\+\_\+body\+\_\+}}
+\index{car\+\_\+body\+\_\+@{car\+\_\+body\+\_\+}!Car@{Car}}
+\subsubsection{\texorpdfstring{car\+\_\+body\+\_\+}{car\_body\_}}
+{\footnotesize\ttfamily \hyperlink{classCarBody}{Car\+Body} Car\+::car\+\_\+body\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 39 of file Car.\+h.
+
+\mbox{\Hypertarget{classCar_a65195e0f8bdcb242616b6c285d7ff07a}\label{classCar_a65195e0f8bdcb242616b6c285d7ff07a}} 
+\index{Car@{Car}!front\+\_\+joint\+\_\+@{front\+\_\+joint\+\_\+}}
+\index{front\+\_\+joint\+\_\+@{front\+\_\+joint\+\_\+}!Car@{Car}}
+\subsubsection{\texorpdfstring{front\+\_\+joint\+\_\+}{front\_joint\_}}
+{\footnotesize\ttfamily b2\+Revolute\+Joint$\ast$ Car\+::front\+\_\+joint\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 42 of file Car.\+h.
+
+\mbox{\Hypertarget{classCar_a4e2939a9c523e2e264ea2377a4829f7c}\label{classCar_a4e2939a9c523e2e264ea2377a4829f7c}} 
+\index{Car@{Car}!front\+\_\+joint\+\_\+def\+\_\+@{front\+\_\+joint\+\_\+def\+\_\+}}
+\index{front\+\_\+joint\+\_\+def\+\_\+@{front\+\_\+joint\+\_\+def\+\_\+}!Car@{Car}}
+\subsubsection{\texorpdfstring{front\+\_\+joint\+\_\+def\+\_\+}{front\_joint\_def\_}}
+{\footnotesize\ttfamily b2\+Revolute\+Joint\+Def Car\+::front\+\_\+joint\+\_\+def\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 41 of file Car.\+h.
+
+\mbox{\Hypertarget{classCar_a9c6abcefc82b364b09e67fad1b200beb}\label{classCar_a9c6abcefc82b364b09e67fad1b200beb}} 
+\index{Car@{Car}!front\+\_\+wheel\+\_\+@{front\+\_\+wheel\+\_\+}}
+\index{front\+\_\+wheel\+\_\+@{front\+\_\+wheel\+\_\+}!Car@{Car}}
+\subsubsection{\texorpdfstring{front\+\_\+wheel\+\_\+}{front\_wheel\_}}
+{\footnotesize\ttfamily \hyperlink{classWheel}{Wheel} Car\+::front\+\_\+wheel\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 38 of file Car.\+h.
+
+\mbox{\Hypertarget{classCar_a73e9873dd2c3c0ab7bbd6623ac9085a8}\label{classCar_a73e9873dd2c3c0ab7bbd6623ac9085a8}} 
+\index{Car@{Car}!is\+\_\+dead\+\_\+@{is\+\_\+dead\+\_\+}}
+\index{is\+\_\+dead\+\_\+@{is\+\_\+dead\+\_\+}!Car@{Car}}
+\subsubsection{\texorpdfstring{is\+\_\+dead\+\_\+}{is\_dead\_}}
+{\footnotesize\ttfamily bool Car\+::is\+\_\+dead\+\_\+\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [private]}}
+
+
+
+Definition at line 45 of file Car.\+h.
+
+\mbox{\Hypertarget{classCar_ac74055f1a48feb09e7c15714125ee190}\label{classCar_ac74055f1a48feb09e7c15714125ee190}} 
+\index{Car@{Car}!last\+\_\+iteration\+\_\+position\+\_\+x@{last\+\_\+iteration\+\_\+position\+\_\+x}}
+\index{last\+\_\+iteration\+\_\+position\+\_\+x@{last\+\_\+iteration\+\_\+position\+\_\+x}!Car@{Car}}
+\subsubsection{\texorpdfstring{last\+\_\+iteration\+\_\+position\+\_\+x}{last\_iteration\_position\_x}}
+{\footnotesize\ttfamily double Car\+::last\+\_\+iteration\+\_\+position\+\_\+x\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [private]}}
+
+
+
+Definition at line 48 of file Car.\+h.
+
+\mbox{\Hypertarget{classCar_a70cd98e49fe96eec0bc4f0c414fd8e19}\label{classCar_a70cd98e49fe96eec0bc4f0c414fd8e19}} 
+\index{Car@{Car}!M\+A\+X\+\_\+\+M\+O\+T\+O\+R\+\_\+\+T\+O\+R\+Q\+U\+E\+\_\+@{M\+A\+X\+\_\+\+M\+O\+T\+O\+R\+\_\+\+T\+O\+R\+Q\+U\+E\+\_\+}}
+\index{M\+A\+X\+\_\+\+M\+O\+T\+O\+R\+\_\+\+T\+O\+R\+Q\+U\+E\+\_\+@{M\+A\+X\+\_\+\+M\+O\+T\+O\+R\+\_\+\+T\+O\+R\+Q\+U\+E\+\_\+}!Car@{Car}}
+\subsubsection{\texorpdfstring{M\+A\+X\+\_\+\+M\+O\+T\+O\+R\+\_\+\+T\+O\+R\+Q\+U\+E\+\_\+}{MAX\_MOTOR\_TORQUE\_}}
+{\footnotesize\ttfamily constexpr float Car\+::\+M\+A\+X\+\_\+\+M\+O\+T\+O\+R\+\_\+\+T\+O\+R\+Q\+U\+E\+\_\+ = 3000.\+0f\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line 33 of file Car.\+h.
+
+\mbox{\Hypertarget{classCar_a371b4dcd77eb566677d633db4dd457ae}\label{classCar_a371b4dcd77eb566677d633db4dd457ae}} 
+\index{Car@{Car}!M\+O\+T\+O\+R\+\_\+\+S\+P\+E\+E\+D\+\_\+@{M\+O\+T\+O\+R\+\_\+\+S\+P\+E\+E\+D\+\_\+}}
+\index{M\+O\+T\+O\+R\+\_\+\+S\+P\+E\+E\+D\+\_\+@{M\+O\+T\+O\+R\+\_\+\+S\+P\+E\+E\+D\+\_\+}!Car@{Car}}
+\subsubsection{\texorpdfstring{M\+O\+T\+O\+R\+\_\+\+S\+P\+E\+E\+D\+\_\+}{MOTOR\_SPEED\_}}
+{\footnotesize\ttfamily constexpr float Car\+::\+M\+O\+T\+O\+R\+\_\+\+S\+P\+E\+E\+D\+\_\+ = 40.\+0f\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line 34 of file Car.\+h.
+
+\mbox{\Hypertarget{classCar_ac916d27d34a5a9aa07129894b79f1aa7}\label{classCar_ac916d27d34a5a9aa07129894b79f1aa7}} 
+\index{Car@{Car}!rear\+\_\+joint\+\_\+@{rear\+\_\+joint\+\_\+}}
+\index{rear\+\_\+joint\+\_\+@{rear\+\_\+joint\+\_\+}!Car@{Car}}
+\subsubsection{\texorpdfstring{rear\+\_\+joint\+\_\+}{rear\_joint\_}}
+{\footnotesize\ttfamily b2\+Revolute\+Joint$\ast$ Car\+::rear\+\_\+joint\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 43 of file Car.\+h.
+
+\mbox{\Hypertarget{classCar_a6d59c94896a5b765761b89b0ae3b8e64}\label{classCar_a6d59c94896a5b765761b89b0ae3b8e64}} 
+\index{Car@{Car}!rear\+\_\+joint\+\_\+def\+\_\+@{rear\+\_\+joint\+\_\+def\+\_\+}}
+\index{rear\+\_\+joint\+\_\+def\+\_\+@{rear\+\_\+joint\+\_\+def\+\_\+}!Car@{Car}}
+\subsubsection{\texorpdfstring{rear\+\_\+joint\+\_\+def\+\_\+}{rear\_joint\_def\_}}
+{\footnotesize\ttfamily b2\+Revolute\+Joint\+Def Car\+::rear\+\_\+joint\+\_\+def\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 41 of file Car.\+h.
+
+\mbox{\Hypertarget{classCar_a2c29a444d66ee10134352516e42c3e0d}\label{classCar_a2c29a444d66ee10134352516e42c3e0d}} 
+\index{Car@{Car}!rear\+\_\+wheel\+\_\+@{rear\+\_\+wheel\+\_\+}}
+\index{rear\+\_\+wheel\+\_\+@{rear\+\_\+wheel\+\_\+}!Car@{Car}}
+\subsubsection{\texorpdfstring{rear\+\_\+wheel\+\_\+}{rear\_wheel\_}}
+{\footnotesize\ttfamily \hyperlink{classWheel}{Wheel} Car\+::rear\+\_\+wheel\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 38 of file Car.\+h.
+
+\mbox{\Hypertarget{classCar_a164067ddfd603614a22d9c178bfa6308}\label{classCar_a164067ddfd603614a22d9c178bfa6308}} 
+\index{Car@{Car}!stands\+\_\+still\+\_\+since@{stands\+\_\+still\+\_\+since}}
+\index{stands\+\_\+still\+\_\+since@{stands\+\_\+still\+\_\+since}!Car@{Car}}
+\subsubsection{\texorpdfstring{stands\+\_\+still\+\_\+since}{stands\_still\_since}}
+{\footnotesize\ttfamily std\+::chrono\+::time\+\_\+point$<$std\+::chrono\+::high\+\_\+resolution\+\_\+clock$>$ Car\+::stands\+\_\+still\+\_\+since\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [private]}}
+
+
+
+Definition at line 47 of file Car.\+h.
+
+\mbox{\Hypertarget{classCar_a348ee6b161f174a80ed4c38f9f84d789}\label{classCar_a348ee6b161f174a80ed4c38f9f84d789}} 
+\index{Car@{Car}!started\+\_\+@{started\+\_\+}}
+\index{started\+\_\+@{started\+\_\+}!Car@{Car}}
+\subsubsection{\texorpdfstring{started\+\_\+}{started\_}}
+{\footnotesize\ttfamily bool Car\+::started\+\_\+\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [private]}}
+
+
+
+Definition at line 46 of file Car.\+h.
+
+\mbox{\Hypertarget{classCar_aa988813339e3a1a8484484ac74b3d4e0}\label{classCar_aa988813339e3a1a8484484ac74b3d4e0}} 
+\index{Car@{Car}!T\+I\+M\+E\+\_\+\+S\+T\+A\+N\+D\+I\+N\+G\+\_\+\+S\+T\+I\+L\+L\+\_\+\+T\+O\+\_\+\+D\+I\+E\+\_\+\+S\+\_\+@{T\+I\+M\+E\+\_\+\+S\+T\+A\+N\+D\+I\+N\+G\+\_\+\+S\+T\+I\+L\+L\+\_\+\+T\+O\+\_\+\+D\+I\+E\+\_\+\+S\+\_\+}}
+\index{T\+I\+M\+E\+\_\+\+S\+T\+A\+N\+D\+I\+N\+G\+\_\+\+S\+T\+I\+L\+L\+\_\+\+T\+O\+\_\+\+D\+I\+E\+\_\+\+S\+\_\+@{T\+I\+M\+E\+\_\+\+S\+T\+A\+N\+D\+I\+N\+G\+\_\+\+S\+T\+I\+L\+L\+\_\+\+T\+O\+\_\+\+D\+I\+E\+\_\+\+S\+\_\+}!Car@{Car}}
+\subsubsection{\texorpdfstring{T\+I\+M\+E\+\_\+\+S\+T\+A\+N\+D\+I\+N\+G\+\_\+\+S\+T\+I\+L\+L\+\_\+\+T\+O\+\_\+\+D\+I\+E\+\_\+\+S\+\_\+}{TIME\_STANDING\_STILL\_TO\_DIE\_S\_}}
+{\footnotesize\ttfamily constexpr double Car\+::\+T\+I\+M\+E\+\_\+\+S\+T\+A\+N\+D\+I\+N\+G\+\_\+\+S\+T\+I\+L\+L\+\_\+\+T\+O\+\_\+\+D\+I\+E\+\_\+\+S\+\_\+ \{5\}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line 36 of file Car.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Physics/\hyperlink{Car_8h}{Car.\+h}\item 
+src/\+Physics/\hyperlink{Car_8cpp}{Car.\+cpp}\end{DoxyCompactItemize}

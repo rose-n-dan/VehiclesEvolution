@@ -1,0 +1,64 @@
+\hypertarget{main_8cpp}{}\section{src/main.cpp File Reference}
+\label{main_8cpp}\index{src/main.\+cpp@{src/main.\+cpp}}
+{\ttfamily \#include $<$Physics/\+Physics.\+h$>$}\newline
+{\ttfamily \#include $<$Graphics/\+Graphics.\+h$>$}\newline
+{\ttfamily \#include $<$Evolutionary\+Algorithm/\+Evolutionary\+Algorithm.\+h$>$}\newline
+Include dependency graph for main.\+cpp\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{main.\+cpp@{main.\+cpp}!main@{main}}
+\index{main@{main}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+The program learns to build a car using a evolutionary algorithm. It starts with a population of 15 randomly generated shapes with wheels and runs each one to see how far it goes. The cars that go the furthest reproduce to produce offspring for the next generation. The offspring combine the traits of the parents to hopefully produce better cars. With the button at the upper left u can choose to input cars from new generation or exit the program. 
+
+Definition at line 18 of file main.\+cpp.
+
+
+\begin{DoxyCode}
+19 \{
+20     constexpr \textcolor{keywordtype}{int} FRAME\_RATE = 120;
+21 
+22     \hyperlink{classPhysics_ab0590d6f12821b4e4a3ef894663704a1}{Physics::getInstance}().\hyperlink{classPhysics_adb2d289adeba022a24562bfcd374df38}{notifyMap}();
+23     \hyperlink{classPhysics_ab0590d6f12821b4e4a3ef894663704a1}{Physics::getInstance}().\hyperlink{classPhysics_a466b0a9be955dcf7afd58afdd396a560}{notifyCars}();
+24 
+25     \hyperlink{classGraphics_a115d78c8686f6c82add227bf1fe2c81c}{Graphics::getInstance}().\hyperlink{classGraphics_abb78da7bc406f5c9518f7fd3f20b42f8}{restartClock}();
+26 
+27     \textcolor{keywordflow}{while} (\hyperlink{classGraphics_a115d78c8686f6c82add227bf1fe2c81c}{Graphics::getInstance}().isWindowOpen())
+28     \{
+29         \hyperlink{classGraphics_a115d78c8686f6c82add227bf1fe2c81c}{Graphics::getInstance}().\hyperlink{classGraphics_abad4212fb355b9b3d6504ad019832213}{handleEvents}();
+30 
+31         \hyperlink{classPhysics_ab0590d6f12821b4e4a3ef894663704a1}{Physics::getInstance}().\hyperlink{classPhysics_a8ae58a3feb584b913d9fef04be7051b0}{update}(FRAME\_RATE);
+32         \hyperlink{classPhysics_ab0590d6f12821b4e4a3ef894663704a1}{Physics::getInstance}().\hyperlink{classPhysics_a5ec463e5f4ccd5830de8c85c2398caaf}{notifyCarsPositions}();
+33 
+34         \textcolor{comment}{// Every generation goes like this}
+35         \textcolor{keywordflow}{if} (\hyperlink{classPhysics_ab0590d6f12821b4e4a3ef894663704a1}{Physics::getInstance}().allDead())
+36         \{
+37             std::cout << \textcolor{stringliteral}{"ALL DEAD"} << std::endl;
+38             \textcolor{comment}{// stop simulation, save all distances, make new generation and so on...}
+39 
+40             \hyperlink{classPhysics_ab0590d6f12821b4e4a3ef894663704a1}{Physics::getInstance}().\hyperlink{classPhysics_a0c2c8ee78b42f9727d420f2fbb624e5a}{makeCars}(
+41                     \hyperlink{classEvolutionaryAlgorithm_a306ea15ca9a4eb67b84d22c7b24ef659}{EvolutionaryAlgorithm::getInstance}().
+      makeNewGeneration(
+42                             \hyperlink{classPhysics_ab0590d6f12821b4e4a3ef894663704a1}{Physics::getInstance}().getFinalDistances()));
+43 
+44             std::cout << \textcolor{stringliteral}{"BEWARE, NEW GENERATION IS COMING!"} << std::endl;
+45         \}
+46 
+47         \hyperlink{classGraphics_a115d78c8686f6c82add227bf1fe2c81c}{Graphics::getInstance}().\hyperlink{classGraphics_ad0e7c12771870690d603e9df6643542c}{draw}();
+48         \hyperlink{classGraphics_a115d78c8686f6c82add227bf1fe2c81c}{Graphics::getInstance}().\hyperlink{classGraphics_a283310b7fe274dab0544d307525198dc}{ensureConstantFrameRate}(
+      FRAME\_RATE);
+49     \}
+50 
+51     \textcolor{keywordflow}{return} 0;
+52 \}
+\end{DoxyCode}

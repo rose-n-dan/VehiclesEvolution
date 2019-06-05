@@ -1,0 +1,268 @@
+\hypertarget{classCarBody}{}\section{Car\+Body Class Reference}
+\label{classCarBody}\index{Car\+Body@{Car\+Body}}
+
+
+{\ttfamily \#include $<$Car\+Body.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCarBody_a060cf8a8c5d2313c331de3dbe8ea93e9}{Car\+Body} (b2\+World \&world, const b2\+Vec2 \&position, const std\+::vector$<$ b2\+Vec2 $>$ \&vertices)
+\item 
+const b2\+Vec2 \& \hyperlink{classCarBody_aa58f688a6f2ae687870daa41b73db625}{get\+Position} () const
+\item 
+const b2\+Vec2 \hyperlink{classCarBody_aac28c2ac7e21b88ebc85f9999bac9b3d}{get\+Velocity} () const
+\item 
+const double \hyperlink{classCarBody_a92d8865abe51f98b4fa7b4314e7372d8}{get\+Angle} () const
+\item 
+std\+::vector$<$ b2\+Vec2 $>$ \hyperlink{classCarBody_ad446bb563f4475c59d28054bbe886a9d}{get\+Polygon} () const
+\item 
+b2\+Body $\ast$ \hyperlink{classCarBody_abf98252ba6d666ce771acfdf7c6d66cb}{get\+Body} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+b2\+Body\+Def \hyperlink{classCarBody_a304e0ab7625f9673e4f25c7c52cfd3f8}{body\+\_\+def\+\_\+}
+\item 
+b2\+Polygon\+Shape \hyperlink{classCarBody_aff94f91206a0bdfa00257e68bfcc5633}{dynamic\+\_\+box\+\_\+}
+\item 
+b2\+Fixture\+Def \hyperlink{classCarBody_abd8188a5a14a45854cc80da8a70d1c12}{fixture\+\_\+def\+\_\+}
+\item 
+b2\+Body $\ast$ \hyperlink{classCarBody_aa460930fa1548d1987051dfa6f68c897}{body\+\_\+}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr float \hyperlink{classCarBody_a451074380bc9169117e9beb8303840fe}{D\+E\+N\+S\+I\+T\+Y\+\_\+} = 0.\+7f
+\item 
+static constexpr float \hyperlink{classCarBody_af87fcb5e61d186798ee126508eaf5f3f}{F\+R\+I\+C\+T\+I\+O\+N\+\_\+} = 2.\+0f
+\item 
+static constexpr float \hyperlink{classCarBody_a726ff99793ed9dfc0f96e3690c3035f8}{R\+E\+S\+T\+I\+T\+I\+U\+T\+I\+O\+N\+\_\+} = 0.\+001f
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 12 of file Car\+Body.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCarBody_a060cf8a8c5d2313c331de3dbe8ea93e9}\label{classCarBody_a060cf8a8c5d2313c331de3dbe8ea93e9}} 
+\index{Car\+Body@{Car\+Body}!Car\+Body@{Car\+Body}}
+\index{Car\+Body@{Car\+Body}!Car\+Body@{Car\+Body}}
+\subsubsection{\texorpdfstring{Car\+Body()}{CarBody()}}
+{\footnotesize\ttfamily Car\+Body\+::\+Car\+Body (\begin{DoxyParamCaption}\item[{b2\+World \&}]{world,  }\item[{const b2\+Vec2 \&}]{position,  }\item[{const std\+::vector$<$ b2\+Vec2 $>$ \&}]{vertices }\end{DoxyParamCaption})}
+
+
+
+Definition at line 7 of file Car\+Body.\+cpp.
+
+
+\begin{DoxyCode}
+7                                                                                           \{
+8     \hyperlink{classCarBody_a304e0ab7625f9673e4f25c7c52cfd3f8}{body\_def\_}.type = b2\_dynamicBody;
+9     \hyperlink{classCarBody_a304e0ab7625f9673e4f25c7c52cfd3f8}{body\_def\_}.position.Set(position.x, position.y);
+10     \hyperlink{classCarBody_aa460930fa1548d1987051dfa6f68c897}{body\_} = world.CreateBody(&\hyperlink{classCarBody_a304e0ab7625f9673e4f25c7c52cfd3f8}{body\_def\_});
+11 
+12     \textcolor{keyword}{auto} vertices\_tab = \textcolor{keyword}{new} b2Vec2 [vertices.size()];
+13 
+14     int32 i = 0;
+15     \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto} &vertex : vertices) \{
+16         vertices\_tab[i] = vertex;
+17         ++i;
+18     \}
+19 
+20     \hyperlink{classCarBody_aff94f91206a0bdfa00257e68bfcc5633}{dynamic\_box\_}.Set(vertices\_tab, i);
+21 
+22     \textcolor{keyword}{delete} [] vertices\_tab;
+23 
+24     \hyperlink{classCarBody_abd8188a5a14a45854cc80da8a70d1c12}{fixture\_def\_}.shape = &\hyperlink{classCarBody_aff94f91206a0bdfa00257e68bfcc5633}{dynamic\_box\_};
+25 
+26     \textcolor{comment}{// Set the box density to be non-zero, so it will be dynamic.}
+27     \hyperlink{classCarBody_abd8188a5a14a45854cc80da8a70d1c12}{fixture\_def\_}.density = \hyperlink{classCarBody_a451074380bc9169117e9beb8303840fe}{DENSITY\_};
+28 
+29     \textcolor{comment}{// Override the default friction.}
+30     \hyperlink{classCarBody_abd8188a5a14a45854cc80da8a70d1c12}{fixture\_def\_}.friction = \hyperlink{classCarBody_af87fcb5e61d186798ee126508eaf5f3f}{FRICTION\_};
+31 
+32     \hyperlink{classCarBody_abd8188a5a14a45854cc80da8a70d1c12}{fixture\_def\_}.restitution = \hyperlink{classCarBody_a726ff99793ed9dfc0f96e3690c3035f8}{RESTITIUTION\_};
+33 
+34     \hyperlink{classCarBody_abd8188a5a14a45854cc80da8a70d1c12}{fixture\_def\_}.filter.categoryBits = 0x0001;
+35     \hyperlink{classCarBody_abd8188a5a14a45854cc80da8a70d1c12}{fixture\_def\_}.filter.maskBits = 0x0002;
+36 
+37     \textcolor{comment}{// Add the shape to the body.}
+38     \hyperlink{classCarBody_aa460930fa1548d1987051dfa6f68c897}{body\_}->CreateFixture(&\hyperlink{classCarBody_abd8188a5a14a45854cc80da8a70d1c12}{fixture\_def\_});
+39 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classCarBody_a92d8865abe51f98b4fa7b4314e7372d8}\label{classCarBody_a92d8865abe51f98b4fa7b4314e7372d8}} 
+\index{Car\+Body@{Car\+Body}!get\+Angle@{get\+Angle}}
+\index{get\+Angle@{get\+Angle}!Car\+Body@{Car\+Body}}
+\subsubsection{\texorpdfstring{get\+Angle()}{getAngle()}}
+{\footnotesize\ttfamily const double Car\+Body\+::get\+Angle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 66 of file Car\+Body.\+cpp.
+
+
+\begin{DoxyCode}
+66                                      \{
+67     \textcolor{keywordflow}{return} \hyperlink{classCarBody_aa460930fa1548d1987051dfa6f68c897}{body\_}->GetAngle();
+68 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classCarBody_abf98252ba6d666ce771acfdf7c6d66cb}\label{classCarBody_abf98252ba6d666ce771acfdf7c6d66cb}} 
+\index{Car\+Body@{Car\+Body}!get\+Body@{get\+Body}}
+\index{get\+Body@{get\+Body}!Car\+Body@{Car\+Body}}
+\subsubsection{\texorpdfstring{get\+Body()}{getBody()}}
+{\footnotesize\ttfamily b2\+Body $\ast$ Car\+Body\+::get\+Body (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 41 of file Car\+Body.\+cpp.
+
+
+\begin{DoxyCode}
+41                          \{
+42     \textcolor{keywordflow}{return} \hyperlink{classCarBody_aa460930fa1548d1987051dfa6f68c897}{body\_};
+43 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classCarBody_ad446bb563f4475c59d28054bbe886a9d}\label{classCarBody_ad446bb563f4475c59d28054bbe886a9d}} 
+\index{Car\+Body@{Car\+Body}!get\+Polygon@{get\+Polygon}}
+\index{get\+Polygon@{get\+Polygon}!Car\+Body@{Car\+Body}}
+\subsubsection{\texorpdfstring{get\+Polygon()}{getPolygon()}}
+{\footnotesize\ttfamily std\+::vector$<$ b2\+Vec2 $>$ Car\+Body\+::get\+Polygon (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 45 of file Car\+Body.\+cpp.
+
+
+\begin{DoxyCode}
+45                                             \{
+46     std::vector<b2Vec2> vertices(static\_cast<unsigned long>(\hyperlink{classCarBody_aff94f91206a0bdfa00257e68bfcc5633}{dynamic\_box\_}.GetVertexCount()));
+47 
+48     int32 i = 0;
+49     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} &vertex : vertices)
+50     \{
+51         vertex = \hyperlink{classCarBody_aff94f91206a0bdfa00257e68bfcc5633}{dynamic\_box\_}.GetVertex(i);
+52         ++i;
+53     \}
+54 
+55     \textcolor{keywordflow}{return} vertices;
+56 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classCarBody_aa58f688a6f2ae687870daa41b73db625}\label{classCarBody_aa58f688a6f2ae687870daa41b73db625}} 
+\index{Car\+Body@{Car\+Body}!get\+Position@{get\+Position}}
+\index{get\+Position@{get\+Position}!Car\+Body@{Car\+Body}}
+\subsubsection{\texorpdfstring{get\+Position()}{getPosition()}}
+{\footnotesize\ttfamily const b2\+Vec2 \& Car\+Body\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 58 of file Car\+Body.\+cpp.
+
+
+\begin{DoxyCode}
+58                                          \{
+59     \textcolor{keywordflow}{return} \hyperlink{classCarBody_aa460930fa1548d1987051dfa6f68c897}{body\_}->GetPosition();
+60 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classCarBody_aac28c2ac7e21b88ebc85f9999bac9b3d}\label{classCarBody_aac28c2ac7e21b88ebc85f9999bac9b3d}} 
+\index{Car\+Body@{Car\+Body}!get\+Velocity@{get\+Velocity}}
+\index{get\+Velocity@{get\+Velocity}!Car\+Body@{Car\+Body}}
+\subsubsection{\texorpdfstring{get\+Velocity()}{getVelocity()}}
+{\footnotesize\ttfamily const b2\+Vec2 Car\+Body\+::get\+Velocity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 62 of file Car\+Body.\+cpp.
+
+
+\begin{DoxyCode}
+62                                         \{
+63     \textcolor{keywordflow}{return} \hyperlink{classCarBody_aa460930fa1548d1987051dfa6f68c897}{body\_}->GetLinearVelocity();
+64 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classCarBody_aa460930fa1548d1987051dfa6f68c897}\label{classCarBody_aa460930fa1548d1987051dfa6f68c897}} 
+\index{Car\+Body@{Car\+Body}!body\+\_\+@{body\+\_\+}}
+\index{body\+\_\+@{body\+\_\+}!Car\+Body@{Car\+Body}}
+\subsubsection{\texorpdfstring{body\+\_\+}{body\_}}
+{\footnotesize\ttfamily b2\+Body$\ast$ Car\+Body\+::body\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 32 of file Car\+Body.\+h.
+
+\mbox{\Hypertarget{classCarBody_a304e0ab7625f9673e4f25c7c52cfd3f8}\label{classCarBody_a304e0ab7625f9673e4f25c7c52cfd3f8}} 
+\index{Car\+Body@{Car\+Body}!body\+\_\+def\+\_\+@{body\+\_\+def\+\_\+}}
+\index{body\+\_\+def\+\_\+@{body\+\_\+def\+\_\+}!Car\+Body@{Car\+Body}}
+\subsubsection{\texorpdfstring{body\+\_\+def\+\_\+}{body\_def\_}}
+{\footnotesize\ttfamily b2\+Body\+Def Car\+Body\+::body\+\_\+def\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 29 of file Car\+Body.\+h.
+
+\mbox{\Hypertarget{classCarBody_a451074380bc9169117e9beb8303840fe}\label{classCarBody_a451074380bc9169117e9beb8303840fe}} 
+\index{Car\+Body@{Car\+Body}!D\+E\+N\+S\+I\+T\+Y\+\_\+@{D\+E\+N\+S\+I\+T\+Y\+\_\+}}
+\index{D\+E\+N\+S\+I\+T\+Y\+\_\+@{D\+E\+N\+S\+I\+T\+Y\+\_\+}!Car\+Body@{Car\+Body}}
+\subsubsection{\texorpdfstring{D\+E\+N\+S\+I\+T\+Y\+\_\+}{DENSITY\_}}
+{\footnotesize\ttfamily constexpr float Car\+Body\+::\+D\+E\+N\+S\+I\+T\+Y\+\_\+ = 0.\+7f\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line 25 of file Car\+Body.\+h.
+
+\mbox{\Hypertarget{classCarBody_aff94f91206a0bdfa00257e68bfcc5633}\label{classCarBody_aff94f91206a0bdfa00257e68bfcc5633}} 
+\index{Car\+Body@{Car\+Body}!dynamic\+\_\+box\+\_\+@{dynamic\+\_\+box\+\_\+}}
+\index{dynamic\+\_\+box\+\_\+@{dynamic\+\_\+box\+\_\+}!Car\+Body@{Car\+Body}}
+\subsubsection{\texorpdfstring{dynamic\+\_\+box\+\_\+}{dynamic\_box\_}}
+{\footnotesize\ttfamily b2\+Polygon\+Shape Car\+Body\+::dynamic\+\_\+box\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 30 of file Car\+Body.\+h.
+
+\mbox{\Hypertarget{classCarBody_abd8188a5a14a45854cc80da8a70d1c12}\label{classCarBody_abd8188a5a14a45854cc80da8a70d1c12}} 
+\index{Car\+Body@{Car\+Body}!fixture\+\_\+def\+\_\+@{fixture\+\_\+def\+\_\+}}
+\index{fixture\+\_\+def\+\_\+@{fixture\+\_\+def\+\_\+}!Car\+Body@{Car\+Body}}
+\subsubsection{\texorpdfstring{fixture\+\_\+def\+\_\+}{fixture\_def\_}}
+{\footnotesize\ttfamily b2\+Fixture\+Def Car\+Body\+::fixture\+\_\+def\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 31 of file Car\+Body.\+h.
+
+\mbox{\Hypertarget{classCarBody_af87fcb5e61d186798ee126508eaf5f3f}\label{classCarBody_af87fcb5e61d186798ee126508eaf5f3f}} 
+\index{Car\+Body@{Car\+Body}!F\+R\+I\+C\+T\+I\+O\+N\+\_\+@{F\+R\+I\+C\+T\+I\+O\+N\+\_\+}}
+\index{F\+R\+I\+C\+T\+I\+O\+N\+\_\+@{F\+R\+I\+C\+T\+I\+O\+N\+\_\+}!Car\+Body@{Car\+Body}}
+\subsubsection{\texorpdfstring{F\+R\+I\+C\+T\+I\+O\+N\+\_\+}{FRICTION\_}}
+{\footnotesize\ttfamily constexpr float Car\+Body\+::\+F\+R\+I\+C\+T\+I\+O\+N\+\_\+ = 2.\+0f\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line 26 of file Car\+Body.\+h.
+
+\mbox{\Hypertarget{classCarBody_a726ff99793ed9dfc0f96e3690c3035f8}\label{classCarBody_a726ff99793ed9dfc0f96e3690c3035f8}} 
+\index{Car\+Body@{Car\+Body}!R\+E\+S\+T\+I\+T\+I\+U\+T\+I\+O\+N\+\_\+@{R\+E\+S\+T\+I\+T\+I\+U\+T\+I\+O\+N\+\_\+}}
+\index{R\+E\+S\+T\+I\+T\+I\+U\+T\+I\+O\+N\+\_\+@{R\+E\+S\+T\+I\+T\+I\+U\+T\+I\+O\+N\+\_\+}!Car\+Body@{Car\+Body}}
+\subsubsection{\texorpdfstring{R\+E\+S\+T\+I\+T\+I\+U\+T\+I\+O\+N\+\_\+}{RESTITIUTION\_}}
+{\footnotesize\ttfamily constexpr float Car\+Body\+::\+R\+E\+S\+T\+I\+T\+I\+U\+T\+I\+O\+N\+\_\+ = 0.\+001f\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line 27 of file Car\+Body.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Physics/\hyperlink{CarBody_8h}{Car\+Body.\+h}\item 
+src/\+Physics/\hyperlink{CarBody_8cpp}{Car\+Body.\+cpp}\end{DoxyCompactItemize}

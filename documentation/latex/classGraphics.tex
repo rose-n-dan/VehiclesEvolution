@@ -1,0 +1,566 @@
+\hypertarget{classGraphics}{}\section{Graphics Class Reference}
+\label{classGraphics}\index{Graphics@{Graphics}}
+
+
+{\ttfamily \#include $<$Graphics.\+h$>$}
+
+
+
+Collaboration diagram for Graphics\+:
+% FIG 0
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGraphics_abe2f13f24a1d35c55fdac10a282744eb}{Graphics} (const \hyperlink{classGraphics}{Graphics} \&)=delete
+\item 
+\hyperlink{classGraphics}{Graphics} \& \hyperlink{classGraphics_abaf6bc20f9541026835dfee157ac5efb}{operator=} (const \hyperlink{classGraphics}{Graphics} \&)=delete
+\item 
+void \hyperlink{classGraphics_aee9384443642037cef28b28acddf86d3}{new\+Cars} (const std\+::vector$<$ \hyperlink{classCar}{Car} $>$ \&cars)
+\item 
+void \hyperlink{classGraphics_adf0937a71f5d477bcd9c553fe863e87b}{new\+Map} (const \hyperlink{classMap}{Map} \&map)
+\item 
+void \hyperlink{classGraphics_a5f2e6a6cc8dffc34b48e66df42046243}{new\+Cars\+Positions} (const std\+::vector$<$ \hyperlink{classCar}{Car} $>$ \&cars)
+\item 
+const bool \hyperlink{classGraphics_a21729e7f5db9080db1a766682e64c43a}{is\+Window\+Open} () const
+\item 
+void \hyperlink{classGraphics_abad4212fb355b9b3d6504ad019832213}{handle\+Events} ()
+\item 
+void \hyperlink{classGraphics_a283310b7fe274dab0544d307525198dc}{ensure\+Constant\+Frame\+Rate} (int frame\+Rate)
+\item 
+void \hyperlink{classGraphics_abb78da7bc406f5c9518f7fd3f20b42f8}{restart\+Clock} ()
+\item 
+void \hyperlink{classGraphics_ad0e7c12771870690d603e9df6643542c}{draw} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classGraphics}{Graphics} \& \hyperlink{classGraphics_a115d78c8686f6c82add227bf1fe2c81c}{get\+Instance} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGraphics_af2e8fe67fd31ec263c843a6e28b29d3c}{Graphics} ()
+\item 
+\hyperlink{classCarGraphics}{Car\+Graphics} \hyperlink{classGraphics_a504c1b9aa359dbe8b05f8879c1045610}{generate\+Graphics} (const \hyperlink{classCar}{Car} \&car)
+\item 
+void \hyperlink{classGraphics_ad3718f2541f28115865058823113f5cd}{follow\+The\+Leader} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const sf\+::\+Color \hyperlink{classGraphics_a44d7a76a58e03b8ad3f025123894c526}{background\+\_\+color\+\_\+}
+\item 
+std\+::vector$<$ \hyperlink{classCarGraphics}{Car\+Graphics} $>$ \hyperlink{classGraphics_a8be356ffe3ee47f915027361b6ae34ab}{cars\+\_\+graphics\+\_\+}
+\item 
+\hyperlink{classMapGraphics}{Map\+Graphics} \hyperlink{classGraphics_a7b3e98774ea965783584d5351c730276}{map\+\_\+graphic\+\_\+}
+\item 
+\hyperlink{classGraphicalUserInterface}{Graphical\+User\+Interface} \hyperlink{classGraphics_ac582857f6b0de010eabd0146c4a5f4d2}{gui\+\_\+}
+\item 
+sf\+::\+Context\+Settings \hyperlink{classGraphics_ab8d68b2977c39547e1c10a7669698aca}{settings\+\_\+}
+\item 
+sf\+::\+Render\+Window \hyperlink{classGraphics_ac760fe1abb0b648844c9f15afa087ef6}{window\+\_\+}
+\item 
+sf\+::\+Clock \hyperlink{classGraphics_ad9850d50fe5792666c8aea88f39ba99c}{clock\+\_\+}
+\item 
+sf\+::\+Time \hyperlink{classGraphics_ab2983b7d90351c0f7b824ac6f887fd6d}{time\+\_\+}
+\item 
+sf\+::\+View \hyperlink{classGraphics_a60792a296f5e93dbd1d086398e20cbd0}{view\+\_\+action\+\_\+}
+\item 
+sf\+::\+View \hyperlink{classGraphics_aaca5b237fae17f3166f8f28e4c363e06}{view\+\_\+gui\+\_\+}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr float \hyperlink{classGraphics_af9c6251065c2900d0a92380c2bea26b2}{P\+I\+X\+E\+L\+S\+\_\+\+P\+E\+R\+\_\+\+M\+E\+T\+E\+R\+\_\+} = 60.\+0f
+\item 
+static constexpr int \hyperlink{classGraphics_a4e8cd4a9f4799e3b7f5e85685d6d4905}{W\+I\+N\+D\+O\+W\+\_\+\+W\+I\+D\+T\+H\+\_\+\+P\+I\+X\+E\+L\+S\+\_\+} = 1000
+\item 
+static constexpr int \hyperlink{classGraphics_a2838b79511d56711b88e677ad48c54e9}{W\+I\+N\+D\+O\+W\+\_\+\+H\+E\+I\+G\+H\+T\+\_\+\+P\+I\+X\+E\+L\+S\+\_\+} = 600
+\item 
+static constexpr int \hyperlink{classGraphics_aac15ea113ea8c69d5e54996513886110}{I\+N\+T\+E\+R\+F\+A\+C\+E\+\_\+\+W\+I\+D\+T\+H\+\_\+\+P\+I\+X\+E\+L\+S\+\_\+} = 300
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class implementing Singleton and Pseudo-\/\+Observer design patterns 
+
+Definition at line 22 of file Graphics.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGraphics_abe2f13f24a1d35c55fdac10a282744eb}\label{classGraphics_abe2f13f24a1d35c55fdac10a282744eb}} 
+\index{Graphics@{Graphics}!Graphics@{Graphics}}
+\index{Graphics@{Graphics}!Graphics@{Graphics}}
+\subsubsection{\texorpdfstring{Graphics()}{Graphics()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Graphics\+::\+Graphics (\begin{DoxyParamCaption}\item[{const \hyperlink{classGraphics}{Graphics} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classGraphics_af2e8fe67fd31ec263c843a6e28b29d3c}\label{classGraphics_af2e8fe67fd31ec263c843a6e28b29d3c}} 
+\index{Graphics@{Graphics}!Graphics@{Graphics}}
+\index{Graphics@{Graphics}!Graphics@{Graphics}}
+\subsubsection{\texorpdfstring{Graphics()}{Graphics()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Graphics\+::\+Graphics (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 11 of file Graphics.\+cpp.
+
+
+\begin{DoxyCode}
+11                    : \hyperlink{classGraphics_ab8d68b2977c39547e1c10a7669698aca}{settings\_}(0, 0, 8),
+12                        \hyperlink{classGraphics_a60792a296f5e93dbd1d086398e20cbd0}{view\_action\_}(sf::FloatRect(0.0f, 0.0f, 
+      \hyperlink{classGraphics_a4e8cd4a9f4799e3b7f5e85685d6d4905}{WINDOW\_WIDTH\_PIXELS\_}, \hyperlink{classGraphics_a2838b79511d56711b88e677ad48c54e9}{WINDOW\_HEIGHT\_PIXELS\_})),
+13                        \hyperlink{classGraphics_aaca5b237fae17f3166f8f28e4c363e06}{view\_gui\_}(\hyperlink{classGraphics_a60792a296f5e93dbd1d086398e20cbd0}{view\_action\_}),
+14                        \hyperlink{classGraphics_ac760fe1abb0b648844c9f15afa087ef6}{window\_}(sf::VideoMode(\hyperlink{classGraphics_a4e8cd4a9f4799e3b7f5e85685d6d4905}{WINDOW\_WIDTH\_PIXELS\_}, 
+      \hyperlink{classGraphics_a2838b79511d56711b88e677ad48c54e9}{WINDOW\_HEIGHT\_PIXELS\_}),
+15                                \textcolor{stringliteral}{"Vehicles Evolution Simulation"}, sf::Style::Default, 
+      \hyperlink{classGraphics_ab8d68b2977c39547e1c10a7669698aca}{settings\_}),
+16                        \hyperlink{classGraphics_ac582857f6b0de010eabd0146c4a5f4d2}{gui\_}(\hyperlink{classGraphics_ac760fe1abb0b648844c9f15afa087ef6}{window\_}, \hyperlink{classGraphics_aac15ea113ea8c69d5e54996513886110}{INTERFACE\_WIDTH\_PIXELS\_}, 
+      \hyperlink{classGraphics_a2838b79511d56711b88e677ad48c54e9}{WINDOW\_HEIGHT\_PIXELS\_}),
+17                        \hyperlink{classGraphics_ad9850d50fe5792666c8aea88f39ba99c}{clock\_}(),
+18                        \hyperlink{classGraphics_a44d7a76a58e03b8ad3f025123894c526}{background\_color\_}(51,204,153) \{
+19     \hyperlink{classGraphics_ac760fe1abb0b648844c9f15afa087ef6}{window\_}.setView(\hyperlink{classGraphics_a60792a296f5e93dbd1d086398e20cbd0}{view\_action\_});
+20     \hyperlink{classGraphics_ac582857f6b0de010eabd0146c4a5f4d2}{gui\_}.\hyperlink{classGraphicalUserInterface_a9dc5f335b77be5a4d871926155afb8dd}{setWindow}();
+21     \hyperlink{classGraphics_ac582857f6b0de010eabd0146c4a5f4d2}{gui\_}.\hyperlink{classGraphicalUserInterface_a48e6dcc9acc179fdb74e67a51d66efb7}{addWidgets}();
+22 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classGraphics_ad0e7c12771870690d603e9df6643542c}\label{classGraphics_ad0e7c12771870690d603e9df6643542c}} 
+\index{Graphics@{Graphics}!draw@{draw}}
+\index{draw@{draw}!Graphics@{Graphics}}
+\subsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Graphics\+::draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 100 of file Graphics.\+cpp.
+
+
+\begin{DoxyCode}
+100                     \{
+101     \hyperlink{classGraphics_ac760fe1abb0b648844c9f15afa087ef6}{window\_}.clear(\hyperlink{classGraphics_a44d7a76a58e03b8ad3f025123894c526}{background\_color\_});
+102     \hyperlink{classGraphics_ad3718f2541f28115865058823113f5cd}{followTheLeader}();
+103     \hyperlink{classGraphics_ac760fe1abb0b648844c9f15afa087ef6}{window\_}.draw(\hyperlink{classGraphics_a7b3e98774ea965783584d5351c730276}{map\_graphic\_});
+104 
+105     \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto} &car\_graphics : \hyperlink{classGraphics_a8be356ffe3ee47f915027361b6ae34ab}{cars\_graphics\_})
+106     \{
+107         \hyperlink{classGraphics_ac760fe1abb0b648844c9f15afa087ef6}{window\_}.draw(car\_graphics);
+108     \}
+109 
+110     \hyperlink{classGraphics_ac760fe1abb0b648844c9f15afa087ef6}{window\_}.setView(\hyperlink{classGraphics_aaca5b237fae17f3166f8f28e4c363e06}{view\_gui\_});
+111     \hyperlink{classGraphics_ac582857f6b0de010eabd0146c4a5f4d2}{gui\_}.\hyperlink{classGraphicalUserInterface_a268c54faf6a8ac32628c60495900ea1c}{draw}();
+112 
+113     \hyperlink{classGraphics_ac760fe1abb0b648844c9f15afa087ef6}{window\_}.display();
+114 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classGraphics_a283310b7fe274dab0544d307525198dc}\label{classGraphics_a283310b7fe274dab0544d307525198dc}} 
+\index{Graphics@{Graphics}!ensure\+Constant\+Frame\+Rate@{ensure\+Constant\+Frame\+Rate}}
+\index{ensure\+Constant\+Frame\+Rate@{ensure\+Constant\+Frame\+Rate}!Graphics@{Graphics}}
+\subsubsection{\texorpdfstring{ensure\+Constant\+Frame\+Rate()}{ensureConstantFrameRate()}}
+{\footnotesize\ttfamily void Graphics\+::ensure\+Constant\+Frame\+Rate (\begin{DoxyParamCaption}\item[{int}]{frame\+Rate }\end{DoxyParamCaption})}
+
+
+
+Definition at line 116 of file Graphics.\+cpp.
+
+
+\begin{DoxyCode}
+116                                                           \{
+117     \hyperlink{classGraphics_ab2983b7d90351c0f7b824ac6f887fd6d}{time\_} = \hyperlink{classGraphics_ad9850d50fe5792666c8aea88f39ba99c}{clock\_}.restart();
+118     sf::Time time\_for\_sleep = sf::milliseconds(static\_cast<int>(1000.0f / static\_cast<float>(frameRate))) -
+       \hyperlink{classGraphics_ab2983b7d90351c0f7b824ac6f887fd6d}{time\_};
+119     sf::sleep(time\_for\_sleep);
+120     \hyperlink{classGraphics_ab2983b7d90351c0f7b824ac6f887fd6d}{time\_} = \hyperlink{classGraphics_ad9850d50fe5792666c8aea88f39ba99c}{clock\_}.restart();
+121 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classGraphics_ad3718f2541f28115865058823113f5cd}\label{classGraphics_ad3718f2541f28115865058823113f5cd}} 
+\index{Graphics@{Graphics}!follow\+The\+Leader@{follow\+The\+Leader}}
+\index{follow\+The\+Leader@{follow\+The\+Leader}!Graphics@{Graphics}}
+\subsubsection{\texorpdfstring{follow\+The\+Leader()}{followTheLeader()}}
+{\footnotesize\ttfamily void Graphics\+::follow\+The\+Leader (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 127 of file Graphics.\+cpp.
+
+
+\begin{DoxyCode}
+127                                \{
+128     \textcolor{keywordflow}{if} (\hyperlink{classGraphics_ac582857f6b0de010eabd0146c4a5f4d2}{gui\_}.\hyperlink{classGraphicalUserInterface_a9aa8920f70bf99225a7e8e4ff9cb5e3f}{isFollowingTheLeader}() && !\hyperlink{classGraphics_a8be356ffe3ee47f915027361b6ae34ab}{cars\_graphics\_}.empty())
+129     \{
+130         sf::Vector2f new\_leader\_position(std::numeric\_limits<float>::lowest(), 0.0f);
+131 
+132         \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto} &car : \hyperlink{classGraphics_a8be356ffe3ee47f915027361b6ae34ab}{cars\_graphics\_}) \{
+133             \textcolor{keywordflow}{if} (car.getPosition().x >= new\_leader\_position.x)
+134                 new\_leader\_position = car.getPosition();
+135         \}
+136 
+137         \hyperlink{classGraphics_a60792a296f5e93dbd1d086398e20cbd0}{view\_action\_}.setCenter(new\_leader\_position -
+138                                sf::Vector2f(static\_cast<float>(\hyperlink{classGraphics_ac582857f6b0de010eabd0146c4a5f4d2}{gui\_}.
+      \hyperlink{classGraphicalUserInterface_a6b168726ffb57ba7d06946d27435abad}{getInterfaceWidth}()), 0.0f) / 2.0f);
+139     \}
+140 
+141     \hyperlink{classGraphics_ac760fe1abb0b648844c9f15afa087ef6}{window\_}.setView(\hyperlink{classGraphics_a60792a296f5e93dbd1d086398e20cbd0}{view\_action\_});
+142 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classGraphics_a504c1b9aa359dbe8b05f8879c1045610}\label{classGraphics_a504c1b9aa359dbe8b05f8879c1045610}} 
+\index{Graphics@{Graphics}!generate\+Graphics@{generate\+Graphics}}
+\index{generate\+Graphics@{generate\+Graphics}!Graphics@{Graphics}}
+\subsubsection{\texorpdfstring{generate\+Graphics()}{generateGraphics()}}
+{\footnotesize\ttfamily \hyperlink{classCarGraphics}{Car\+Graphics} Graphics\+::generate\+Graphics (\begin{DoxyParamCaption}\item[{const \hyperlink{classCar}{Car} \&}]{car }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 144 of file Graphics.\+cpp.
+
+
+\begin{DoxyCode}
+144                                                      \{
+145     \textcolor{keyword}{auto} vertices = car.\hyperlink{classCar_a54179bc7ddca42a4f285c0475174f5b5}{getCarBodyVertices}();
+146     std::vector<sf::Vector2f> sf\_vertices;
+147     sf\_vertices.reserve(vertices.size());
+148 
+149     \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto} &vertex : vertices)
+150     \{
+151         sf\_vertices.emplace\_back(vertex.x * \hyperlink{classGraphics_af9c6251065c2900d0a92380c2bea26b2}{PIXELS\_PER\_METER\_}, vertex.y * 
+      \hyperlink{classGraphics_af9c6251065c2900d0a92380c2bea26b2}{PIXELS\_PER\_METER\_});
+152     \}
+153 
+154     \textcolor{keywordflow}{return} \hyperlink{classCarGraphics}{CarGraphics}(sf\_vertices, car.\hyperlink{classCar_a00f0b724a34f1f98411e098492823bf1}{getFrontWheelRadius}() * 
+      \hyperlink{classGraphics_af9c6251065c2900d0a92380c2bea26b2}{PIXELS\_PER\_METER\_},
+155                        car.\hyperlink{classCar_aeb0e2313eb141c7977f3c1a9a2737933}{getRearWheelRadius}() * 
+      \hyperlink{classGraphics_af9c6251065c2900d0a92380c2bea26b2}{PIXELS\_PER\_METER\_});
+156 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classGraphics_a115d78c8686f6c82add227bf1fe2c81c}\label{classGraphics_a115d78c8686f6c82add227bf1fe2c81c}} 
+\index{Graphics@{Graphics}!get\+Instance@{get\+Instance}}
+\index{get\+Instance@{get\+Instance}!Graphics@{Graphics}}
+\subsubsection{\texorpdfstring{get\+Instance()}{getInstance()}}
+{\footnotesize\ttfamily static \hyperlink{classGraphics}{Graphics}\& Graphics\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line 28 of file Graphics.\+h.
+
+
+\begin{DoxyCode}
+28                                    \{
+29         \textcolor{keyword}{static} \hyperlink{classGraphics}{Graphics} graphicsInstance;
+30         \textcolor{keywordflow}{return} graphicsInstance;
+31     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classGraphics_abad4212fb355b9b3d6504ad019832213}\label{classGraphics_abad4212fb355b9b3d6504ad019832213}} 
+\index{Graphics@{Graphics}!handle\+Events@{handle\+Events}}
+\index{handle\+Events@{handle\+Events}!Graphics@{Graphics}}
+\subsubsection{\texorpdfstring{handle\+Events()}{handleEvents()}}
+{\footnotesize\ttfamily void Graphics\+::handle\+Events (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 81 of file Graphics.\+cpp.
+
+
+\begin{DoxyCode}
+81                             \{
+82     sf::Event event;
+83     \textcolor{keywordflow}{while} (\hyperlink{classGraphics_ac760fe1abb0b648844c9f15afa087ef6}{window\_}.pollEvent(event))
+84     \{
+85         \textcolor{keywordflow}{if} (event.type == sf::Event::Closed)
+86             \hyperlink{classGraphics_ac760fe1abb0b648844c9f15afa087ef6}{window\_}.close();
+87 
+88         \textcolor{keywordflow}{if} (event.type == sf::Event::Resized)
+89         \{
+90             \textcolor{keyword}{auto} visible\_area = sf::Vector2f(event.size.width, event.size.height);
+91             \hyperlink{classGraphics_aaca5b237fae17f3166f8f28e4c363e06}{view\_gui\_}.setSize(visible\_area);
+92             \hyperlink{classGraphics_aaca5b237fae17f3166f8f28e4c363e06}{view\_gui\_}.setCenter(event.size.width / 2.0f, event.size.height / 2.0f);
+93             \hyperlink{classGraphics_a60792a296f5e93dbd1d086398e20cbd0}{view\_action\_}.setSize(visible\_area);
+94             \hyperlink{classGraphics_ac582857f6b0de010eabd0146c4a5f4d2}{gui\_}.\hyperlink{classGraphicalUserInterface_ab0c8cd6460442a3ad01c304ec1216631}{setView}(\hyperlink{classGraphics_aaca5b237fae17f3166f8f28e4c363e06}{view\_gui\_});
+95         \}
+96         \hyperlink{classGraphics_ac582857f6b0de010eabd0146c4a5f4d2}{gui\_}.\hyperlink{classGraphicalUserInterface_a71964c3c49b23a05aa3fd4b4d36aa42d}{handleEvent}(event);
+97     \}
+98 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classGraphics_a21729e7f5db9080db1a766682e64c43a}\label{classGraphics_a21729e7f5db9080db1a766682e64c43a}} 
+\index{Graphics@{Graphics}!is\+Window\+Open@{is\+Window\+Open}}
+\index{is\+Window\+Open@{is\+Window\+Open}!Graphics@{Graphics}}
+\subsubsection{\texorpdfstring{is\+Window\+Open()}{isWindowOpen()}}
+{\footnotesize\ttfamily const bool Graphics\+::is\+Window\+Open (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 77 of file Graphics.\+cpp.
+
+
+\begin{DoxyCode}
+77                                         \{
+78     \textcolor{keywordflow}{return} \hyperlink{classGraphics_ac760fe1abb0b648844c9f15afa087ef6}{window\_}.isOpen();
+79 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classGraphics_aee9384443642037cef28b28acddf86d3}\label{classGraphics_aee9384443642037cef28b28acddf86d3}} 
+\index{Graphics@{Graphics}!new\+Cars@{new\+Cars}}
+\index{new\+Cars@{new\+Cars}!Graphics@{Graphics}}
+\subsubsection{\texorpdfstring{new\+Cars()}{newCars()}}
+{\footnotesize\ttfamily void Graphics\+::new\+Cars (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \hyperlink{classCar}{Car} $>$ \&}]{cars }\end{DoxyParamCaption})}
+
+
+
+Definition at line 24 of file Graphics.\+cpp.
+
+
+\begin{DoxyCode}
+24                                                  \{
+25     \hyperlink{classGraphics_a8be356ffe3ee47f915027361b6ae34ab}{cars\_graphics\_}.clear();
+26 
+27     \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto} &car : cars)
+28     \{
+29         \hyperlink{classGraphics_a8be356ffe3ee47f915027361b6ae34ab}{cars\_graphics\_}.push\_back(\hyperlink{classGraphics_a504c1b9aa359dbe8b05f8879c1045610}{generateGraphics}(car));
+30     \}
+31 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classGraphics_a5f2e6a6cc8dffc34b48e66df42046243}\label{classGraphics_a5f2e6a6cc8dffc34b48e66df42046243}} 
+\index{Graphics@{Graphics}!new\+Cars\+Positions@{new\+Cars\+Positions}}
+\index{new\+Cars\+Positions@{new\+Cars\+Positions}!Graphics@{Graphics}}
+\subsubsection{\texorpdfstring{new\+Cars\+Positions()}{newCarsPositions()}}
+{\footnotesize\ttfamily void Graphics\+::new\+Cars\+Positions (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \hyperlink{classCar}{Car} $>$ \&}]{cars }\end{DoxyParamCaption})}
+
+
+
+Definition at line 56 of file Graphics.\+cpp.
+
+
+\begin{DoxyCode}
+56                                                           \{
+57     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} i = 0;
+58     \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto} &car : cars)
+59     \{
+60         \textcolor{keyword}{auto} angle = \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(car.getAngle() * 180.0f / M\_PI);
+61         sf::Vector2f position = sf::Vector2f(\hyperlink{classGraphics_af9c6251065c2900d0a92380c2bea26b2}{PIXELS\_PER\_METER\_} * car.getPosition().x,
+62                                              \hyperlink{classGraphics_af9c6251065c2900d0a92380c2bea26b2}{PIXELS\_PER\_METER\_} * car.getPosition().y);
+63         \hyperlink{classGraphics_a8be356ffe3ee47f915027361b6ae34ab}{cars\_graphics\_}.at(i).setPositionAndAngle(position, angle);
+64 
+65         sf::Vector2f front\_wheel\_position = sf::Vector2f(\hyperlink{classGraphics_af9c6251065c2900d0a92380c2bea26b2}{PIXELS\_PER\_METER\_} * car.
+      getFrontWheelPosition().x,
+66                                                          \hyperlink{classGraphics_af9c6251065c2900d0a92380c2bea26b2}{PIXELS\_PER\_METER\_} * car.
+      getFrontWheelPosition().y);
+67         \hyperlink{classGraphics_a8be356ffe3ee47f915027361b6ae34ab}{cars\_graphics\_}.at(i).setFrontWheelPosition(front\_wheel\_position);
+68 
+69         sf::Vector2f rear\_wheel\_position = sf::Vector2f(\hyperlink{classGraphics_af9c6251065c2900d0a92380c2bea26b2}{PIXELS\_PER\_METER\_} * car.
+      getRearWheelPosition().x,
+70                                                         \hyperlink{classGraphics_af9c6251065c2900d0a92380c2bea26b2}{PIXELS\_PER\_METER\_} * car.
+      getRearWheelPosition().y);
+71         \hyperlink{classGraphics_a8be356ffe3ee47f915027361b6ae34ab}{cars\_graphics\_}.at(i).setRearWheelPosition(rear\_wheel\_position);
+72 
+73         ++i;
+74     \}
+75 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classGraphics_adf0937a71f5d477bcd9c553fe863e87b}\label{classGraphics_adf0937a71f5d477bcd9c553fe863e87b}} 
+\index{Graphics@{Graphics}!new\+Map@{new\+Map}}
+\index{new\+Map@{new\+Map}!Graphics@{Graphics}}
+\subsubsection{\texorpdfstring{new\+Map()}{newMap()}}
+{\footnotesize\ttfamily void Graphics\+::new\+Map (\begin{DoxyParamCaption}\item[{const \hyperlink{classMap}{Map} \&}]{map }\end{DoxyParamCaption})}
+
+
+
+Definition at line 33 of file Graphics.\+cpp.
+
+
+\begin{DoxyCode}
+33                                     \{
+34     \textcolor{keyword}{auto} polyline = map.\hyperlink{classMap_a32d8cf8af3089a95e0471fd523050896}{getPolyline}();
+35 
+36     \textcolor{keywordflow}{if} (!polyline.empty())
+37     \{
+38         \textcolor{comment}{// Needed to duplicate first vertex as the end, to make Map a closed ring}
+39 
+40         \hyperlink{classGraphics_a7b3e98774ea965783584d5351c730276}{map\_graphic\_}.\hyperlink{classMapGraphics_a389137596a79ed6a8239fe5451f8f470}{resetPolyline}(polyline.size() + 1);
+41 
+42         \textcolor{keywordtype}{int} i = 0;
+43 
+44         \textcolor{keyword}{auto} first\_vertex = polyline.at(0);
+45         \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto} &vertex : polyline)
+46         \{
+47             \hyperlink{classGraphics_a7b3e98774ea965783584d5351c730276}{map\_graphic\_}.\hyperlink{classMapGraphics_a0d58d85db2e9d6e62623ebab6ffa11e9}{setVertex}(i, sf::Vector2f(
+      \hyperlink{classGraphics_af9c6251065c2900d0a92380c2bea26b2}{PIXELS\_PER\_METER\_} * vertex.x, \hyperlink{classGraphics_af9c6251065c2900d0a92380c2bea26b2}{PIXELS\_PER\_METER\_} * vertex.y));
+48             ++i;
+49         \}
+50 
+51         \hyperlink{classGraphics_a7b3e98774ea965783584d5351c730276}{map\_graphic\_}.\hyperlink{classMapGraphics_a0d58d85db2e9d6e62623ebab6ffa11e9}{setVertex}(i, sf::Vector2f(
+      \hyperlink{classGraphics_af9c6251065c2900d0a92380c2bea26b2}{PIXELS\_PER\_METER\_} * first\_vertex.x, \hyperlink{classGraphics_af9c6251065c2900d0a92380c2bea26b2}{PIXELS\_PER\_METER\_} * first\_vertex.y));
+52     \}
+53 
+54 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classGraphics_abaf6bc20f9541026835dfee157ac5efb}\label{classGraphics_abaf6bc20f9541026835dfee157ac5efb}} 
+\index{Graphics@{Graphics}!operator=@{operator=}}
+\index{operator=@{operator=}!Graphics@{Graphics}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \hyperlink{classGraphics}{Graphics}\& Graphics\+::operator= (\begin{DoxyParamCaption}\item[{const \hyperlink{classGraphics}{Graphics} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classGraphics_abb78da7bc406f5c9518f7fd3f20b42f8}\label{classGraphics_abb78da7bc406f5c9518f7fd3f20b42f8}} 
+\index{Graphics@{Graphics}!restart\+Clock@{restart\+Clock}}
+\index{restart\+Clock@{restart\+Clock}!Graphics@{Graphics}}
+\subsubsection{\texorpdfstring{restart\+Clock()}{restartClock()}}
+{\footnotesize\ttfamily void Graphics\+::restart\+Clock (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 123 of file Graphics.\+cpp.
+
+
+\begin{DoxyCode}
+123                             \{
+124     \hyperlink{classGraphics_ab2983b7d90351c0f7b824ac6f887fd6d}{time\_} = \hyperlink{classGraphics_ad9850d50fe5792666c8aea88f39ba99c}{clock\_}.restart();
+125 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classGraphics_a44d7a76a58e03b8ad3f025123894c526}\label{classGraphics_a44d7a76a58e03b8ad3f025123894c526}} 
+\index{Graphics@{Graphics}!background\+\_\+color\+\_\+@{background\+\_\+color\+\_\+}}
+\index{background\+\_\+color\+\_\+@{background\+\_\+color\+\_\+}!Graphics@{Graphics}}
+\subsubsection{\texorpdfstring{background\+\_\+color\+\_\+}{background\_color\_}}
+{\footnotesize\ttfamily const sf\+::\+Color Graphics\+::background\+\_\+color\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 57 of file Graphics.\+h.
+
+\mbox{\Hypertarget{classGraphics_a8be356ffe3ee47f915027361b6ae34ab}\label{classGraphics_a8be356ffe3ee47f915027361b6ae34ab}} 
+\index{Graphics@{Graphics}!cars\+\_\+graphics\+\_\+@{cars\+\_\+graphics\+\_\+}}
+\index{cars\+\_\+graphics\+\_\+@{cars\+\_\+graphics\+\_\+}!Graphics@{Graphics}}
+\subsubsection{\texorpdfstring{cars\+\_\+graphics\+\_\+}{cars\_graphics\_}}
+{\footnotesize\ttfamily std\+::vector$<$\hyperlink{classCarGraphics}{Car\+Graphics}$>$ Graphics\+::cars\+\_\+graphics\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 59 of file Graphics.\+h.
+
+\mbox{\Hypertarget{classGraphics_ad9850d50fe5792666c8aea88f39ba99c}\label{classGraphics_ad9850d50fe5792666c8aea88f39ba99c}} 
+\index{Graphics@{Graphics}!clock\+\_\+@{clock\+\_\+}}
+\index{clock\+\_\+@{clock\+\_\+}!Graphics@{Graphics}}
+\subsubsection{\texorpdfstring{clock\+\_\+}{clock\_}}
+{\footnotesize\ttfamily sf\+::\+Clock Graphics\+::clock\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 65 of file Graphics.\+h.
+
+\mbox{\Hypertarget{classGraphics_ac582857f6b0de010eabd0146c4a5f4d2}\label{classGraphics_ac582857f6b0de010eabd0146c4a5f4d2}} 
+\index{Graphics@{Graphics}!gui\+\_\+@{gui\+\_\+}}
+\index{gui\+\_\+@{gui\+\_\+}!Graphics@{Graphics}}
+\subsubsection{\texorpdfstring{gui\+\_\+}{gui\_}}
+{\footnotesize\ttfamily \hyperlink{classGraphicalUserInterface}{Graphical\+User\+Interface} Graphics\+::gui\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 61 of file Graphics.\+h.
+
+\mbox{\Hypertarget{classGraphics_aac15ea113ea8c69d5e54996513886110}\label{classGraphics_aac15ea113ea8c69d5e54996513886110}} 
+\index{Graphics@{Graphics}!I\+N\+T\+E\+R\+F\+A\+C\+E\+\_\+\+W\+I\+D\+T\+H\+\_\+\+P\+I\+X\+E\+L\+S\+\_\+@{I\+N\+T\+E\+R\+F\+A\+C\+E\+\_\+\+W\+I\+D\+T\+H\+\_\+\+P\+I\+X\+E\+L\+S\+\_\+}}
+\index{I\+N\+T\+E\+R\+F\+A\+C\+E\+\_\+\+W\+I\+D\+T\+H\+\_\+\+P\+I\+X\+E\+L\+S\+\_\+@{I\+N\+T\+E\+R\+F\+A\+C\+E\+\_\+\+W\+I\+D\+T\+H\+\_\+\+P\+I\+X\+E\+L\+S\+\_\+}!Graphics@{Graphics}}
+\subsubsection{\texorpdfstring{I\+N\+T\+E\+R\+F\+A\+C\+E\+\_\+\+W\+I\+D\+T\+H\+\_\+\+P\+I\+X\+E\+L\+S\+\_\+}{INTERFACE\_WIDTH\_PIXELS\_}}
+{\footnotesize\ttfamily constexpr int Graphics\+::\+I\+N\+T\+E\+R\+F\+A\+C\+E\+\_\+\+W\+I\+D\+T\+H\+\_\+\+P\+I\+X\+E\+L\+S\+\_\+ = 300\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line 55 of file Graphics.\+h.
+
+\mbox{\Hypertarget{classGraphics_a7b3e98774ea965783584d5351c730276}\label{classGraphics_a7b3e98774ea965783584d5351c730276}} 
+\index{Graphics@{Graphics}!map\+\_\+graphic\+\_\+@{map\+\_\+graphic\+\_\+}}
+\index{map\+\_\+graphic\+\_\+@{map\+\_\+graphic\+\_\+}!Graphics@{Graphics}}
+\subsubsection{\texorpdfstring{map\+\_\+graphic\+\_\+}{map\_graphic\_}}
+{\footnotesize\ttfamily \hyperlink{classMapGraphics}{Map\+Graphics} Graphics\+::map\+\_\+graphic\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 60 of file Graphics.\+h.
+
+\mbox{\Hypertarget{classGraphics_af9c6251065c2900d0a92380c2bea26b2}\label{classGraphics_af9c6251065c2900d0a92380c2bea26b2}} 
+\index{Graphics@{Graphics}!P\+I\+X\+E\+L\+S\+\_\+\+P\+E\+R\+\_\+\+M\+E\+T\+E\+R\+\_\+@{P\+I\+X\+E\+L\+S\+\_\+\+P\+E\+R\+\_\+\+M\+E\+T\+E\+R\+\_\+}}
+\index{P\+I\+X\+E\+L\+S\+\_\+\+P\+E\+R\+\_\+\+M\+E\+T\+E\+R\+\_\+@{P\+I\+X\+E\+L\+S\+\_\+\+P\+E\+R\+\_\+\+M\+E\+T\+E\+R\+\_\+}!Graphics@{Graphics}}
+\subsubsection{\texorpdfstring{P\+I\+X\+E\+L\+S\+\_\+\+P\+E\+R\+\_\+\+M\+E\+T\+E\+R\+\_\+}{PIXELS\_PER\_METER\_}}
+{\footnotesize\ttfamily constexpr float Graphics\+::\+P\+I\+X\+E\+L\+S\+\_\+\+P\+E\+R\+\_\+\+M\+E\+T\+E\+R\+\_\+ = 60.\+0f\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line 52 of file Graphics.\+h.
+
+\mbox{\Hypertarget{classGraphics_ab8d68b2977c39547e1c10a7669698aca}\label{classGraphics_ab8d68b2977c39547e1c10a7669698aca}} 
+\index{Graphics@{Graphics}!settings\+\_\+@{settings\+\_\+}}
+\index{settings\+\_\+@{settings\+\_\+}!Graphics@{Graphics}}
+\subsubsection{\texorpdfstring{settings\+\_\+}{settings\_}}
+{\footnotesize\ttfamily sf\+::\+Context\+Settings Graphics\+::settings\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 63 of file Graphics.\+h.
+
+\mbox{\Hypertarget{classGraphics_ab2983b7d90351c0f7b824ac6f887fd6d}\label{classGraphics_ab2983b7d90351c0f7b824ac6f887fd6d}} 
+\index{Graphics@{Graphics}!time\+\_\+@{time\+\_\+}}
+\index{time\+\_\+@{time\+\_\+}!Graphics@{Graphics}}
+\subsubsection{\texorpdfstring{time\+\_\+}{time\_}}
+{\footnotesize\ttfamily sf\+::\+Time Graphics\+::time\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 66 of file Graphics.\+h.
+
+\mbox{\Hypertarget{classGraphics_a60792a296f5e93dbd1d086398e20cbd0}\label{classGraphics_a60792a296f5e93dbd1d086398e20cbd0}} 
+\index{Graphics@{Graphics}!view\+\_\+action\+\_\+@{view\+\_\+action\+\_\+}}
+\index{view\+\_\+action\+\_\+@{view\+\_\+action\+\_\+}!Graphics@{Graphics}}
+\subsubsection{\texorpdfstring{view\+\_\+action\+\_\+}{view\_action\_}}
+{\footnotesize\ttfamily sf\+::\+View Graphics\+::view\+\_\+action\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 67 of file Graphics.\+h.
+
+\mbox{\Hypertarget{classGraphics_aaca5b237fae17f3166f8f28e4c363e06}\label{classGraphics_aaca5b237fae17f3166f8f28e4c363e06}} 
+\index{Graphics@{Graphics}!view\+\_\+gui\+\_\+@{view\+\_\+gui\+\_\+}}
+\index{view\+\_\+gui\+\_\+@{view\+\_\+gui\+\_\+}!Graphics@{Graphics}}
+\subsubsection{\texorpdfstring{view\+\_\+gui\+\_\+}{view\_gui\_}}
+{\footnotesize\ttfamily sf\+::\+View Graphics\+::view\+\_\+gui\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 67 of file Graphics.\+h.
+
+\mbox{\Hypertarget{classGraphics_ac760fe1abb0b648844c9f15afa087ef6}\label{classGraphics_ac760fe1abb0b648844c9f15afa087ef6}} 
+\index{Graphics@{Graphics}!window\+\_\+@{window\+\_\+}}
+\index{window\+\_\+@{window\+\_\+}!Graphics@{Graphics}}
+\subsubsection{\texorpdfstring{window\+\_\+}{window\_}}
+{\footnotesize\ttfamily sf\+::\+Render\+Window Graphics\+::window\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 64 of file Graphics.\+h.
+
+\mbox{\Hypertarget{classGraphics_a2838b79511d56711b88e677ad48c54e9}\label{classGraphics_a2838b79511d56711b88e677ad48c54e9}} 
+\index{Graphics@{Graphics}!W\+I\+N\+D\+O\+W\+\_\+\+H\+E\+I\+G\+H\+T\+\_\+\+P\+I\+X\+E\+L\+S\+\_\+@{W\+I\+N\+D\+O\+W\+\_\+\+H\+E\+I\+G\+H\+T\+\_\+\+P\+I\+X\+E\+L\+S\+\_\+}}
+\index{W\+I\+N\+D\+O\+W\+\_\+\+H\+E\+I\+G\+H\+T\+\_\+\+P\+I\+X\+E\+L\+S\+\_\+@{W\+I\+N\+D\+O\+W\+\_\+\+H\+E\+I\+G\+H\+T\+\_\+\+P\+I\+X\+E\+L\+S\+\_\+}!Graphics@{Graphics}}
+\subsubsection{\texorpdfstring{W\+I\+N\+D\+O\+W\+\_\+\+H\+E\+I\+G\+H\+T\+\_\+\+P\+I\+X\+E\+L\+S\+\_\+}{WINDOW\_HEIGHT\_PIXELS\_}}
+{\footnotesize\ttfamily constexpr int Graphics\+::\+W\+I\+N\+D\+O\+W\+\_\+\+H\+E\+I\+G\+H\+T\+\_\+\+P\+I\+X\+E\+L\+S\+\_\+ = 600\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line 54 of file Graphics.\+h.
+
+\mbox{\Hypertarget{classGraphics_a4e8cd4a9f4799e3b7f5e85685d6d4905}\label{classGraphics_a4e8cd4a9f4799e3b7f5e85685d6d4905}} 
+\index{Graphics@{Graphics}!W\+I\+N\+D\+O\+W\+\_\+\+W\+I\+D\+T\+H\+\_\+\+P\+I\+X\+E\+L\+S\+\_\+@{W\+I\+N\+D\+O\+W\+\_\+\+W\+I\+D\+T\+H\+\_\+\+P\+I\+X\+E\+L\+S\+\_\+}}
+\index{W\+I\+N\+D\+O\+W\+\_\+\+W\+I\+D\+T\+H\+\_\+\+P\+I\+X\+E\+L\+S\+\_\+@{W\+I\+N\+D\+O\+W\+\_\+\+W\+I\+D\+T\+H\+\_\+\+P\+I\+X\+E\+L\+S\+\_\+}!Graphics@{Graphics}}
+\subsubsection{\texorpdfstring{W\+I\+N\+D\+O\+W\+\_\+\+W\+I\+D\+T\+H\+\_\+\+P\+I\+X\+E\+L\+S\+\_\+}{WINDOW\_WIDTH\_PIXELS\_}}
+{\footnotesize\ttfamily constexpr int Graphics\+::\+W\+I\+N\+D\+O\+W\+\_\+\+W\+I\+D\+T\+H\+\_\+\+P\+I\+X\+E\+L\+S\+\_\+ = 1000\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line 53 of file Graphics.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Graphics/\hyperlink{Graphics_8h}{Graphics.\+h}\item 
+src/\+Graphics/\hyperlink{Graphics_8cpp}{Graphics.\+cpp}\end{DoxyCompactItemize}

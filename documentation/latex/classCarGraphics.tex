@@ -1,0 +1,240 @@
+\hypertarget{classCarGraphics}{}\section{Car\+Graphics Class Reference}
+\label{classCarGraphics}\index{Car\+Graphics@{Car\+Graphics}}
+
+
+{\ttfamily \#include $<$Car\+Graphics.\+h$>$}
+
+
+
+Inheritance diagram for Car\+Graphics\+:
+% FIG 0
+
+
+Collaboration diagram for Car\+Graphics\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCarGraphics_a37c8d0d08003f0a84495a3aedfe471db}{Car\+Graphics} (const std\+::vector$<$ sf\+::\+Vector2f $>$ \&vertices, double front\+\_\+wheel\+\_\+radius, double rear\+\_\+wheel\+\_\+radius)
+\item 
+void \hyperlink{classCarGraphics_a66e55f3ba283beb484eb8285c40bda14}{set\+Position\+And\+Angle} (const sf\+::\+Vector2f \&position, float angle)
+\item 
+void \hyperlink{classCarGraphics_a02169a6fec9b7d4c076b5597a11eac08}{set\+Front\+Wheel\+Position} (const sf\+::\+Vector2f \&position)
+\item 
+void \hyperlink{classCarGraphics_a30a28ce4d33808d22f6ca460c5b8013d}{set\+Rear\+Wheel\+Position} (const sf\+::\+Vector2f \&position)
+\item 
+const sf\+::\+Vector2f \& \hyperlink{classCarGraphics_a80e3b77608619843db5cbae4faee825b}{get\+Position} () const
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classCarGraphics_a7a9cf695c9bae5a533c21c6f5d78e635}{draw} (sf\+::\+Render\+Target \&target, sf\+::\+Render\+States states) const override
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const sf\+::\+Color \hyperlink{classCarGraphics_a3df8d600a272817a5c521cdc8c23c587}{car\+\_\+body\+\_\+color\+\_\+}
+\item 
+const sf\+::\+Color \hyperlink{classCarGraphics_adc369f5f948025767d40f2ad40e2568a}{wheel\+\_\+color\+\_\+}
+\item 
+sf\+::\+Convex\+Shape \hyperlink{classCarGraphics_a4e1969ef5f4326f10b83b1488484f660}{car\+\_\+body\+\_\+graphics\+\_\+}
+\item 
+sf\+::\+Circle\+Shape \hyperlink{classCarGraphics_a2a66d0c60b79f54a807a31afd76c4ad1}{wheel\+\_\+rear\+\_\+}
+\item 
+sf\+::\+Circle\+Shape \hyperlink{classCarGraphics_a2e004e7f0288f6ed1352ba9116b4d112}{wheel\+\_\+front\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 10 of file Car\+Graphics.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCarGraphics_a37c8d0d08003f0a84495a3aedfe471db}\label{classCarGraphics_a37c8d0d08003f0a84495a3aedfe471db}} 
+\index{Car\+Graphics@{Car\+Graphics}!Car\+Graphics@{Car\+Graphics}}
+\index{Car\+Graphics@{Car\+Graphics}!Car\+Graphics@{Car\+Graphics}}
+\subsubsection{\texorpdfstring{Car\+Graphics()}{CarGraphics()}}
+{\footnotesize\ttfamily Car\+Graphics\+::\+Car\+Graphics (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ sf\+::\+Vector2f $>$ \&}]{vertices,  }\item[{double}]{front\+\_\+wheel\+\_\+radius,  }\item[{double}]{rear\+\_\+wheel\+\_\+radius }\end{DoxyParamCaption})}
+
+
+
+Definition at line 11 of file Car\+Graphics.\+cpp.
+
+
+\begin{DoxyCode}
+12                                                                               : 
+      \hyperlink{classCarGraphics_a3df8d600a272817a5c521cdc8c23c587}{car\_body\_color\_}(255,204,0),
+13                                                                                 
+      \hyperlink{classCarGraphics_adc369f5f948025767d40f2ad40e2568a}{wheel\_color\_}(255,51,102) \{
+14     \hyperlink{classCarGraphics_a4e1969ef5f4326f10b83b1488484f660}{car\_body\_graphics\_}.setPointCount(vertices.size());
+15     \hyperlink{classCarGraphics_a4e1969ef5f4326f10b83b1488484f660}{car\_body\_graphics\_}.setOrigin(sf::Vector2f(0.0f, 0.0f));
+16 
+17     \textcolor{keywordtype}{size\_t} index = 0;
+18     \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto} &vertex : vertices)
+19     \{
+20         \hyperlink{classCarGraphics_a4e1969ef5f4326f10b83b1488484f660}{car\_body\_graphics\_}.setPoint(index, vertex);
+21         ++index;
+22     \}
+23 
+24     \hyperlink{classCarGraphics_a4e1969ef5f4326f10b83b1488484f660}{car\_body\_graphics\_}.setFillColor(\hyperlink{classCarGraphics_a3df8d600a272817a5c521cdc8c23c587}{car\_body\_color\_});
+25     \hyperlink{classCarGraphics_a4e1969ef5f4326f10b83b1488484f660}{car\_body\_graphics\_}.setPosition(0.0f, 0.0f);
+26 
+27     \textcolor{keyword}{auto} rear\_wheel\_radius\_f = \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(rear\_wheel\_radius);
+28     \hyperlink{classCarGraphics_a2a66d0c60b79f54a807a31afd76c4ad1}{wheel\_rear\_}.setRadius(rear\_wheel\_radius\_f);
+29     \hyperlink{classCarGraphics_a2a66d0c60b79f54a807a31afd76c4ad1}{wheel\_rear\_}.setOrigin(rear\_wheel\_radius\_f, rear\_wheel\_radius\_f);
+30     \hyperlink{classCarGraphics_a2a66d0c60b79f54a807a31afd76c4ad1}{wheel\_rear\_}.setFillColor(\hyperlink{classCarGraphics_adc369f5f948025767d40f2ad40e2568a}{wheel\_color\_});
+31 
+32     \textcolor{keyword}{auto} front\_wheel\_radius\_f = \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(front\_wheel\_radius);
+33     \hyperlink{classCarGraphics_a2e004e7f0288f6ed1352ba9116b4d112}{wheel\_front\_}.setRadius(front\_wheel\_radius\_f);
+34     \hyperlink{classCarGraphics_a2e004e7f0288f6ed1352ba9116b4d112}{wheel\_front\_}.setOrigin(front\_wheel\_radius\_f, front\_wheel\_radius\_f);
+35     \hyperlink{classCarGraphics_a2e004e7f0288f6ed1352ba9116b4d112}{wheel\_front\_}.setFillColor(\hyperlink{classCarGraphics_adc369f5f948025767d40f2ad40e2568a}{wheel\_color\_});
+36 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classCarGraphics_a7a9cf695c9bae5a533c21c6f5d78e635}\label{classCarGraphics_a7a9cf695c9bae5a533c21c6f5d78e635}} 
+\index{Car\+Graphics@{Car\+Graphics}!draw@{draw}}
+\index{draw@{draw}!Car\+Graphics@{Car\+Graphics}}
+\subsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Car\+Graphics\+::draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Target \&}]{target,  }\item[{sf\+::\+Render\+States}]{states }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}}
+
+
+
+Definition at line 55 of file Car\+Graphics.\+cpp.
+
+
+\begin{DoxyCode}
+55                                                                           \{
+56     target.draw(\hyperlink{classCarGraphics_a4e1969ef5f4326f10b83b1488484f660}{car\_body\_graphics\_}, states);
+57     target.draw(\hyperlink{classCarGraphics_a2e004e7f0288f6ed1352ba9116b4d112}{wheel\_front\_}, states);
+58     target.draw(\hyperlink{classCarGraphics_a2a66d0c60b79f54a807a31afd76c4ad1}{wheel\_rear\_}, states);
+59 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classCarGraphics_a80e3b77608619843db5cbae4faee825b}\label{classCarGraphics_a80e3b77608619843db5cbae4faee825b}} 
+\index{Car\+Graphics@{Car\+Graphics}!get\+Position@{get\+Position}}
+\index{get\+Position@{get\+Position}!Car\+Graphics@{Car\+Graphics}}
+\subsubsection{\texorpdfstring{get\+Position()}{getPosition()}}
+{\footnotesize\ttfamily const sf\+::\+Vector2f \& Car\+Graphics\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 51 of file Car\+Graphics.\+cpp.
+
+
+\begin{DoxyCode}
+51                                                  \{
+52     \textcolor{keywordflow}{return} \hyperlink{classCarGraphics_a4e1969ef5f4326f10b83b1488484f660}{car\_body\_graphics\_}.getPosition();
+53 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classCarGraphics_a02169a6fec9b7d4c076b5597a11eac08}\label{classCarGraphics_a02169a6fec9b7d4c076b5597a11eac08}} 
+\index{Car\+Graphics@{Car\+Graphics}!set\+Front\+Wheel\+Position@{set\+Front\+Wheel\+Position}}
+\index{set\+Front\+Wheel\+Position@{set\+Front\+Wheel\+Position}!Car\+Graphics@{Car\+Graphics}}
+\subsubsection{\texorpdfstring{set\+Front\+Wheel\+Position()}{setFrontWheelPosition()}}
+{\footnotesize\ttfamily void Car\+Graphics\+::set\+Front\+Wheel\+Position (\begin{DoxyParamCaption}\item[{const sf\+::\+Vector2f \&}]{position }\end{DoxyParamCaption})}
+
+
+
+Definition at line 43 of file Car\+Graphics.\+cpp.
+
+
+\begin{DoxyCode}
+43                                                                   \{
+44     \hyperlink{classCarGraphics_a2e004e7f0288f6ed1352ba9116b4d112}{wheel\_front\_}.setPosition(position);
+45 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classCarGraphics_a66e55f3ba283beb484eb8285c40bda14}\label{classCarGraphics_a66e55f3ba283beb484eb8285c40bda14}} 
+\index{Car\+Graphics@{Car\+Graphics}!set\+Position\+And\+Angle@{set\+Position\+And\+Angle}}
+\index{set\+Position\+And\+Angle@{set\+Position\+And\+Angle}!Car\+Graphics@{Car\+Graphics}}
+\subsubsection{\texorpdfstring{set\+Position\+And\+Angle()}{setPositionAndAngle()}}
+{\footnotesize\ttfamily void Car\+Graphics\+::set\+Position\+And\+Angle (\begin{DoxyParamCaption}\item[{const sf\+::\+Vector2f \&}]{position,  }\item[{float}]{angle }\end{DoxyParamCaption})}
+
+
+
+Definition at line 38 of file Car\+Graphics.\+cpp.
+
+
+\begin{DoxyCode}
+38                                                                              \{
+39     \hyperlink{classCarGraphics_a4e1969ef5f4326f10b83b1488484f660}{car\_body\_graphics\_}.setPosition(position);
+40     \hyperlink{classCarGraphics_a4e1969ef5f4326f10b83b1488484f660}{car\_body\_graphics\_}.setRotation(angle);
+41 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classCarGraphics_a30a28ce4d33808d22f6ca460c5b8013d}\label{classCarGraphics_a30a28ce4d33808d22f6ca460c5b8013d}} 
+\index{Car\+Graphics@{Car\+Graphics}!set\+Rear\+Wheel\+Position@{set\+Rear\+Wheel\+Position}}
+\index{set\+Rear\+Wheel\+Position@{set\+Rear\+Wheel\+Position}!Car\+Graphics@{Car\+Graphics}}
+\subsubsection{\texorpdfstring{set\+Rear\+Wheel\+Position()}{setRearWheelPosition()}}
+{\footnotesize\ttfamily void Car\+Graphics\+::set\+Rear\+Wheel\+Position (\begin{DoxyParamCaption}\item[{const sf\+::\+Vector2f \&}]{position }\end{DoxyParamCaption})}
+
+
+
+Definition at line 47 of file Car\+Graphics.\+cpp.
+
+
+\begin{DoxyCode}
+47                                                                  \{
+48     \hyperlink{classCarGraphics_a2a66d0c60b79f54a807a31afd76c4ad1}{wheel\_rear\_}.setPosition(position);
+49 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classCarGraphics_a3df8d600a272817a5c521cdc8c23c587}\label{classCarGraphics_a3df8d600a272817a5c521cdc8c23c587}} 
+\index{Car\+Graphics@{Car\+Graphics}!car\+\_\+body\+\_\+color\+\_\+@{car\+\_\+body\+\_\+color\+\_\+}}
+\index{car\+\_\+body\+\_\+color\+\_\+@{car\+\_\+body\+\_\+color\+\_\+}!Car\+Graphics@{Car\+Graphics}}
+\subsubsection{\texorpdfstring{car\+\_\+body\+\_\+color\+\_\+}{car\_body\_color\_}}
+{\footnotesize\ttfamily const sf\+::\+Color Car\+Graphics\+::car\+\_\+body\+\_\+color\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 24 of file Car\+Graphics.\+h.
+
+\mbox{\Hypertarget{classCarGraphics_a4e1969ef5f4326f10b83b1488484f660}\label{classCarGraphics_a4e1969ef5f4326f10b83b1488484f660}} 
+\index{Car\+Graphics@{Car\+Graphics}!car\+\_\+body\+\_\+graphics\+\_\+@{car\+\_\+body\+\_\+graphics\+\_\+}}
+\index{car\+\_\+body\+\_\+graphics\+\_\+@{car\+\_\+body\+\_\+graphics\+\_\+}!Car\+Graphics@{Car\+Graphics}}
+\subsubsection{\texorpdfstring{car\+\_\+body\+\_\+graphics\+\_\+}{car\_body\_graphics\_}}
+{\footnotesize\ttfamily sf\+::\+Convex\+Shape Car\+Graphics\+::car\+\_\+body\+\_\+graphics\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 26 of file Car\+Graphics.\+h.
+
+\mbox{\Hypertarget{classCarGraphics_adc369f5f948025767d40f2ad40e2568a}\label{classCarGraphics_adc369f5f948025767d40f2ad40e2568a}} 
+\index{Car\+Graphics@{Car\+Graphics}!wheel\+\_\+color\+\_\+@{wheel\+\_\+color\+\_\+}}
+\index{wheel\+\_\+color\+\_\+@{wheel\+\_\+color\+\_\+}!Car\+Graphics@{Car\+Graphics}}
+\subsubsection{\texorpdfstring{wheel\+\_\+color\+\_\+}{wheel\_color\_}}
+{\footnotesize\ttfamily const sf\+::\+Color Car\+Graphics\+::wheel\+\_\+color\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 24 of file Car\+Graphics.\+h.
+
+\mbox{\Hypertarget{classCarGraphics_a2e004e7f0288f6ed1352ba9116b4d112}\label{classCarGraphics_a2e004e7f0288f6ed1352ba9116b4d112}} 
+\index{Car\+Graphics@{Car\+Graphics}!wheel\+\_\+front\+\_\+@{wheel\+\_\+front\+\_\+}}
+\index{wheel\+\_\+front\+\_\+@{wheel\+\_\+front\+\_\+}!Car\+Graphics@{Car\+Graphics}}
+\subsubsection{\texorpdfstring{wheel\+\_\+front\+\_\+}{wheel\_front\_}}
+{\footnotesize\ttfamily sf\+::\+Circle\+Shape Car\+Graphics\+::wheel\+\_\+front\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 28 of file Car\+Graphics.\+h.
+
+\mbox{\Hypertarget{classCarGraphics_a2a66d0c60b79f54a807a31afd76c4ad1}\label{classCarGraphics_a2a66d0c60b79f54a807a31afd76c4ad1}} 
+\index{Car\+Graphics@{Car\+Graphics}!wheel\+\_\+rear\+\_\+@{wheel\+\_\+rear\+\_\+}}
+\index{wheel\+\_\+rear\+\_\+@{wheel\+\_\+rear\+\_\+}!Car\+Graphics@{Car\+Graphics}}
+\subsubsection{\texorpdfstring{wheel\+\_\+rear\+\_\+}{wheel\_rear\_}}
+{\footnotesize\ttfamily sf\+::\+Circle\+Shape Car\+Graphics\+::wheel\+\_\+rear\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 27 of file Car\+Graphics.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Graphics/\hyperlink{CarGraphics_8h}{Car\+Graphics.\+h}\item 
+src/\+Graphics/\hyperlink{CarGraphics_8cpp}{Car\+Graphics.\+cpp}\end{DoxyCompactItemize}

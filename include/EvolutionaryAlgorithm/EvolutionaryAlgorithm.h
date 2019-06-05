@@ -1,6 +1,8 @@
-//
-// Created by SpiritStudio on 01.12.18.
-//
+//!  A EvolutionaryAlgorithm class.
+/*!
+  A class which represents the Evolutionary Algorithm
+
+*/
 
 #ifndef VEHICLESEVOLUTION_EVOLUTIONARYALGORITHM_H
 #define VEHICLESEVOLUTION_EVOLUTIONARYALGORITHM_H

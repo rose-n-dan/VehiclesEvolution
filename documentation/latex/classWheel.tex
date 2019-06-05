@@ -1,0 +1,230 @@
+\hypertarget{classWheel}{}\section{Wheel Class Reference}
+\label{classWheel}\index{Wheel@{Wheel}}
+
+
+{\ttfamily \#include $<$Wheel.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classWheel_a80d4c116370fe8edb97f2a3381e9f55b}{Wheel} (b2\+World \&world, double radius)
+\item 
+const b2\+Vec2 \& \hyperlink{classWheel_a645ce5d8595047c6774f936794e3f543}{get\+Position} () const
+\item 
+const double \hyperlink{classWheel_a5bc6a7580f38a4ea08ba8d1bff79178a}{get\+Angle} () const
+\item 
+const double \hyperlink{classWheel_a224ac73d325efb3cdc389a36d54ca10b}{get\+Radius} () const
+\item 
+b2\+Body $\ast$ \hyperlink{classWheel_af278d5423746dfc46834ec6b225d4e17}{get\+Body} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+b2\+Body\+Def \hyperlink{classWheel_a3ab427a9baabb06def9994e54c6adea4}{body\+\_\+def\+\_\+}
+\item 
+b2\+Circle\+Shape \hyperlink{classWheel_a9464768a2f778d0da93bd53e8beb7740}{dynamic\+\_\+circle\+\_\+}
+\item 
+b2\+Fixture\+Def \hyperlink{classWheel_a22109a794a3024cbc11b1e5fde8630d1}{fixture\+\_\+def\+\_\+}
+\item 
+b2\+Body $\ast$ \hyperlink{classWheel_a155ed4c915b672ca1dd3a6fdd51ff6e9}{body\+\_\+}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr float \hyperlink{classWheel_afc6cf2c4e04f565ba581203878a358f0}{D\+E\+N\+S\+I\+T\+Y\+\_\+} = 2.\+0f
+\item 
+static constexpr float \hyperlink{classWheel_a714e23dd922b96909529cc611e515603}{F\+R\+I\+C\+T\+I\+O\+N\+\_\+} = 0.\+5f
+\item 
+static constexpr float \hyperlink{classWheel_ad8d457ae4fcae73501f37a35f044d024}{R\+E\+S\+T\+I\+T\+I\+U\+T\+I\+O\+N\+\_\+} = 0.\+1f
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 10 of file Wheel.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classWheel_a80d4c116370fe8edb97f2a3381e9f55b}\label{classWheel_a80d4c116370fe8edb97f2a3381e9f55b}} 
+\index{Wheel@{Wheel}!Wheel@{Wheel}}
+\index{Wheel@{Wheel}!Wheel@{Wheel}}
+\subsubsection{\texorpdfstring{Wheel()}{Wheel()}}
+{\footnotesize\ttfamily Wheel\+::\+Wheel (\begin{DoxyParamCaption}\item[{b2\+World \&}]{world,  }\item[{double}]{radius }\end{DoxyParamCaption})}
+
+
+
+Definition at line 7 of file Wheel.\+cpp.
+
+
+\begin{DoxyCode}
+7                                           \{
+8     \hyperlink{classWheel_a3ab427a9baabb06def9994e54c6adea4}{body\_def\_}.type = b2\_dynamicBody;
+9     \hyperlink{classWheel_a155ed4c915b672ca1dd3a6fdd51ff6e9}{body\_} = world.CreateBody(&\hyperlink{classWheel_a3ab427a9baabb06def9994e54c6adea4}{body\_def\_});
+10 
+11     \hyperlink{classWheel_a9464768a2f778d0da93bd53e8beb7740}{dynamic\_circle\_}.m\_radius = \textcolor{keyword}{static\_cast<}float32\textcolor{keyword}{>}(radius);
+12 
+13     \hyperlink{classWheel_a22109a794a3024cbc11b1e5fde8630d1}{fixture\_def\_}.shape = &\hyperlink{classWheel_a9464768a2f778d0da93bd53e8beb7740}{dynamic\_circle\_};
+14 
+15     \textcolor{comment}{// Set the box density to be non-zero, so it will be dynamic.}
+16     \hyperlink{classWheel_a22109a794a3024cbc11b1e5fde8630d1}{fixture\_def\_}.density = \hyperlink{classWheel_afc6cf2c4e04f565ba581203878a358f0}{DENSITY\_};
+17 
+18     \textcolor{comment}{// Override the default friction.}
+19     \hyperlink{classWheel_a22109a794a3024cbc11b1e5fde8630d1}{fixture\_def\_}.friction = \hyperlink{classWheel_a714e23dd922b96909529cc611e515603}{FRICTION\_};
+20 
+21     \hyperlink{classWheel_a22109a794a3024cbc11b1e5fde8630d1}{fixture\_def\_}.restitution = \hyperlink{classWheel_ad8d457ae4fcae73501f37a35f044d024}{RESTITIUTION\_};
+22 
+23     \hyperlink{classWheel_a22109a794a3024cbc11b1e5fde8630d1}{fixture\_def\_}.filter.categoryBits = 0x0001;
+24     \hyperlink{classWheel_a22109a794a3024cbc11b1e5fde8630d1}{fixture\_def\_}.filter.maskBits = 0x0002;
+25 
+26     \textcolor{comment}{// Add the shape to the body.}
+27     \hyperlink{classWheel_a155ed4c915b672ca1dd3a6fdd51ff6e9}{body\_}->CreateFixture(&\hyperlink{classWheel_a22109a794a3024cbc11b1e5fde8630d1}{fixture\_def\_});
+28 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classWheel_a5bc6a7580f38a4ea08ba8d1bff79178a}\label{classWheel_a5bc6a7580f38a4ea08ba8d1bff79178a}} 
+\index{Wheel@{Wheel}!get\+Angle@{get\+Angle}}
+\index{get\+Angle@{get\+Angle}!Wheel@{Wheel}}
+\subsubsection{\texorpdfstring{get\+Angle()}{getAngle()}}
+{\footnotesize\ttfamily const double Wheel\+::get\+Angle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 42 of file Wheel.\+cpp.
+
+
+\begin{DoxyCode}
+42                                    \{
+43     \textcolor{keywordflow}{return} \hyperlink{classWheel_a155ed4c915b672ca1dd3a6fdd51ff6e9}{body\_}->GetAngle();
+44 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classWheel_af278d5423746dfc46834ec6b225d4e17}\label{classWheel_af278d5423746dfc46834ec6b225d4e17}} 
+\index{Wheel@{Wheel}!get\+Body@{get\+Body}}
+\index{get\+Body@{get\+Body}!Wheel@{Wheel}}
+\subsubsection{\texorpdfstring{get\+Body()}{getBody()}}
+{\footnotesize\ttfamily b2\+Body $\ast$ Wheel\+::get\+Body (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 30 of file Wheel.\+cpp.
+
+
+\begin{DoxyCode}
+30                        \{
+31     \textcolor{keywordflow}{return} \hyperlink{classWheel_a155ed4c915b672ca1dd3a6fdd51ff6e9}{body\_};
+32 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classWheel_a645ce5d8595047c6774f936794e3f543}\label{classWheel_a645ce5d8595047c6774f936794e3f543}} 
+\index{Wheel@{Wheel}!get\+Position@{get\+Position}}
+\index{get\+Position@{get\+Position}!Wheel@{Wheel}}
+\subsubsection{\texorpdfstring{get\+Position()}{getPosition()}}
+{\footnotesize\ttfamily const b2\+Vec2 \& Wheel\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 34 of file Wheel.\+cpp.
+
+
+\begin{DoxyCode}
+34                                        \{
+35     \textcolor{keywordflow}{return} \hyperlink{classWheel_a155ed4c915b672ca1dd3a6fdd51ff6e9}{body\_}->GetPosition();
+36 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classWheel_a224ac73d325efb3cdc389a36d54ca10b}\label{classWheel_a224ac73d325efb3cdc389a36d54ca10b}} 
+\index{Wheel@{Wheel}!get\+Radius@{get\+Radius}}
+\index{get\+Radius@{get\+Radius}!Wheel@{Wheel}}
+\subsubsection{\texorpdfstring{get\+Radius()}{getRadius()}}
+{\footnotesize\ttfamily const double Wheel\+::get\+Radius (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 38 of file Wheel.\+cpp.
+
+
+\begin{DoxyCode}
+38                                     \{
+39     \textcolor{keywordflow}{return} \hyperlink{classWheel_a9464768a2f778d0da93bd53e8beb7740}{dynamic\_circle\_}.m\_radius;
+40 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classWheel_a155ed4c915b672ca1dd3a6fdd51ff6e9}\label{classWheel_a155ed4c915b672ca1dd3a6fdd51ff6e9}} 
+\index{Wheel@{Wheel}!body\+\_\+@{body\+\_\+}}
+\index{body\+\_\+@{body\+\_\+}!Wheel@{Wheel}}
+\subsubsection{\texorpdfstring{body\+\_\+}{body\_}}
+{\footnotesize\ttfamily b2\+Body$\ast$ Wheel\+::body\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 29 of file Wheel.\+h.
+
+\mbox{\Hypertarget{classWheel_a3ab427a9baabb06def9994e54c6adea4}\label{classWheel_a3ab427a9baabb06def9994e54c6adea4}} 
+\index{Wheel@{Wheel}!body\+\_\+def\+\_\+@{body\+\_\+def\+\_\+}}
+\index{body\+\_\+def\+\_\+@{body\+\_\+def\+\_\+}!Wheel@{Wheel}}
+\subsubsection{\texorpdfstring{body\+\_\+def\+\_\+}{body\_def\_}}
+{\footnotesize\ttfamily b2\+Body\+Def Wheel\+::body\+\_\+def\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 26 of file Wheel.\+h.
+
+\mbox{\Hypertarget{classWheel_afc6cf2c4e04f565ba581203878a358f0}\label{classWheel_afc6cf2c4e04f565ba581203878a358f0}} 
+\index{Wheel@{Wheel}!D\+E\+N\+S\+I\+T\+Y\+\_\+@{D\+E\+N\+S\+I\+T\+Y\+\_\+}}
+\index{D\+E\+N\+S\+I\+T\+Y\+\_\+@{D\+E\+N\+S\+I\+T\+Y\+\_\+}!Wheel@{Wheel}}
+\subsubsection{\texorpdfstring{D\+E\+N\+S\+I\+T\+Y\+\_\+}{DENSITY\_}}
+{\footnotesize\ttfamily constexpr float Wheel\+::\+D\+E\+N\+S\+I\+T\+Y\+\_\+ = 2.\+0f\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line 22 of file Wheel.\+h.
+
+\mbox{\Hypertarget{classWheel_a9464768a2f778d0da93bd53e8beb7740}\label{classWheel_a9464768a2f778d0da93bd53e8beb7740}} 
+\index{Wheel@{Wheel}!dynamic\+\_\+circle\+\_\+@{dynamic\+\_\+circle\+\_\+}}
+\index{dynamic\+\_\+circle\+\_\+@{dynamic\+\_\+circle\+\_\+}!Wheel@{Wheel}}
+\subsubsection{\texorpdfstring{dynamic\+\_\+circle\+\_\+}{dynamic\_circle\_}}
+{\footnotesize\ttfamily b2\+Circle\+Shape Wheel\+::dynamic\+\_\+circle\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 27 of file Wheel.\+h.
+
+\mbox{\Hypertarget{classWheel_a22109a794a3024cbc11b1e5fde8630d1}\label{classWheel_a22109a794a3024cbc11b1e5fde8630d1}} 
+\index{Wheel@{Wheel}!fixture\+\_\+def\+\_\+@{fixture\+\_\+def\+\_\+}}
+\index{fixture\+\_\+def\+\_\+@{fixture\+\_\+def\+\_\+}!Wheel@{Wheel}}
+\subsubsection{\texorpdfstring{fixture\+\_\+def\+\_\+}{fixture\_def\_}}
+{\footnotesize\ttfamily b2\+Fixture\+Def Wheel\+::fixture\+\_\+def\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 28 of file Wheel.\+h.
+
+\mbox{\Hypertarget{classWheel_a714e23dd922b96909529cc611e515603}\label{classWheel_a714e23dd922b96909529cc611e515603}} 
+\index{Wheel@{Wheel}!F\+R\+I\+C\+T\+I\+O\+N\+\_\+@{F\+R\+I\+C\+T\+I\+O\+N\+\_\+}}
+\index{F\+R\+I\+C\+T\+I\+O\+N\+\_\+@{F\+R\+I\+C\+T\+I\+O\+N\+\_\+}!Wheel@{Wheel}}
+\subsubsection{\texorpdfstring{F\+R\+I\+C\+T\+I\+O\+N\+\_\+}{FRICTION\_}}
+{\footnotesize\ttfamily constexpr float Wheel\+::\+F\+R\+I\+C\+T\+I\+O\+N\+\_\+ = 0.\+5f\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line 23 of file Wheel.\+h.
+
+\mbox{\Hypertarget{classWheel_ad8d457ae4fcae73501f37a35f044d024}\label{classWheel_ad8d457ae4fcae73501f37a35f044d024}} 
+\index{Wheel@{Wheel}!R\+E\+S\+T\+I\+T\+I\+U\+T\+I\+O\+N\+\_\+@{R\+E\+S\+T\+I\+T\+I\+U\+T\+I\+O\+N\+\_\+}}
+\index{R\+E\+S\+T\+I\+T\+I\+U\+T\+I\+O\+N\+\_\+@{R\+E\+S\+T\+I\+T\+I\+U\+T\+I\+O\+N\+\_\+}!Wheel@{Wheel}}
+\subsubsection{\texorpdfstring{R\+E\+S\+T\+I\+T\+I\+U\+T\+I\+O\+N\+\_\+}{RESTITIUTION\_}}
+{\footnotesize\ttfamily constexpr float Wheel\+::\+R\+E\+S\+T\+I\+T\+I\+U\+T\+I\+O\+N\+\_\+ = 0.\+1f\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line 24 of file Wheel.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Physics/\hyperlink{Wheel_8h}{Wheel.\+h}\item 
+src/\+Physics/\hyperlink{Wheel_8cpp}{Wheel.\+cpp}\end{DoxyCompactItemize}

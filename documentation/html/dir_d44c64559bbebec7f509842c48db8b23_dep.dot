@@ -1,0 +1,15 @@
+digraph "include" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_d44c64559bbebec7f509842c48db8b23 {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_d44c64559bbebec7f509842c48db8b23.html"];
+    dir_d44c64559bbebec7f509842c48db8b23 [shape=plaintext label="include"];
+    dir_2b5b204ced78a4ffd540ffee1982eeb3 [shape=box label="EvolutionaryAlgorithm" color="black" fillcolor="white" style="filled" URL="dir_2b5b204ced78a4ffd540ffee1982eeb3.html"];
+    dir_b43dbc6878c2b5c121b79d76cc4886e7 [shape=box label="Graphics" color="black" fillcolor="white" style="filled" URL="dir_b43dbc6878c2b5c121b79d76cc4886e7.html"];
+    dir_cb0495686ad0971a39d9b806550be749 [shape=box label="Physics" color="black" fillcolor="white" style="filled" URL="dir_cb0495686ad0971a39d9b806550be749.html"];
+  }
+  dir_b43dbc6878c2b5c121b79d76cc4886e7->dir_cb0495686ad0971a39d9b806550be749 [headlabel="2", labeldistance=1.5 headhref="dir_000007_000008.html"];
+  dir_cb0495686ad0971a39d9b806550be749->dir_b43dbc6878c2b5c121b79d76cc4886e7 [headlabel="1", labeldistance=1.5 headhref="dir_000008_000007.html"];
+  dir_cb0495686ad0971a39d9b806550be749->dir_2b5b204ced78a4ffd540ffee1982eeb3 [headlabel="3", labeldistance=1.5 headhref="dir_000008_000006.html"];
+}

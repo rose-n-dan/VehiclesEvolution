@@ -1,6 +1,14 @@
 //
 // Created by SpiritStudio on 12.01.19.
 //
+/**
+ * The library implements a modified ear slicing algorithm for polygon triangulation
+ * It is optimized by z-order curve hashing and extended to handle holes, twisted polygons, degeneracies and self-intersections.
+ * It works in a way that doesn't guarantee correctness of triangulation, but attempts to always produce acceptable results for practical data.
+ * It's based on ideas from FIST:
+ *  Fast Industrial-Strength Triangulation of Polygons by Martin Held
+ *  Triangulation by Ear Clipping by David Eberly.
+ */
 
 #include <random>
 
