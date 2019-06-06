@@ -57,7 +57,7 @@ void GraphicalUserInterface::addWidgets() {
 
 std::shared_ptr<tgui::Button> GraphicalUserInterface::addButton(const sf::Vector2f &position, const std::string &text) {
     auto button = tgui::Button::create(text);
-    button->setSize(BUTTON_WIDTH_PIXELS_, BUTTON_HEIGHT_PIXELS_);
+        button->setSize(BUTTON_WIDTH_PIXELS_, BUTTON_HEIGHT_PIXELS_);
     button->setPosition(position);
     gui_.add(button);
 
