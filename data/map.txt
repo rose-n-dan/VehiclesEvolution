@@ -1,3 +1,9 @@
+//!  A map creation file
+/*!
+    The file consists of coordinates of verticies which shape of the map depends on.
+    The tessellation method performs triangulation on these verticies in order to create map.
+*/
+
 -10 10
 -10 0
 0 5
