@@ -13,8 +13,9 @@ include_directories(..)
 include_directories(../include)
 
 set(EXECUTABLE_NAME "runTests")
+set(TEST_SOURCES "gtest.cpp" "src/Car.cpp" "src/Map.cpp" "src/Utils.cpp")
 
-add_executable(${EXECUTABLE_NAME} gtest.cpp ../src/Physics/Physics.cpp ../src/Physics/Car.cpp ../src/Physics/Map.cpp
+add_executable(${EXECUTABLE_NAME} ${TEST_SOURCES} ../src/Physics/Physics.cpp ../src/Physics/Car.cpp ../src/Physics/Map.cpp
         ../src/EvolutionaryAlgorithm/CarParameters.cpp ../src/Graphics/Graphics.cpp
         ../src/EvolutionaryAlgorithm/EvolutionaryAlgorithm.cpp ../src/Graphics/CarGraphics.cpp
         ../src/Graphics/MapGraphics.cpp ../src/Physics/CarBody.cpp ../src/Physics/Wheel.cpp
