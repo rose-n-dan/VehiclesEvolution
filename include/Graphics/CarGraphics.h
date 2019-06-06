@@ -17,6 +17,9 @@ public:
     void setRearWheelPosition(const sf::Vector2f &position);
 
     const sf::Vector2f& getPosition() const;
+    const sf::ConvexShape& getCarBodyGraphics() const;
+    const sf::CircleShape& getFrontWheel() const;
+    const sf::CircleShape& getRearWheel() const;
 
 private:
     void draw(sf::RenderTarget &target, sf::RenderStates states) const override;

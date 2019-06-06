@@ -13,11 +13,6 @@ class CarParameters {
 
 public:
     CarParameters();
-    CarParameters(double front_wheel_radius, double rear_wheel_radius) : CarParameters() {
-        front_wheel_radius_ = front_wheel_radius;
-        rear_wheel_radius_ = rear_wheel_radius;
-    }
-
     CarParameters(double front_wheel_radius, double rear_wheel_radius,
                   const std::vector<b2Vec2>& car_body, b2Vec2 front_joint, b2Vec2 rear_joint);
 

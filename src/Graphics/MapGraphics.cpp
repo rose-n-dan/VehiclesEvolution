@@ -15,3 +15,7 @@ void MapGraphics::resetPolyline(size_t size) {
 void MapGraphics::setVertex(int i, const sf::Vector2f &position) {
     map_graphics_[i].position = position;
 }
+
+const sf::VertexArray& MapGraphics::getVertices() const {
+    return map_graphics_;
+}

@@ -66,6 +66,12 @@ void Physics::makeCar(const CarParameters &car_parameters) {
     notifyCars();
 }
 
+void Physics::loadNewMap(const std::string &file_name) {
+    map_ = Map(world_, file_name);
+
+    notifyMap();
+}
+
 std::vector<double> Physics::getFinalDistances() const {
     std::vector<double> distances;
     for (const auto & car : cars_) {

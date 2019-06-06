@@ -52,6 +52,18 @@ const sf::Vector2f& CarGraphics::getPosition() const {
     return car_body_graphics_.getPosition();
 }
 
+const sf::ConvexShape& CarGraphics::getCarBodyGraphics() const {
+    return car_body_graphics_;
+}
+
+const sf::CircleShape& CarGraphics::getFrontWheel() const {
+    return wheel_front_;
+}
+
+const sf::CircleShape& CarGraphics::getRearWheel() const {
+    return wheel_rear_;
+}
+
 void CarGraphics::draw(sf::RenderTarget &target, sf::RenderStates states) const {
     target.draw(car_body_graphics_, states);
     target.draw(wheel_front_, states);

@@ -12,6 +12,7 @@ class MapGraphics : public sf::Drawable {
 public:
     void resetPolyline(size_t size);
     void setVertex(int i, const sf::Vector2f &position);
+    const sf::VertexArray& getVertices() const;
 
 private:
     void draw(sf::RenderTarget &target, sf::RenderStates states) const override;

@@ -37,6 +37,7 @@ public:
 
     void makeCars(const std::vector<CarParameters> &cars_parameters);
     void makeCar(const CarParameters &car_parameters);
+    void loadNewMap(const std::string &file_name);
 
     std::vector<double> getFinalDistances() const;
 
