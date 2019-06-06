@@ -35,3 +35,5 @@ CMakeFiles/*
 *.exe
 *.out
 *.app
+
+documentation/*

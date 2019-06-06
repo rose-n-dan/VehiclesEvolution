@@ -16,12 +16,6 @@ public:
     //!  A Constructor of class.
     /*!
         The constructor creates a Map object specifying its world membership.
-        \param world specifies the world which Map object belong to.
-    */
-    Map(b2World &world);
-    //!  A Constructor of class.
-    /*!
-        The constructor creates a Map object specifying its world membership.
         The additional feature is that the map is being created using external .txt file
         \param world specifies the world which Map object belong to.
     */
