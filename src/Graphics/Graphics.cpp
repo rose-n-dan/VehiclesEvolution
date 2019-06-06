@@ -113,6 +113,22 @@ void Graphics::draw() {
     window_.display();
 }
 
+const MapGraphics& Graphics::getMapGraphics() const {
+    return map_graphic_;
+}
+
+const std::vector<CarGraphics>& Graphics::getCarGraphics() const {
+    return cars_graphics_;
+}
+
+const std::pair<double, double> Graphics::getMapGraphicsVertexInMeters(int vertex_index) const {
+    double x = convertPixelsToMeters(map_graphic_.getVertices()[vertex_index].position.x);
+    double y = convertPixelsToMeters(map_graphic_.getVertices()[vertex_index].position.y);
+
+    return std::make_pair(x, y);
+}
+
+
 void Graphics::ensureConstantFrameRate(const int frameRate) {
     time_ = clock_.restart();
     sf::Time time_for_sleep = sf::milliseconds(static_cast<int>(1000.0f / static_cast<float>(frameRate))) - time_;
@@ -154,3 +170,8 @@ CarGraphics Graphics::generateGraphics(const Car &car) {
     return CarGraphics(sf_vertices, car.getFrontWheelRadius() * PIXELS_PER_METER_,
                        car.getRearWheelRadius() * PIXELS_PER_METER_);
 }
+
+double Graphics::convertPixelsToMeters(double pixels) {
+    return pixels / PIXELS_PER_METER_;
+}
+

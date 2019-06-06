@@ -54,6 +54,7 @@ public:
     void makeCars(const std::vector<CarParameters> &cars_parameters);
     //!  A Method for creating a single car object from parameters given.
     void makeCar(const CarParameters &car_parameters);
+    void loadNewMap(const std::string &file_name);
 
     //!  A Method for updating the distances covered by lastly generated cars.
     std::vector<double> getFinalDistances() const;

@@ -39,6 +39,9 @@ public:
 
     //!  A method for getting the position of the CarGraphics object
     const sf::Vector2f& getPosition() const;
+    const sf::ConvexShape& getCarBodyGraphics() const;
+    const sf::CircleShape& getFrontWheel() const;
+    const sf::CircleShape& getRearWheel() const;
 
 private:
     //!  A method for drawing the CarGraphics object

@@ -16,6 +16,7 @@ public:
     void resetPolyline(size_t size);
     //! A Method for setting the position of i-th vertex
     void setVertex(int i, const sf::Vector2f &position);
+    const sf::VertexArray& getVertices() const;
 
 private:
     //!  A method for drawing the MapGraphics object
