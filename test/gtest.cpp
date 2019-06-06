@@ -3,13 +3,36 @@
 //
 
 #include <math.h>
+#include <fstream>
 
 #include <gtest/gtest.h>
 
 #include <Physics/Physics.h>
 
+
 TEST(ExamplePhysicsTest, Physics) {
     EXPECT_FALSE(Physics::getInstance().allDead());
+}
+
+TEST(MapTest, Tests) {
+    std::string map_file_name = "../data/test_map.txt";
+    std::ifstream map_file(map_file_name, std::ios::in);
+    double x, y;
+    int i = 0;
+
+    Physics::getInstance().loadNewMap(map_file_name);
+
+    while (map_file >> x >> y)
+    {
+        // Testing if physical representation of map is consistent with the file
+        EXPECT_FLOAT_EQ(Physics::getInstance().getMap().getPolyline().at(i).x, x);
+        EXPECT_FLOAT_EQ(Physics::getInstance().getMap().getPolyline().at(i).y, y);
+
+        // Testing if graphical representation of map is consistent with the file
+        EXPECT_FLOAT_EQ(Graphics::getInstance().getMapGraphicsVertexInMeters(i).first, x);
+        EXPECT_FLOAT_EQ(Graphics::getInstance().getMapGraphicsVertexInMeters(i).second, y);
+        ++i;
+    }
 }
 
 TEST(CarTests, Tests) {
@@ -35,23 +58,17 @@ TEST(CarTests, Tests) {
     EXPECT_FLOAT_EQ(car_parameters.front_wheel_radius_, front_wheel_radius);
     EXPECT_FLOAT_EQ(car_parameters.rear_wheel_radius_, rear_wheel_radius);
 
-    EXPECT_EQ(car_parameters.car_body_.at(0).x, -1);
-    EXPECT_EQ(car_parameters.car_body_.at(0).y, 0);
-    EXPECT_EQ(car_parameters.car_body_.at(1).x, 0);
-    EXPECT_EQ(car_parameters.car_body_.at(1).y, 1);
-    EXPECT_EQ(car_parameters.car_body_.at(2).x, 1);
-    EXPECT_EQ(car_parameters.car_body_.at(2).y, 1);
-    EXPECT_EQ(car_parameters.car_body_.at(3).x, 2);
-    EXPECT_EQ(car_parameters.car_body_.at(3).y, 0);
-    EXPECT_EQ(car_parameters.car_body_.at(4).x, 1);
-    EXPECT_EQ(car_parameters.car_body_.at(4).y, -1);
-    EXPECT_EQ(car_parameters.car_body_.at(5).x, 0);
-    EXPECT_EQ(car_parameters.car_body_.at(5).y, -1);
+    int i = 0;
+    for (const auto &v : car_parameters.car_body_) {
+        EXPECT_FLOAT_EQ(v.x, car_body.at(i).x);
+        EXPECT_FLOAT_EQ(v.y, car_body.at(i).y);
+        ++i;
+    }
 
-    EXPECT_EQ(car_parameters.front_joint_.x, 1);
-    EXPECT_EQ(car_parameters.front_joint_.y, -1);
-    EXPECT_EQ(car_parameters.rear_joint_.x, 0);
-    EXPECT_EQ(car_parameters.rear_joint_.y, -1);
+    EXPECT_FLOAT_EQ(car_parameters.front_joint_.x, 1);
+    EXPECT_FLOAT_EQ(car_parameters.front_joint_.y, -1);
+    EXPECT_FLOAT_EQ(car_parameters.rear_joint_.x, 0);
+    EXPECT_FLOAT_EQ(car_parameters.rear_joint_.y, -1);
 
 
     // Testing makeCar method
@@ -61,18 +78,12 @@ TEST(CarTests, Tests) {
     EXPECT_FLOAT_EQ(car.getFrontWheelRadius(), front_wheel_radius);
     EXPECT_FLOAT_EQ(car.getRearWheelRadius(), rear_wheel_radius);
 
-    EXPECT_EQ(car.getCarBodyVertices().at(0).x, -1);
-    EXPECT_EQ(car.getCarBodyVertices().at(0).y, 0);
-    EXPECT_EQ(car.getCarBodyVertices().at(1).x, 0);
-    EXPECT_EQ(car.getCarBodyVertices().at(1).y, 1);
-    EXPECT_EQ(car.getCarBodyVertices().at(2).x, 1);
-    EXPECT_EQ(car.getCarBodyVertices().at(2).y, 1);
-    EXPECT_EQ(car.getCarBodyVertices().at(3).x, 2);
-    EXPECT_EQ(car.getCarBodyVertices().at(3).y, 0);
-    EXPECT_EQ(car.getCarBodyVertices().at(4).x, 1);
-    EXPECT_EQ(car.getCarBodyVertices().at(4).y, -1);
-    EXPECT_EQ(car.getCarBodyVertices().at(5).x, 0);
-    EXPECT_EQ(car.getCarBodyVertices().at(5).y, -1);
+    i = 0;
+    for (const auto &v : car.getCarBodyVertices()) {
+        EXPECT_FLOAT_EQ(v.x, car_body.at(i).x);
+        EXPECT_FLOAT_EQ(v.y, car_body.at(i).y);
+        ++i;
+    }
 
 
     // Testing makeCars method for two sets of parameters
@@ -87,18 +98,25 @@ TEST(CarTests, Tests) {
         EXPECT_FLOAT_EQ(car.getFrontWheelRadius(), front_wheel_radius);
         EXPECT_FLOAT_EQ(car.getRearWheelRadius(), rear_wheel_radius);
 
-        EXPECT_EQ(car.getCarBodyVertices().at(0).x, -1);
-        EXPECT_EQ(car.getCarBodyVertices().at(0).y, 0);
-        EXPECT_EQ(car.getCarBodyVertices().at(1).x, 0);
-        EXPECT_EQ(car.getCarBodyVertices().at(1).y, 1);
-        EXPECT_EQ(car.getCarBodyVertices().at(2).x, 1);
-        EXPECT_EQ(car.getCarBodyVertices().at(2).y, 1);
-        EXPECT_EQ(car.getCarBodyVertices().at(3).x, 2);
-        EXPECT_EQ(car.getCarBodyVertices().at(3).y, 0);
-        EXPECT_EQ(car.getCarBodyVertices().at(4).x, 1);
-        EXPECT_EQ(car.getCarBodyVertices().at(4).y, -1);
-        EXPECT_EQ(car.getCarBodyVertices().at(5).x, 0);
-        EXPECT_EQ(car.getCarBodyVertices().at(5).y, -1);
+        i = 0;
+        for (const auto &v : car.getCarBodyVertices()) {
+            EXPECT_FLOAT_EQ(v.x, car_body.at(i).x);
+            EXPECT_FLOAT_EQ(v.y, car_body.at(i).y);
+            ++i;
+        }
+    }
+
+    // Testing if graphical representation of Car is consistent with the physical
+    CarGraphics car_graphics = Graphics::getInstance().getCarGraphics().at(0);
+
+    EXPECT_FLOAT_EQ(Graphics::convertPixelsToMeters(car_graphics.getFrontWheel().getRadius()), front_wheel_radius);
+    EXPECT_FLOAT_EQ(Graphics::convertPixelsToMeters(car_graphics.getRearWheel().getRadius()), rear_wheel_radius);
+
+    for (i = 0; i < car_body.size(); ++i) {
+        EXPECT_FLOAT_EQ(Graphics::convertPixelsToMeters(car_graphics.getCarBodyGraphics().getPoint(i).x),
+                        car_body.at(i).x);
+        EXPECT_FLOAT_EQ(Graphics::convertPixelsToMeters(car_graphics.getCarBodyGraphics().getPoint(i).y),
+                        car_body.at(i).y);
     }
 }
 

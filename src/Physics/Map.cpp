@@ -8,13 +8,12 @@
 #include <Physics/Map.h>
 #include <Utils.h>
 
-
-Map::Map(b2World &world) {
+Map::Map(b2World &world, std::string file_name) {
     body_def_.position.Set(0.0f, 0.0f);
 
     body_ = world.CreateBody(&body_def_);
 
-    loadFromFile("../data/map.txt");
+    loadFromFile(file_name);
 
     map_shape_ = utils::applyTessellation(polyline_);
     unsigned long i = 0;

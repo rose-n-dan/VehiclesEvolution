@@ -10,7 +10,7 @@
 class Map {
 
 public:
-    Map(b2World &world);
+    explicit Map(b2World &world, std::string file_name="data/map.txt");
 
     const b2Vec2& getPosition() const;
     const std::vector<b2Vec2>& getPolyline() const;

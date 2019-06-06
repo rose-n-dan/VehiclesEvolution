@@ -42,6 +42,12 @@ public:
 
     void draw();
 
+    const MapGraphics& getMapGraphics() const;
+    const std::vector<CarGraphics>& getCarGraphics() const;
+    const std::pair<double, double> getMapGraphicsVertexInMeters(int vertex_index) const;
+
+    static double convertPixelsToMeters(double pixels);
+
 private:
     Graphics();
 
