@@ -21,15 +21,14 @@ add_executable(${EXECUTABLE_NAME} ${TEST_SOURCES} ../src/Physics/Physics.cpp ../
         ../src/Graphics/MapGraphics.cpp ../src/Physics/CarBody.cpp ../src/Physics/Wheel.cpp
         ../src/Graphics/GraphicalUserInterface.cpp ../src/Utils.cpp)
 
-set(TGUI_LIBRARIES "${PROJECT_SOURCE_DIR}/../lib/libtgui.so")
-
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/../cmake_modules" ${CMAKE_MODULE_PATH})
 find_package(Box2D REQUIRED) # tested on 2.3.1
 find_package(SFML 2 REQUIRED COMPONENTS system window graphics network audio) # tested on 2.4.2
+find_package(TGUI 0.8 REQUIRED) # tested on 0.8.5
 
 target_link_libraries(${EXECUTABLE_NAME}
         ${GTEST_LIBRARIES}
         ${SFML_LIBRARIES}
         ${BOX2D_LIBRARIES} ${SFML_DEPENDENCIES}
-        ${TGUI_LIBRARIES}
+        ${TGUI_LIBRARY}
         pthread)

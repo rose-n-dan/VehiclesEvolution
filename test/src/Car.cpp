@@ -54,7 +54,7 @@ TEST(HolisticTests, Car)
 
     i = 0;
     for (const auto &v : car.getCarBodyVertices()) {
-        EXPECT_FLOAT_EQ(v.x, car_body.at(i).x);
+        EXPECT_FLOAT_EQ(v.x, car_body.at((i + 3) % 6).x);
         EXPECT_FLOAT_EQ(v.y, car_body.at(i).y);
         ++i;
     }
@@ -74,7 +74,7 @@ TEST(HolisticTests, Car)
 
         i = 0;
         for (const auto &v : car.getCarBodyVertices()) {
-            EXPECT_FLOAT_EQ(v.x, car_body.at(i).x);
+            EXPECT_FLOAT_EQ(v.x, car_body.at((i + 3) % 6).x);
             EXPECT_FLOAT_EQ(v.y, car_body.at(i).y);
             ++i;
         }
@@ -88,7 +88,7 @@ TEST(HolisticTests, Car)
 
     for (i = 0; i < car_body.size(); ++i) {
         EXPECT_FLOAT_EQ(Graphics::convertPixelsToMeters(car_graphics.getCarBodyGraphics().getPoint(i).x),
-                car_body.at(i).x);
+                car_body.at((i + 3) % 6).x);
         EXPECT_FLOAT_EQ(Graphics::convertPixelsToMeters(car_graphics.getCarBodyGraphics().getPoint(i).y),
                 car_body.at(i).y);
     }
