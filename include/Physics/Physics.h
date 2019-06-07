@@ -49,6 +49,8 @@ public:
     void update(const int frame_rate);
     //!  A Method for checking whether all cars from population are stuck.
     const bool allDead() const;
+    //!  A Method for checking whether a car from population has won a race.
+    const bool OneHasWon() const;
 
     //!  A Method for creating a vector of cars which will try to beat the track.
     void makeCars(const std::vector<CarParameters> &cars_parameters);

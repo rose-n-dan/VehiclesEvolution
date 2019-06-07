@@ -7,6 +7,10 @@
 #include <Utils.h>
 #include <EvolutionaryAlgorithm/EvolutionaryAlgorithm.h>
 
+
+int EvolutionaryAlgorithm::POPULATION_NUMBER_ = 0;
+
+
 EvolutionaryAlgorithm::EvolutionaryAlgorithm() {
     std::random_device rd;
     generator_.seed(rd());
@@ -68,6 +72,7 @@ const std::vector<CarParameters> EvolutionaryAlgorithm::generateNewPopulation() 
 }
 
 const std::vector<CarParameters> EvolutionaryAlgorithm::makeNewGeneration(const std::vector<double> &distances) {
+    setPopulationNumber();
     // add distances to last_generation_parameters vector
     {
         auto parIt = last_generation_parameters_.begin();
@@ -122,12 +127,20 @@ const double EvolutionaryAlgorithm::getCrossoverProbability() const {
     return crossover_probability_;
 }
 
+int EvolutionaryAlgorithm::getPopulationNumber() const {
+    return POPULATION_NUMBER_;
+}
+
 void EvolutionaryAlgorithm::setMutationProbability_(double mutation_probability) {
     EvolutionaryAlgorithm::mutation_probability_ = mutation_probability;
 }
 
 void EvolutionaryAlgorithm::setCrossoverProbability_(double crossover_probability) {
     EvolutionaryAlgorithm::crossover_probability_ = crossover_probability;
+}
+
+void EvolutionaryAlgorithm::setPopulationNumber() {
+    POPULATION_NUMBER_++;
 }
 
 bool EvolutionaryAlgorithm::maybeMutate(CarParameters & parameters) const {

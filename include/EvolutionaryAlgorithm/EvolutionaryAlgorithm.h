@@ -43,10 +43,14 @@ public:
     const double getMutationProbability() const;
     //!  A Method for getting the value of crossover probability in newly generated populations.
     const double getCrossoverProbability() const;
+    //!  A Method for getting the consecutive number of population.
+    int getPopulationNumber() const;
     //!  A Method for setting the value of mutation probability in newly generated populations.
     void setMutationProbability_(double mutation_probability);
     //!  A Method for setting the value of crossover probability in newly generated populations.
     void setCrossoverProbability_(double crossover_probability);
+    //!  A Method for setting the consecutive number of population.
+    void setPopulationNumber();
 
     //!  A Method for deciding whether a mutation will occur.
     /*!
@@ -118,6 +122,12 @@ private:
         Store the information about number of cars in each of the population.
     */
     const int CAR_NUMBER_IN_POPULATION_{15};
+
+    //! Private static variable
+    /*!
+        Store the information about consecutive number of population.
+    */
+    static int POPULATION_NUMBER_;
 
     //! Private vector.
     /*!

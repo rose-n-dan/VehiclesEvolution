@@ -92,8 +92,16 @@ int main()
                             Physics::getInstance().getFinalDistances()));
 
             std::cout << "BEWARE, NEW GENERATION IS COMING!" << std::endl;
+            std::cout << "The number of population is: " << EvolutionaryAlgorithm::getInstance().getPopulationNumber() <<  std::endl;
         }
-
+        if (Physics::getInstance().OneHasWon())
+        {
+            Graphics::getInstance().drawEnd();
+            std::cout << "END OF THE SIMULATION" << std::endl;
+            std::cout << "The winning car was from population number: " << EvolutionaryAlgorithm::getInstance().getPopulationNumber() << std::endl;
+            Graphics::getInstance().ensureConstantFrameRate(FRAME_RATE);
+            return 0;
+        }
         Graphics::getInstance().draw();
         Graphics::getInstance().ensureConstantFrameRate(FRAME_RATE);
     }

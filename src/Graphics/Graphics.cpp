@@ -113,6 +113,14 @@ void Graphics::draw() {
     window_.display();
 }
 
+void Graphics::drawEnd() {
+    window_.clear(background_color_);
+    window_.setView(view_gui_);
+    gui_.draw();
+
+    window_.display();
+}
+
 const MapGraphics& Graphics::getMapGraphics() const {
     return map_graphic_;
 }

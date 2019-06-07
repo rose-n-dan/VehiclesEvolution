@@ -89,3 +89,7 @@ const bool Car::isDead() const {
 
     return is_dead_;
 }
+
+const bool Car::HasWon() const {
+    return best_position_x_ > 300;
+}

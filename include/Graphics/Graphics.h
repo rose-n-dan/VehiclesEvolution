@@ -67,6 +67,8 @@ public:
     void restartClock();
     //!  A method for drawing texture on window.
     void draw();
+    //!  A method for drawing endgame textures.
+    void drawEnd();
 
     const MapGraphics& getMapGraphics() const;
     const std::vector<CarGraphics>& getCarGraphics() const;

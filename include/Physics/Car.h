@@ -49,6 +49,8 @@ public:
     const double getAngle() const;
     //!  A Method for checking whether Car object is dead.
     const bool isDead() const;
+    //!  A Method for checking whether Car object has won the race.
+    const bool HasWon() const;
 
 private:
     //!  Private static constant expression

@@ -33,6 +33,18 @@ const bool Physics::allDead() const {
     return ret;
 }
 
+const bool Physics::OneHasWon() const {
+    bool ret = false;
+
+    for (auto &car : cars_) {
+        if (car.HasWon()) {
+            ret = true;
+        }
+    }
+
+    return ret;
+}
+
 void Physics::notifyCars() {
     Graphics::getInstance().newCars(cars_);
 }
@@ -76,7 +88,6 @@ std::vector<double> Physics::getFinalDistances() const {
     std::vector<double> distances;
     for (const auto & car : cars_) {
         distances.push_back(car.getBestPosition());
-        std::cout << car.getBestPosition() << std::endl;
     }
 
     return distances;
