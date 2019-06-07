@@ -128,7 +128,32 @@ private:
     /*!
         Store the information about probability of mutation occurrence.
     */
-    double mutation_probability_{0.02};
+    double mutation_probability_{0.03};
+    //! Private variable.
+    /*!
+        Store the information about standard deviation of wheel radius.
+    */
+    double wheel_sigma_{0.15};
+    //! Private variable.
+    /*!
+        Store the information about expected value of wheel radius.
+    */
+    double wheel_expedted_value_{0.5};
+    //! Private variable.
+    /*!
+        Store the information about min radius of car body point (in regard to expected car body center in polar coordinates).
+    */
+    double min_car_body_point_radius_{0.3};
+    //! Private variable.
+    /*!
+        Store the information about max radius of car body point (in regard to expected car body center in polar coordinates).
+    */
+    double max_car_body_point_radius_{2};
+    //! Private variable.
+    /*!
+        Store the information about standard deviation of car body points cartesian coordinates (x and y).
+    */
+    double car_body_point_cartesian_sigma_{0.15};
     //! Private variable.
     /*!
         Store the information about probability of crossover occurrence.

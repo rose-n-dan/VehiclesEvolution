@@ -38,17 +38,11 @@ void GraphicalUserInterface::addWidgets() {
     button->connect("pressed", [&](){ window_.close(); });
     vertical_distance += BUTTONS_VERTICAL_DISTANCE_PIXELS_;
 
-    // TODO: Change make functions into making from Evolutional Algorithm
     std::vector<CarParameters> params_example = EvolutionaryAlgorithm::getInstance().generateNewPopulation();
 
     button = addButton(sf::Vector2f(left_side_offset, vertical_distance), "Generate new population");
     button->connect("pressed", &Physics::makeCars, &Physics::getInstance(), params_example);
     vertical_distance += BUTTONS_VERTICAL_DISTANCE_PIXELS_;
-
-//    CarParameters param_example;
-//    button = addButton(sf::Vector2f(left_side_offset, vertical_distance), "Add new car");
-//    button->connect("pressed", &Physics::makeCar, &Physics::getInstance(), param_example);
-//    vertical_distance += BUTTONS_VERTICAL_DISTANCE_PIXELS_;
 
     auto checkbox = addCheckbox(sf::Vector2f(left_side_offset, vertical_distance), "Follow the leader");
     checkbox->connect("checked", [&](){ follow_the_leader_checked_ = true; });
@@ -64,7 +58,6 @@ std::shared_ptr<tgui::Button> GraphicalUserInterface::addButton(const sf::Vector
     return button;
 }
 
-
 std::shared_ptr<tgui::CheckBox> GraphicalUserInterface::addCheckbox(const sf::Vector2f &position,
                                                                     const std::string &text) {
     auto checkbox = tgui::CheckBox::create(text);
@@ -74,7 +67,6 @@ std::shared_ptr<tgui::CheckBox> GraphicalUserInterface::addCheckbox(const sf::Ve
 
     return checkbox;
 }
-
 
 void GraphicalUserInterface::draw() {
     window_.draw(background_);

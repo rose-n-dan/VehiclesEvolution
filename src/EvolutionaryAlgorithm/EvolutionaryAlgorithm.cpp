@@ -19,12 +19,12 @@ EvolutionaryAlgorithm& EvolutionaryAlgorithm::getInstance() {
 
 const CarParameters EvolutionaryAlgorithm::generateRandomCar() const {
     // wheels radiuses generation
-    std::normal_distribution<double> wheel_radius_distribution(0.5, 0.15);
+    std::normal_distribution<double> wheel_radius_distribution(wheel_expedted_value_, wheel_sigma_);
     double first_wheel_radius = std::fabs(wheel_radius_distribution(generator_));
     double second_wheel_radius = std::fabs(wheel_radius_distribution(generator_));
 
     std::uniform_real_distribution<double> car_body_distribution_theta(0.0, 2 * M_PI / CarParameters::NUMBER_OF_CAR_BODY_POINTS_);
-    std::uniform_real_distribution<double> car_body_distribution_radius(0.3, 2);
+    std::uniform_real_distribution<double> car_body_distribution_radius(min_car_body_point_radius_, max_car_body_point_radius_);
     std::vector<b2Vec2> car_body_points;
     for (int i = 0; i < CarParameters::NUMBER_OF_CAR_BODY_POINTS_; i++) {
         double offset = i * 2 * M_PI / CarParameters::NUMBER_OF_CAR_BODY_POINTS_;
@@ -87,9 +87,9 @@ const std::vector<CarParameters> EvolutionaryAlgorithm::makeNewGeneration(const 
     // newly generated population
     std::vector<CarParameters> newly_generated_population;
 
-    // elitist selection - two best guys have guaranteed places in new population
-    newly_generated_population.push_back(last_generation_parameters_.rbegin()[0]);
-//    newly_generated_population.push_back(last_generation_parameters_.rbegin()[1]);
+    // elitist selection - two best guys have guaranteed places in new population - TO CONSIDER
+    // newly_generated_population.push_back(last_generation_parameters_.rbegin()[0]);
+    // newly_generated_population.push_back(last_generation_parameters_.rbegin()[1]);
 
     // rank based selection
     while (newly_generated_population.size() < distances.size()) {
@@ -131,22 +131,20 @@ void EvolutionaryAlgorithm::setCrossoverProbability_(double crossover_probabilit
 }
 
 bool EvolutionaryAlgorithm::maybeMutate(CarParameters & parameters) const {
-    // should return if mutation occured
-    // mutate on both wheel radius and carbody points
-    return maybeMutate(parameters.front_wheel_radius_, 0.15) &&
-           maybeMutate(parameters.rear_wheel_radius_, 0.15) &&
-           maybeMutate(reinterpret_cast<double &>(parameters.car_body_.at(0).x), 0.15) &&
-           maybeMutate(reinterpret_cast<double &>(parameters.car_body_.at(0).y), 0.15) &&
-           maybeMutate(reinterpret_cast<double &>(parameters.car_body_.at(1).x), 0.15) &&
-           maybeMutate(reinterpret_cast<double &>(parameters.car_body_.at(1).y), 0.15) &&
-           maybeMutate(reinterpret_cast<double &>(parameters.car_body_.at(2).x), 0.15) &&
-           maybeMutate(reinterpret_cast<double &>(parameters.car_body_.at(2).y), 0.15) &&
-           maybeMutate(reinterpret_cast<double &>(parameters.car_body_.at(3).x), 0.15) &&
-           maybeMutate(reinterpret_cast<double &>(parameters.car_body_.at(3).y), 0.15) &&
-           maybeMutate(reinterpret_cast<double &>(parameters.car_body_.at(4).x), 0.15) &&
-           maybeMutate(reinterpret_cast<double &>(parameters.car_body_.at(4).y), 0.15) &&
-           maybeMutate(reinterpret_cast<double &>(parameters.car_body_.at(5).x), 0.15) &&
-           maybeMutate(reinterpret_cast<double &>(parameters.car_body_.at(5).y), 0.15);
+    // returns true if any mutation occured
+    bool mutataion_occured = false;
+
+    mutataion_occured += maybeMutate(parameters.front_wheel_radius_, wheel_sigma_);
+    mutataion_occured += maybeMutate(parameters.rear_wheel_radius_, wheel_sigma_);
+    for (auto & v : parameters.car_body_) {
+        mutataion_occured += maybeMutate(reinterpret_cast<double &>(v.x), car_body_point_cartesian_sigma_);
+        mutataion_occured += maybeMutate(reinterpret_cast<double &>(v.y), car_body_point_cartesian_sigma_);
+    }
+
+    if (mutataion_occured) {
+        std::cout << "BANG - mutation occured!" << std::endl;
+    }
+    return mutataion_occured;
 }
 
 bool EvolutionaryAlgorithm::maybeMutate(double & value, double sigma) const {
@@ -164,18 +162,18 @@ double EvolutionaryAlgorithm::doMutate(double value, double sigma) const {
 }
 
 CarParameters EvolutionaryAlgorithm::doCrossover(const CarParameters & mother, const CarParameters & father) const {
-    //create new parameters
+    // create new parameters
     CarParameters new_car_parameters;
-    //crossover on wheel radius
+    // crossover on wheel radius
     new_car_parameters.front_wheel_radius_ = doCrossover(mother.front_wheel_radius_, father.front_wheel_radius_);
     new_car_parameters.rear_wheel_radius_ = doCrossover(mother.rear_wheel_radius_, father.rear_wheel_radius_);
-    //crossover on carbody points
+    // crossover on car body points
     for (int i = 0; i < CarParameters::NUMBER_OF_CAR_BODY_POINTS_; i++) {
-        new_car_parameters.car_body_[i].x = doCrossover(mother.car_body_[i].x, father.car_body_[i].x);
-        new_car_parameters.car_body_[i].y = doCrossover(mother.car_body_[i].y, father.car_body_[i].y);
+        new_car_parameters.car_body_.emplace_back(doCrossover(mother.car_body_[i].x, father.car_body_[i].x),
+                                                  doCrossover(mother.car_body_[i].y, father.car_body_[i].y));
     }
-    //pick right joint position
-    //picking from bottom area of carbody
+    // pick right joint position
+    // picking from bottom area of car body
     std::uniform_int_distribution<int> joint_index_distribution(3, 5);
     int first_joint_index = joint_index_distribution(generator_);
     int second_joint_index = joint_index_distribution(generator_);

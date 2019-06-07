@@ -69,12 +69,7 @@ const bool Car::isDead() const {
     if (!is_dead_) {
         std::chrono::duration<double> elapsed = std::chrono::high_resolution_clock::now() - stands_still_since;
 
-        // WTF ?!?!
-//        std::cout << "Time not moving: " << elapsed.count() << std::endl;
-//        std::cout << "Velocity by position: " << last_iteration_position_x - getPosition().x << std::endl;
-//        std::cout << "Velocity: " << getVelocity().x << std::endl;
-
-        if (utils::isNearlyZero(getPosition().x - last_iteration_position_x, 1e-5)) {
+        if (utils::isNearlyZero(getPosition().x - last_iteration_position_x, MIN_DIST_IN_ITERATION_)) {
             if ((elapsed.count()) > TIME_STANDING_STILL_TO_DIE_S_) {
                 is_dead_ = true;
             }

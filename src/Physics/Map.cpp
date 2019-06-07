@@ -30,6 +30,7 @@ Map::Map(b2World &world, std::string file_name) {
         // Override the default friction.
         fixture_def_.at(i).friction = FRICTION_;
 
+        // Collision detection masks from box2d
         fixture_def_.at(i).filter.categoryBits = 0x0002;
         fixture_def_.at(i).filter.maskBits = 0x0001;
         body_->CreateFixture(&fixture_def_.at(i));

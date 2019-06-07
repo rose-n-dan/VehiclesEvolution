@@ -66,6 +66,12 @@ private:
     */
     static constexpr double TIME_STANDING_STILL_TO_DIE_S_{5};
 
+    //!  Private static constant expression
+    /*!
+        The attribute consists of information about minimal distance that car needs to cover in one iteration not to be considered dead.
+    */
+    static constexpr double MIN_DIST_IN_ITERATION_{1e-5};
+
     //!  Private object
     /*!
         The attribute consists of object which represents front wheel.

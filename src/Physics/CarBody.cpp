@@ -31,6 +31,7 @@ CarBody::CarBody(b2World &world, const b2Vec2 &position, const std::vector<b2Vec
 
     fixture_def_.restitution = RESTITIUTION_;
 
+    // Collision detection masks from box2d
     fixture_def_.filter.categoryBits = 0x0001;
     fixture_def_.filter.maskBits = 0x0002;
 

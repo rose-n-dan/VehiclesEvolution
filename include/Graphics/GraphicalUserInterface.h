@@ -29,10 +29,7 @@ public:
     //!  A method for drawing widget on window.
     void draw();
 
-    //! Public consant variable.
-    /*!
-        Store the information about width of the displayed interface.
-    */
+    //!  Store the information about width of the displayed interface.
     const int getInterfaceWidth() const;
 
     //!  A method for checking whether the following leather button is checked.

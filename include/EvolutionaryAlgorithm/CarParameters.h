@@ -16,15 +16,8 @@ class CarParameters {
 
 public:
     //!  A CarParameters default constructor.
-    CarParameters();
-    //! A CarParameters constructor.
-    /*!
-      Constructor that specifies front and rear wheel radius
-    */
-    CarParameters(double front_wheel_radius, double rear_wheel_radius) : CarParameters() {
-        front_wheel_radius_ = front_wheel_radius;
-        rear_wheel_radius_ = rear_wheel_radius;
-    }
+    CarParameters() = default;
+
     //! A CarParameters constructor.
     /*!
       Constructor that specifies front and rear wheel radius

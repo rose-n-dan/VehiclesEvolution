@@ -39,8 +39,14 @@ public:
 
     //!  A method for getting the position of the CarGraphics object
     const sf::Vector2f& getPosition() const;
+
+    //!  A method for getting a car body graphical representation object
     const sf::ConvexShape& getCarBodyGraphics() const;
+
+    //!  A method for getting a car front wheel graphical representation object
     const sf::CircleShape& getFrontWheel() const;
+
+    //!  A method for getting a car rear wheel graphical representation object
     const sf::CircleShape& getRearWheel() const;
 
 private:
