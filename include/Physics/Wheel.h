@@ -35,7 +35,7 @@ private:
     /*!
         The attribute consists of information about friction coefficient of the Wheel object.
     */
-    static constexpr float FRICTION_ = 0.5f;
+    static constexpr float FRICTION_ = 1.0f;
     //!  Private static constant expression
     /*!
         The attribute consists of information about restitiution coefficient of the Wheel object.

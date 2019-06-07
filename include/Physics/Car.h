@@ -31,6 +31,8 @@ public:
 
     //!  A Method for getting a Car object's position.
     const b2Vec2& getPosition() const;
+    //!  A Method for getting a Car object's best position.
+    const double getBestPosition() const;
     //!  A Method for getting a Car object's velocity.
     const b2Vec2 getVelocity() const;
     //!  A Method for getting a Car object's front wheel position.
@@ -53,18 +55,24 @@ private:
     /*!
         The attribute consists of information about max torque of the wheel motor.
     */
-    static constexpr float MAX_MOTOR_TORQUE_ = 3000.0f;
+    static constexpr float MAX_MOTOR_TORQUE_ = 7000.0f;
     //!  Private static constant expression
     /*!
         The attribute consists of information about max speed of the wheel motor.
     */
-    static constexpr float MOTOR_SPEED_ = 40.0f;
+    static constexpr float MOTOR_SPEED_ = 30.0f;
 
     //!  Private static constant expression
     /*!
         The attribute consists of information about time, after which Car which is not moving further, is regarding as dead.
     */
     static constexpr double TIME_STANDING_STILL_TO_DIE_S_{5};
+
+    //!  Private static constant expression
+    /*!
+        The attribute consists of information about minimal distance that car needs to cover in one iteration not to be considered dead.
+    */
+    static constexpr double MIN_DIST_IN_ITERATION_{1e-5};
 
     //!  Private object
     /*!
@@ -118,12 +126,17 @@ private:
     /*!
         The attribute consists of information about time which passed since car had stopped.
     */
-    mutable std::chrono::time_point<std::chrono::high_resolution_clock> stands_still_since;
+    mutable std::chrono::time_point<std::chrono::high_resolution_clock> stands_still_since_;
     //!  Private variable
     /*!
         The attribute consists of information about position of the Car object from the last iteration.
     */
-    mutable double last_iteration_position_x;
+    mutable double last_iteration_position_x_;
+    //!  Private variable
+    /*!
+        The attribute consists of greatest x position.
+    */
+    mutable double best_position_x_{0};
 
 };
 

@@ -37,3 +37,15 @@ CMakeFiles/*
 *.app
 
 documentation/*
+
+# Build
+CMakeCache.txt
+Makefile
+VehiclesEvolution
+cmake_install.cmake
+
+# Test build
+test/CMakeCache.txt
+test/Makefile
+test/VehiclesEvolution
+test/cmake_install.cmake

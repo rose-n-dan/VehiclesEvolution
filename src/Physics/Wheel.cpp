@@ -20,6 +20,7 @@ Wheel::Wheel(b2World &world, double radius) {
 
     fixture_def_.restitution = RESTITIUTION_;
 
+    // Collision detection masks from box2d
     fixture_def_.filter.categoryBits = 0x0001;
     fixture_def_.filter.maskBits = 0x0002;
 

@@ -37,6 +37,10 @@ const b2Vec2& Car::getPosition() const {
     return car_body_.getPosition();
 }
 
+const double Car::getBestPosition() const {
+    return best_position_x_;
+}
+
 const b2Vec2 Car::getVelocity() const{
     return car_body_.getVelocity();
 }
@@ -67,21 +71,20 @@ const double Car::getAngle() const {
 
 const bool Car::isDead() const {
     if (!is_dead_) {
-        std::chrono::duration<double> elapsed = std::chrono::high_resolution_clock::now() - stands_still_since;
+        std::chrono::duration<double> elapsed = std::chrono::high_resolution_clock::now() - stands_still_since_;
 
-        // WTF ?!?!
-//        std::cout << "Time not moving: " << elapsed.count() << std::endl;
-//        std::cout << "Velocity by position: " << last_iteration_position_x - getPosition().x << std::endl;
-//        std::cout << "Velocity: " << getVelocity().x << std::endl;
-
-        if (utils::isNearlyZero(getPosition().x - last_iteration_position_x, 1e-5)) {
+        if (utils::isNearlyZero(getPosition().x - last_iteration_position_x_, MIN_DIST_IN_ITERATION_)) {
             if ((elapsed.count()) > TIME_STANDING_STILL_TO_DIE_S_) {
                 is_dead_ = true;
             }
         } else {
-            stands_still_since = std::chrono::high_resolution_clock::now();
+            stands_still_since_ = std::chrono::high_resolution_clock::now();
         }
-        last_iteration_position_x = getPosition().x;
+        last_iteration_position_x_ = getPosition().x;
+
+        if (best_position_x_ < getPosition().x) {
+            best_position_x_ = getPosition().x;
+        }
     }
 
     return is_dead_;

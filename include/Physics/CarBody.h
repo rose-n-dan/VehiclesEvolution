@@ -46,7 +46,7 @@ private:
     /*!
         The attribute consists of information about friction coefficient of the CarBody object.
     */
-    static constexpr float FRICTION_ = 2.0f;
+    static constexpr float FRICTION_ = 3.0f;
     //!  Private static constant expression
     /*!
         The attribute consists of information about restitiution coefficient of the CarBody object.
